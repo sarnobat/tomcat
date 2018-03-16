@@ -47,10 +47,11 @@ public class App {
             }
           });
 
-      appContext.addServletMapping("/helloworld", "helloWorldServlet");
+      //appContext.addServletMapping("/helloworld", "helloWorldServlet");
+      appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
 
       Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
-      appContext.addServletMapping("/webdav/*", "webdavservlet");
+//      appContext.addServletMapping("/webdav/*", "webdavservlet");
       //appContext.addServletMapping("/*", "webdavservlet");
 
       server.start();
