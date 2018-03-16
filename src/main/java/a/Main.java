@@ -4,17 +4,21 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
 
-public class App {
+public class Main {
+
   @SuppressWarnings("serial")
   public static void main(String[] args) {
+
     Tomcat server = new Tomcat();
     server.setPort(8080);
 
@@ -51,7 +55,7 @@ public class App {
       appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
 
       Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
-//      appContext.addServletMapping("/webdav/*", "webdavservlet");
+      //      appContext.addServletMapping("/webdav/*", "webdavservlet");
       //appContext.addServletMapping("/*", "webdavservlet");
 
       server.start();
