@@ -24,9 +24,7 @@ work
 build.properties
 mvn.properties
 .checkstyle
-.classpath
 .fbprefs
-.project
 .settings
 .idea
 *.iml
