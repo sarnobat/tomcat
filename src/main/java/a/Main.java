@@ -27,7 +27,7 @@ public class Main {
 
     // Document root
     // Server context root
-    server.setBaseDir("/tmp");
+		server.setBaseDir("/");
 
     // Application context root
     String applicaton = "/tmp/";
@@ -37,8 +37,7 @@ public class Main {
     }
 
     try {
-      String string = Paths.get(applicaton).toAbsolutePath().toString();
-      Context appContext = server.addWebapp("", string);
+			Context appContext = server.addWebapp("/", Paths.get(applicaton).toAbsolutePath().toString());
 
       // A Jetty AbstractHandler is an HttpServlet here:
       Tomcat.addServlet(
@@ -55,8 +54,7 @@ public class Main {
             }
           });
 
-      //appContext.addServletMapping("/helloworld", "helloWorldServlet");
-      appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
+			appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
 
       Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
       //      appContext.addServletMapping("/webdav/*", "webdavservlet");
