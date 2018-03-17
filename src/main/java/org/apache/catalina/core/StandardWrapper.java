@@ -1007,7 +1007,7 @@ public class StandardWrapper extends ContainerBase
      * @throws ServletException for a Servlet load error
      */
     public synchronized Servlet loadServlet() throws ServletException {
-
+System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + servletClass);
         // Nothing to do if we already have an instance or an instance pool
         if (!singleThreadModel && (instance != null))
             return instance;
@@ -1029,6 +1029,7 @@ public class StandardWrapper extends ContainerBase
 
             InstanceManager instanceManager = ((StandardContext)getParent()).getInstanceManager();
             try {
+                System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + servletClass);
                 servlet = (Servlet) instanceManager.newInstance(servletClass);
             } catch (ClassCastException e) {
                 unavailable(null);
@@ -1100,6 +1101,7 @@ public class StandardWrapper extends ContainerBase
 
     private synchronized void initServlet(Servlet servlet)
             throws ServletException {
+        System.out.println("SRIDHAR StandardWrapper.initServlet() - " + servlet.getClass().getName());
 
         if (instanceInitialized && !singleThreadModel) return;
 
@@ -1209,6 +1211,7 @@ public class StandardWrapper extends ContainerBase
      */
     @Override
     public void unavailable(UnavailableException unavailable) {
+        System.out.println("SRIDHAR StandardWrapper.unavailable() - ");
         getServletContext().log(sm.getString("standardWrapper.unavailable", getName()));
         if (unavailable == null)
             setAvailable(Long.MAX_VALUE);

@@ -1,4 +1,5 @@
-    mvn --settings ~/sarnobat.git/mac/.m2/settings.xml compile exec:java
+	mvn --settings ~/sarnobat.git/mac/.m2/settings.xml exec:java
+	java -jar /Users/ssarnobat/trash/tomcat.trash/target/ProjectName.jar
 
 ## Welcome to Apache Tomcat!
 

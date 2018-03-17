@@ -1165,6 +1165,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                     log.debug("  Returning class from cache");
                 if (resolve)
                     resolveClass(clazz);
+                System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 1");
                 return clazz;
             }
 
@@ -1175,6 +1176,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                     log.debug("  Returning class from cache");
                 if (resolve)
                     resolveClass(clazz);
+                System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 2");
                 return clazz;
             }
 
@@ -1197,6 +1199,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                 // Given these reported errors, catch Throwable to ensure any
                 // other edge cases are also caught
                 tryLoadingFromJavaseLoader = (javaseLoader.getResource(resourceName) != null);
+                System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - 3");
             } catch (Throwable t) {
                 // Swallow all exceptions apart from those that must be re-thrown
                 ExceptionUtils.handleThrowable(t);
@@ -1212,6 +1215,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                     if (clazz != null) {
                         if (resolve)
                             resolveClass(clazz);
+                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 4");
                         return clazz;
                     }
                 } catch (ClassNotFoundException e) {
@@ -1229,24 +1233,28 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                         String error = "Security Violation, attempt to use " +
                             "Restricted Class: " + name;
                         log.info(error, se);
+                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - not allowed");
                         throw new ClassNotFoundException(error, se);
                     }
                 }
             }
 
             boolean delegateLoad = delegate || filter(name, true);
-
+System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - delegateLoad = " + delegateLoad);
+System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name + " + name);
             // (1) Delegate to our parent if requested
             if (delegateLoad) {
                 if (log.isDebugEnabled())
                     log.debug("  Delegating to parent classloader1 " + parent);
                 try {
+                    System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - parent = " + parent);
                     clazz = Class.forName(name, false, parent);
                     if (clazz != null) {
                         if (log.isDebugEnabled())
                             log.debug("  Loading class from parent");
                         if (resolve)
                             resolveClass(clazz);
+                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 5");
                         return clazz;
                     }
                 } catch (ClassNotFoundException e) {
@@ -1264,6 +1272,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                         log.debug("  Loading class from local repository");
                     if (resolve)
                         resolveClass(clazz);
+                    System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 6");
                     return clazz;
                 }
             } catch (ClassNotFoundException e) {
@@ -1281,6 +1290,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                             log.debug("  Loading class from parent");
                         if (resolve)
                             resolveClass(clazz);
+                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 7");
                         return clazz;
                     }
                 } catch (ClassNotFoundException e) {
@@ -1288,7 +1298,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                 }
             }
         }
-
+System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name = " + name);
         throw new ClassNotFoundException(name);
     }
 

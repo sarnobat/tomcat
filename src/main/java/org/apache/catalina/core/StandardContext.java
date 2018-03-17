@@ -5949,6 +5949,7 @@ public class StandardContext extends ContainerBase
                 workDir = "work" + File.separator + engineName +
                     File.separator + hostName + File.separator + temp;
             }
+            System.out.println("SRIDHAR StandardContext.postWorkDirectory() - workDir = " + workDir);
             setWorkDir(workDir);
         }
 

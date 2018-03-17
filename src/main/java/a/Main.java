@@ -19,12 +19,15 @@ public class Main {
   @SuppressWarnings("serial")
   public static void main(String[] args) {
 
+    System.out.println(
+        "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
+
     Tomcat server = new Tomcat();
     server.setPort(8080);
 
     // Document root
     // Server context root
-    server.setBaseDir("/");
+    server.setBaseDir("/tmp");
 
     // Application context root
     String applicaton = "/tmp/";
@@ -34,7 +37,8 @@ public class Main {
     }
 
     try {
-      Context appContext = server.addWebapp("/", Paths.get(applicaton).toAbsolutePath().toString());
+      String string = Paths.get(applicaton).toAbsolutePath().toString();
+      Context appContext = server.addWebapp("", string);
 
       // A Jetty AbstractHandler is an HttpServlet here:
       Tomcat.addServlet(
