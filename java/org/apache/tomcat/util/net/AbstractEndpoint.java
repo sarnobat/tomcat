@@ -452,7 +452,9 @@ public abstract class AbstractEndpoint<S,U> {
      */
     private int port;
     public int getPort() { return port; }
-    public void setPort(int port ) { this.port=port; }
+    public void setPort(int port ) { this.port=port;
+    System.out.println("SRIDHAR AbstractEndpoint.setPort() - " + port);
+    }
 
 
     public final int getLocalPort() {

@@ -1,3 +1,19 @@
+# Sridhar
+
+## Build
+	ant
+
+## Run
+    CATALINA_HOME= ;"/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java" "-Djava.util.logging.config.file=/Users/ssarnobat/trash/tomcat.trash/output/build/conf/logging.properties" -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Denv=dev -Xms1024M -Xmx2048M -XX:PermSize=256M -XX:MaxPermSize=768m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9088 -Djava.security.egd=file:/dev/./urandom -Dlog4j.configurationFile=file:///Users/ssarnobat/control4/log4j2.xml -Dlog4j2.debug=true -Duser.home=/Users/ssarnobat -Dignore.endorsed.dirs="" -classpath "/Users/ssarnobat/trash/tomcat.trash/output/build/bin/bootstrap.jar:/Users/ssarnobat/trash/tomcat.trash/output/build/bin/tomcat-juli.jar" -Dcatalina.base="/Users/ssarnobat/trash/tomcat.trash/output/build" -Dcatalina.home="/Users/ssarnobat/trash/tomcat.trash/output/build" -Djava.io.tmpdir="/Users/ssarnobat/trash/tomcat.trash/output/build/temp" org.apache.catalina.startup.Bootstrap start
+
+Other info:	
+	unset CATALINA_HOME
+    output/build/bin/catalina.sh start
+    
+    CATALINA_HOME= ;"/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java" "-Djava.util.logging.config.file=/Users/ssarnobat/trash/tomcat.trash/output/build/conf/logging.properties" -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Denv=dev -Xms1024M -Xmx2048M -XX:PermSize=256M -XX:MaxPermSize=768m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9088 -Djava.security.egd=file:/dev/./urandom -Dlog4j.configurationFile=file:///Users/ssarnobat/control4/log4j2.xml -Dlog4j2.debug=true -Duser.home=/Users/ssarnobat -Dignore.endorsed.dirs="" -classpath "/Users/ssarnobat/trash/tomcat.trash/output/build/bin/bootstrap.jar:/Users/ssarnobat/trash/tomcat.trash/output/build/bin/tomcat-juli.jar" -Dcatalina.base="/Users/ssarnobat/trash/tomcat.trash/output/build" -Dcatalina.home="/Users/ssarnobat/trash/tomcat.trash/output/build" -Djava.io.tmpdir="/Users/ssarnobat/trash/tomcat.trash/output/build/temp" org.apache.catalina.startup.Bootstrap start
+    "/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java" -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:57749 -Dfile.encoding=UTF-8 -classpath /Users/ssarnobat/trash/tomcat.trash/target/classes:/Users/ssarnobat/.m2/repository/javax/xml/jaxrpc-api/1.1/jaxrpc-api-1.1.jar:/Users/ssarnobat/.m2/repository/org/apache/ant/ant/1.10.2/ant-1.10.2.jar:/Users/ssarnobat/.m2/repository/org/apache/ant/ant-launcher/1.10.2/ant-launcher-1.10.2.jar:/Users/ssarnobat/.m2/repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar:/Users/ssarnobat/.m2/repository/org/eclipse/jdt/core/compiler/ecj/4.6.1/ecj-4.6.1.jar:/Users/ssarnobat/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar org.apache.catalina.startup.Bootstrap
+
+
 ## Welcome to Apache Tomcat!
 
 ### What Is It?

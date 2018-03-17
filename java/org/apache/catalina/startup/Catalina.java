@@ -144,6 +144,7 @@ public class Catalina {
 
 
     public String getConfigFile() {
+        System.out.println("SRIDHAR Catalina.getConfigFile() - ");
         return configFile;
     }
 
@@ -259,7 +260,7 @@ public class Catalina {
      * @return the main configuration file
      */
     protected File configFile() {
-
+System.out.println("SRIDHAR Catalina.configFile() - ");
         File file = new File(configFile);
         if (!file.isAbsolute()) {
             file = new File(Bootstrap.getCatalinaBase(), configFile);

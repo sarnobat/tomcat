@@ -273,6 +273,7 @@ public abstract class AbstractProtocol<S> implements ProtocolHandler,
 
     public int getPort() { return endpoint.getPort(); }
     public void setPort(int port) {
+        System.out.println("SRIDHAR AbstractProtocol.setPort() - " + port);
         endpoint.setPort(port);
     }
 
