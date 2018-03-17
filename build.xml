@@ -339,6 +339,7 @@
   <!-- files.tomcat-embed-core because of an include/exclude conflict        -->
   <!-- between files.catalina and files.bootstrap.                           -->
   <patternset id="files.bootstrap">
+    <include name="org/apache/catalina/startup/Main.*" />
     <include name="org/apache/catalina/startup/Bootstrap.*" />
     <include name="org/apache/catalina/startup/catalina.properties" />
     <include name="org/apache/catalina/startup/CatalinaProperties.*" />

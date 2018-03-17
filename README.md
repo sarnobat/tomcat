@@ -11,7 +11,8 @@
 
 ### Embedded
 
-
+	CATALINA_HOME= ;"/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/bin/java" "-Djava.util.logging.config.file=/Users/ssarnobat/trash/tomcat.trash/output/build/conf/logging.properties" -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djdk.tls.ephemeralDHKeySize=2048 -Djava.protocol.handler.pkgs=org.apache.catalina.webresources -Denv=dev -Xms1024M -Xmx2048M -XX:PermSize=256M -XX:MaxPermSize=768m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9088 -Djava.security.egd=file:/dev/./urandom -Dlog4j.configurationFile=file:///Users/ssarnobat/control4/log4j2.xml -Dlog4j2.debug=true -Duser.home=/Users/ssarnobat -Dignore.endorsed.dirs="" -classpath "/Users/ssarnobat/trash/tomcat.trash/output/build/bin/bootstrap.jar:/Users/ssarnobat/trash/tomcat.trash/output/build/bin/tomcat-juli.jar" -Dcatalina.base="/Users/ssarnobat/trash/tomcat.trash/output/build" -Dcatalina.home="/Users/ssarnobat/trash/tomcat.trash/output/build" -Djava.io.tmpdir="/Users/ssarnobat/trash/tomcat.trash/output/build/temp" org.apache.catalina.startup.Main start
+	
 ## Other info:	
 	unset CATALINA_HOME
     output/build/bin/catalina.sh start
