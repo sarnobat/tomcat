@@ -817,6 +817,7 @@ public final class Mapper {
             }
         }
         if (context == null) {
+            System.out.println("SRIDHAR Mapper.internalMap() - no context, so returning");
             return;
         }
 
