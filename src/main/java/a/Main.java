@@ -19,8 +19,7 @@ public class Main {
   @SuppressWarnings("serial")
   public static void main(String[] args) {
 
-    System.out.println(
-        "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
+    System.out.println("SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
 
     Tomcat server = new Tomcat();
     server.setPort(8080);
