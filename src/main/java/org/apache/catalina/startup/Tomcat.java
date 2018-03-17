@@ -357,6 +357,7 @@ public class Tomcat {
      */
     public void init() throws LifecycleException {
         getServer();
+        getConnector();
         server.init();
     }
 
@@ -368,6 +369,7 @@ public class Tomcat {
      */
     public void start() throws LifecycleException {
         getServer();
+        getConnector();
         server.start();
     }
 

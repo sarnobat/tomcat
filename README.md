@@ -4,7 +4,7 @@ Compile:
 Gives classloading error:	
 	mvn --settings ~/sarnobat.git/mac/.m2/settings.xml exec:java
 	
-Works (also works when run with eclipse):
+Runs (also runs when run with eclipse) - but it doesn't load the hello world servlet:
 	java -cp /Users/ssarnobat/trash/tomcat.trash/target/ProjectName.jar a.Main
 
 ## Welcome to Apache Tomcat!

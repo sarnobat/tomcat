@@ -27,17 +27,17 @@ public class Main {
 
     // Document root
     // Server context root
-    server.setBaseDir("/");
+    server.setBaseDir("/tmp");
 
     // Application context root
-    String applicaton = "/tmp/";
-    File application = Paths.get(applicaton).toFile();
+    String appDocBase = "/tmp/";
+    File application = Paths.get(appDocBase).toFile();
     if (!application.exists()) {
       application.mkdirs();
     }
 
     try {
-      Context appContext = server.addWebapp("/", Paths.get(applicaton).toAbsolutePath().toString());
+      Context appContext = server.addWebapp("/app", Paths.get(appDocBase).toAbsolutePath().toString());
 
       // A Jetty AbstractHandler is an HttpServlet here:
       Tomcat.addServlet(
