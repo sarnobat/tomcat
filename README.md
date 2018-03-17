@@ -1,5 +1,11 @@
-	mvn --settings ~/sarnobat.git/mac/.m2/settings.xml compile exec:java
-	java -jar /Users/ssarnobat/trash/tomcat.trash/target/ProjectName.jar
+Compile:
+	mvn --settings ~/sarnobat.git/mac/.m2/settings.xml compile install
+	
+Gives classloading error:	
+	mvn --settings ~/sarnobat.git/mac/.m2/settings.xml exec:java
+	
+Works:	
+	java -cp /Users/ssarnobat/trash/tomcat.trash/target/ProjectName.jar a.Main
 
 ## Welcome to Apache Tomcat!
 
