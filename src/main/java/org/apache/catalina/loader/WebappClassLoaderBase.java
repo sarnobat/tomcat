@@ -1247,7 +1247,7 @@ System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name = " + name)
                 if (log.isDebugEnabled())
                     log.debug("  Delegating to parent classloader1 " + parent);
                 try {
-                    System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - parent = " + parent);
+//                    System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - parent = " + parent);
                     clazz = Class.forName(name, false, parent);
                     if (clazz != null) {
                         if (log.isDebugEnabled())
