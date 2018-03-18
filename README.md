@@ -1,5 +1,8 @@
 # Sridhar
 
+
+	git checkout mavenized
+
 ## Build
 	ant
 
