@@ -77,6 +77,7 @@ public final class NonLoginAuthenticator extends AuthenticatorBase {
     protected boolean doAuthenticate(Request request, HttpServletResponse response)
         throws IOException {
 
+        System.out.println("SRIDHAR NonLoginAuthenticator.doAuthenticate() - ");
         // Don't try and use SSO to authenticate since there is no auth
         // configured for this web application
         if (checkForCachedAuthentication(request, response, true)) {

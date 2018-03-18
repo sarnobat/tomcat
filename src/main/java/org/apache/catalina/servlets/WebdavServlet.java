@@ -337,6 +337,7 @@ public class WebdavServlet extends DefaultServlet {
         }
 
         final String method = req.getMethod();
+        System.out.println("SRIDHAR WebdavServlet.service() - method = " + method);
 
         if (debug > 0) {
             log("[" + method + "] " + path);

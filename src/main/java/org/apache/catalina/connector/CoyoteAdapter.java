@@ -873,6 +873,7 @@ public class CoyoteAdapter implements Adapter {
         String authtype = req.getAuthType().toString();
         if (authtype != null) {
             request.setAuthType(authtype);
+            System.out.println("SRIDHAR CoyoteAdapter.doConnectorAuthenticationAuthorization() - authType" + authtype);
         }
     }
 

@@ -72,7 +72,7 @@ public class BasicAuthenticator extends AuthenticatorBase {
     @Override
     protected boolean doAuthenticate(Request request, HttpServletResponse response)
             throws IOException {
-
+System.out.println("SRIDHAR BasicAuthenticator.doAuthenticate() - ");
         if (checkForCachedAuthentication(request, response, true)) {
             return true;
         }

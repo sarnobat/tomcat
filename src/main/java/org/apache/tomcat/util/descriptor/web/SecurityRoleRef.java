@@ -45,6 +45,7 @@ public class SecurityRoleRef implements Serializable {
     }
 
     public void setName(String name) {
+        System.out.println("SRIDHAR SecurityRoleRef.setName() - name " + name);
         this.name = name;
     }
 
