@@ -147,7 +147,7 @@ public class DefaultInstanceManager implements InstanceManager {
     public Object newInstance(String className) throws IllegalAccessException,
             InvocationTargetException, NamingException, InstantiationException,
             ClassNotFoundException, IllegalArgumentException, NoSuchMethodException, SecurityException {
-        System.out.println("SRIDHAR DefaultInstanceManager.newInstance() - Loading class " + className + " using " + classLoader.getClass().getName());
+//        System.out.println("SRIDHAR DefaultInstanceManager.newInstance() - Loading class " + className + " using " + classLoader.getClass().getName());
         Class<?> clazz = loadClassMaybePrivileged(className, classLoader);
         return newInstance(clazz.getConstructor().newInstance(), clazz);
     }

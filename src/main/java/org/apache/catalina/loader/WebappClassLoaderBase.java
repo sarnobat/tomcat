@@ -1199,7 +1199,7 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
                 // Given these reported errors, catch Throwable to ensure any
                 // other edge cases are also caught
                 tryLoadingFromJavaseLoader = (javaseLoader.getResource(resourceName) != null);
-                System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - 3");
+                //System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - 3");
             } catch (Throwable t) {
                 // Swallow all exceptions apart from those that must be re-thrown
                 ExceptionUtils.handleThrowable(t);
@@ -1240,8 +1240,8 @@ public abstract class WebappClassLoaderBase extends URLClassLoader
             }
 
             boolean delegateLoad = delegate || filter(name, true);
-System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - delegateLoad = " + delegateLoad);
-System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name + " + name);
+//System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - delegateLoad = " + delegateLoad);
+System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name = " + name);
             // (1) Delegate to our parent if requested
             if (delegateLoad) {
                 if (log.isDebugEnabled())
@@ -1254,7 +1254,7 @@ System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - name + " + name)
                             log.debug("  Loading class from parent");
                         if (resolve)
                             resolveClass(clazz);
-                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 5");
+//                        System.out.println("SRIDHAR WebappClassLoaderBase.loadClass() - found 5");
                         return clazz;
                     }
                 } catch (ClassNotFoundException e) {

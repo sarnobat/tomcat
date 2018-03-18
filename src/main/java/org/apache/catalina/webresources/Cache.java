@@ -57,7 +57,7 @@ public class Cache {
     }
 
     protected WebResource getResource(String path, boolean useClassLoaderResources) {
-System.out.println("SRIDHAR Cache.getResource() - " + path);
+//System.out.println("SRIDHAR Cache.getResource() - " + path);
         if (noCache(path)) {
             return root.getResourceInternal(path, useClassLoaderResources);
         }
