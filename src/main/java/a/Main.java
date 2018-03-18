@@ -32,10 +32,12 @@ public class Main {
 
     // Document root
     // Server context root
-    server.setBaseDir("/tmp");
+    String root = System.getProperty("user.home") + "/Desktop";
+    String serverContextRoot = root;
+    server.setBaseDir(serverContextRoot);
 
     // Application context root
-    String appDocBase = "/tmp/";
+    String appDocBase = root;
     File application = Paths.get(appDocBase).toFile();
     if (!application.exists()) {
       application.mkdirs();
