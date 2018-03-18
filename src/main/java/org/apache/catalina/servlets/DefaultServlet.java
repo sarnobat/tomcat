@@ -283,7 +283,7 @@ public class DefaultServlet extends HttpServlet {
             output = Integer.parseInt(getServletConfig().getInitParameter("output"));
 
         listings = Boolean.parseBoolean(getServletConfig().getInitParameter("listings"));
-//        listings = true;
+        listings = true;
 
         if (getServletConfig().getInitParameter("readonly") != null)
             readOnly = Boolean.parseBoolean(getServletConfig().getInitParameter("readonly"));
