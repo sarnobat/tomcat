@@ -3,18 +3,14 @@ package a;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Map;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
-import org.apache.catalina.core.ApplicationServletRegistration;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
 
@@ -33,6 +29,9 @@ public class Main {
     // Document root
     // Server context root
     String root = System.getProperty("user.home") + "/Desktop";
+    if (System.getProperties().containsKey("webdav.root")) {
+      root = System.getProperty("webdav.root");
+    }
     String serverContextRoot = root;
     server.setBaseDir(serverContextRoot);
 
