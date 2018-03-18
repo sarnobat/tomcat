@@ -27,7 +27,8 @@ public class Main {
         "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
 
     Tomcat server = new Tomcat();
-    server.setPort(8080);
+    int port = 8080;
+    server.setPort(port);
 
     // Document root
     // Server context root
@@ -60,21 +61,21 @@ public class Main {
       appContext.addParameter("listings", "true");
       appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
 
-      WebdavServlet servlet = new WebdavServlet() ;
-//      {
-//          /**
-//           * Initialize this servlet.
-//           */
-//          @Override
-//          public void init()
-//              throws ServletException {
-//
-//              super.init();
-//              super.getServletConfig().getServletContext().setInitParameter("listings", "true");
-//          }
-//      };
-//      ServletConfig servletConfig = servlet.getServletConfig();
-//  servlet.init(servletConfig);
+      WebdavServlet servlet = new WebdavServlet();
+      //      {
+      //          /**
+      //           * Initialize this servlet.
+      //           */
+      //          @Override
+      //          public void init()
+      //              throws ServletException {
+      //
+      //              super.init();
+      //              super.getServletConfig().getServletContext().setInitParameter("listings", "true");
+      //          }
+      //      };
+      //      ServletConfig servletConfig = servlet.getServletConfig();
+      //  servlet.init(servletConfig);
       Tomcat.addServlet(appContext, "webdavservlet", servlet);
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
       //      appContext.addServletMapping("/*", "webdavservlet");
@@ -86,7 +87,13 @@ public class Main {
       server.start();
       System.out.println(
           "SRIDHAR Main.main() - " + appContext.getServletContext().getServletRegistrations());
-      System.out.println("Tomcat server: http://" + server.getHost().getName() + ":" + 8080 + "/");
+      System.out.println("Tomcat server: http://" + server.getHost().getName() + ":" + port + "/");
+      System.out.println(
+          "SRIDHAR Main.main() - Try visiting this url:  http://"
+              + server.getHost().getName()
+              + ":"
+              + port
+              + "/1.txt");
       server.getServer().await();
     } catch (ServletException e) {
       e.printStackTrace();
