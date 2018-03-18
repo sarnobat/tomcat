@@ -3,14 +3,18 @@ package a;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Map;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
+import org.apache.catalina.core.ApplicationServletRegistration;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
 
@@ -19,7 +23,8 @@ public class Main {
   @SuppressWarnings("serial")
   public static void main(String[] args) {
 
-    System.out.println("SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
+    System.out.println(
+        "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
 
     Tomcat server = new Tomcat();
     server.setPort(8080);
@@ -52,14 +57,35 @@ public class Main {
               response.getWriter().println("<h1>Hello World</h1>");
             }
           });
-
+      appContext.addParameter("listings", "true");
       appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
 
-      Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
-      //      appContext.addServletMapping("/webdav/*", "webdavservlet");
-      //appContext.addServletMapping("/*", "webdavservlet");
-
+      WebdavServlet servlet = new WebdavServlet() ;
+//      {
+//          /**
+//           * Initialize this servlet.
+//           */
+//          @Override
+//          public void init()
+//              throws ServletException {
+//
+//              super.init();
+//              super.getServletConfig().getServletContext().setInitParameter("listings", "true");
+//          }
+//      };
+//      ServletConfig servletConfig = servlet.getServletConfig();
+//  servlet.init(servletConfig);
+      Tomcat.addServlet(appContext, "webdavservlet", servlet);
+      appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
+      //      appContext.addServletMapping("/*", "webdavservlet");
+      appContext
+          .getServletContext()
+          .getServletRegistrations()
+          .get("webdavservlet")
+          .setInitParameter("listings", "true");
       server.start();
+      System.out.println(
+          "SRIDHAR Main.main() - " + appContext.getServletContext().getServletRegistrations());
       System.out.println("Tomcat server: http://" + server.getHost().getName() + ":" + 8080 + "/");
       server.getServer().await();
     } catch (ServletException e) {
