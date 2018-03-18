@@ -265,8 +265,8 @@ public class WebdavServlet extends DefaultServlet {
         throws ServletException {
 
         super.init();
-        
-        Object o = getServletConfig().getInitParameter("listings");
+
+//        Object o = getServletConfig().getInitParameter("listings");
 
         if (getServletConfig().getInitParameter("secret") != null)
             secret = getServletConfig().getInitParameter("secret");
