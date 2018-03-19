@@ -63,7 +63,6 @@ import org.apache.catalina.realm.RealmBase;
 import org.apache.tomcat.util.ExceptionUtils;
 import org.apache.tomcat.util.buf.UriUtil;
 import org.apache.tomcat.util.descriptor.web.LoginConfig;
-import org.apache.tomcat.util.res.StringManager;
 
 // TODO: lazy init for the temp dir - only when a JSP is compiled or
 // get temp dir is called we need to create it. This will avoid the
