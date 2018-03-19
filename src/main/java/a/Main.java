@@ -23,7 +23,6 @@ public class Main {
         "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
 
     int port = 4453;
-    Tomcat server = new Tomcat(port);
 
     // Document root
     // Server context root
@@ -32,6 +31,7 @@ public class Main {
       root = System.getProperty("webdav.root");
     }
     String serverContextRoot = root;
+    Tomcat server = new Tomcat(port, root);
     server.setBaseDir(serverContextRoot);
 
     // Application context root

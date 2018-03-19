@@ -151,15 +151,16 @@ public class Tomcat {
     protected Server server;
 
     protected final int port;
-    protected String hostname = "localhost";
+    protected final String hostname;
     protected String basedir;
 
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port) {
+    public Tomcat(int port, String hostname) {
         this.port = port;
+        this.hostname = hostname;
         ExceptionUtils.preload();
     }
 
@@ -187,15 +188,6 @@ public class Tomcat {
      */
     public void setBaseDir(String basedir) {
         this.basedir = basedir;
-    }
-
-    /**
-     * The the hostname of the default host, default is
-     * 'localhost'.
-     * @param s The default host name
-     */
-    public void setHostname(String s) {
-        hostname = s;
     }
 
     /**
