@@ -139,9 +139,6 @@ import org.apache.tomcat.util.res.StringManager;
  */
 public class Tomcat {
 
-    // TODO: remove
-    private static final StringManager sm = StringManager.getManager(Tomcat.class);
-
     // TODO: make final
     protected Server server;
 
@@ -684,12 +681,12 @@ public class Tomcat {
         File baseFile = new File(basedir);
         if (baseFile.exists()) {
             if (!baseFile.isDirectory()) {
-                throw new IllegalArgumentException(sm.getString("tomcat.baseDirNotDir", baseFile));
+                throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
             }
         } else {
             if (!baseFile.mkdirs()) {
                 // Failed to create base directory
-                throw new IllegalStateException(sm.getString("tomcat.baseDirMakeFail", baseFile));
+                throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
             }
             /*
              * If file permissions were going to be set on the newly created
@@ -714,7 +711,7 @@ public class Tomcat {
             File homeFile = new File(catalinaHome);
             if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
                 // Failed to create home directory
-                throw new IllegalStateException(sm.getString("tomcat.homeDirMakeFail", homeFile));
+                throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
             }
             try {
                 homeFile = homeFile.getCanonicalFile();
