@@ -733,8 +733,6 @@ public class Tomcat {
         "org.apache.catalina.core.AprLifecycleListener"
     };
 
-    private boolean silent = false;
-
     /**
      * Controls if the loggers will be silenced or not.
      * @param silent    <code>true</code> sets the log level to WARN for the
@@ -744,7 +742,6 @@ public class Tomcat {
      *                  level of INFO.
      */
     public void setSilent(boolean silent) {
-        this.silent = silent;
         for (String s : silences) {
             Logger logger = Logger.getLogger(s);
             if (silent) {
@@ -758,11 +755,7 @@ public class Tomcat {
     private void silence(Host host, String contextPath) {
         String loggerName = getLoggerName(host, contextPath);
         Logger logger = Logger.getLogger(loggerName);
-        if (silent) {
-            logger.setLevel(Level.WARNING);
-        } else {
             logger.setLevel(Level.INFO);
-        }
     }
 
 
