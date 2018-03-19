@@ -30,19 +30,16 @@ public class Main {
     if (System.getProperties().containsKey("webdav.root")) {
       root = System.getProperty("webdav.root");
     }
-    String serverContextRoot = root;
-    Tomcat server = new Tomcat(port, root);
-    server.setBaseDir(serverContextRoot);
+    Tomcat server = new Tomcat(port, "localhost", root);
 
     // Application context root
-    String appDocBase = root;
-    File application = Paths.get(appDocBase).toFile();
+    File application = Paths.get(root).toFile();
     if (!application.exists()) {
       application.mkdirs();
     }
 
     try {
-      Context appContext = server.addWebapp("", Paths.get(appDocBase).toAbsolutePath().toString());
+      Context appContext = server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
 
       // A Jetty AbstractHandler is an HttpServlet here:
       Tomcat.addServlet(

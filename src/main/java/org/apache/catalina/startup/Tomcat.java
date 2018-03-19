@@ -160,7 +160,8 @@ public class Tomcat {
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
     public Tomcat(int port, String hostname,String basedir) {
-        initBaseDir();
+        getServer();
+        this.basedir = basedir;
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
@@ -578,18 +579,14 @@ public class Tomcat {
      * @return the deployed context
      * @see #addWebapp(String, String)
      */
+    // Webapp = Context
+    // This method shoudl just create the context, it should not add it
     public Context addWebapp(Host host, String contextPath, String docBase,
             LifecycleListener config) {
 
         silence(host, contextPath);
 
-        Context ctx = createContext(host, contextPath);
-        ctx.setPath(contextPath);
-        ctx.setDocBase(docBase);
-        ctx.addLifecycleListener(getDefaultWebXmlListener());
-        ctx.setConfigFile(getWebappConfigFile(docBase, contextPath));
-
-        ctx.addLifecycleListener(config);
+        Context ctx = createAppContext(host, contextPath, docBase, config);
 
         if (config instanceof ContextConfig) {
             // prevent it from looking ( if it finds one - it'll have dup error )
@@ -604,6 +601,18 @@ public class Tomcat {
 
         return ctx;
     }
+
+  private Context createAppContext(
+      Host host, String contextPath, String docBase, LifecycleListener config) {
+    Context ctx = createContext(host, contextPath);
+    ctx.setPath(contextPath);
+    ctx.setDocBase(docBase);
+    ctx.addLifecycleListener(getDefaultWebXmlListener());
+    ctx.setConfigFile(getWebappConfigFile(docBase, contextPath));
+
+    ctx.addLifecycleListener(config);
+    return ctx;
+  }
 
     /**
      * Return a listener that provides the required configuration items for JSP
