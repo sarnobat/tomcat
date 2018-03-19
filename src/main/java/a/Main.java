@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
+import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
 
@@ -31,7 +32,7 @@ public class Main {
     }
 
     try {
-      Context appContext = server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
+      StandardContext appContext = (StandardContext)server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
       WebdavServlet servlet = new WebdavServlet();
       Tomcat.addServlet(appContext, "webdavservlet", servlet);
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
