@@ -148,6 +148,7 @@ public class Tomcat {
     // TODO: make private
     protected final int port;
     protected final String hostname;
+    // TODO: make final
     protected String basedir;
 
     private final Map<String, String> userPass = new HashMap<>();
