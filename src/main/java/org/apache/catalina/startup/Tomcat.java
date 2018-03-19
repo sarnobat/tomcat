@@ -611,7 +611,6 @@ public class Tomcat {
      *  Must exist, relative to the server home
      * @param config Custom context configurator helper
      * @return the deployed context
-     * @see #addWebapp(String, String)
      */
     // Webapp = Context
     // This method shoudl just create the context, it should not add it
