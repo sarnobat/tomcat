@@ -141,13 +141,6 @@ public class Tomcat {
 
     private static final StringManager sm = StringManager.getManager(Tomcat.class);
 
-    // Some logging implementations use weak references for loggers so there is
-    // the possibility that logging configuration could be lost if GC runs just
-    // after Loggers are configured but before they are used. The purpose of
-    // this Map is to retain strong references to explicitly configured loggers
-    // so that configuration is not lost.
-    private final Map<String, Logger> pinnedLoggers = new HashMap<>();
-
     protected Server server;
 
     // TODO: make private
@@ -754,7 +747,6 @@ public class Tomcat {
         this.silent = silent;
         for (String s : silences) {
             Logger logger = Logger.getLogger(s);
-            pinnedLoggers.put(s, logger);
             if (silent) {
                 logger.setLevel(Level.WARNING);
             } else {
@@ -766,7 +758,6 @@ public class Tomcat {
     private void silence(Host host, String contextPath) {
         String loggerName = getLoggerName(host, contextPath);
         Logger logger = Logger.getLogger(loggerName);
-        pinnedLoggers.put(loggerName, logger);
         if (silent) {
             logger.setLevel(Level.WARNING);
         } else {
