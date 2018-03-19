@@ -139,8 +139,10 @@ import org.apache.tomcat.util.res.StringManager;
  */
 public class Tomcat {
 
+    // TODO: remove
     private static final StringManager sm = StringManager.getManager(Tomcat.class);
 
+    // TODO: make final
     protected Server server;
 
     // TODO: make private
