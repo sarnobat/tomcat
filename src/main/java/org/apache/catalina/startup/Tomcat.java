@@ -174,7 +174,17 @@ public class Tomcat {
      * @throws ServletException if a deployment error occurs
      */
     public Context addWebapp(String contextPath, String docBase) throws ServletException {
-        return addWebapp(getHost(), contextPath, docBase);
+        LifecycleListener listener = null;
+    try {
+        Class<?> clazz = Class.forName(getHost().getConfigClass());
+        listener = (LifecycleListener) clazz.getConstructor().newInstance();
+    } catch (ReflectiveOperationException e) {
+        // Wrap in IAE since we can't easily change the method signature to
+        // to throw the specific checked exceptions
+        throw new IllegalArgumentException(e);
+    }
+    
+    return addWebapp(getHost(),  contextPath, docBase, listener);
     }
 
 
@@ -596,28 +606,6 @@ public class Tomcat {
             host.addChild(ctx);
         }
         return ctx;
-    }
-
-    /**
-     * @param host The host in which the context will be deployed
-     * @param contextPath The context mapping to use, "" for root context.
-     * @param docBase Base directory for the context, for static files.
-     *  Must exist, relative to the server home
-     * @return the deployed context
-     * @see #addWebapp(String, String)
-     */
-    public Context addWebapp(Host host, String contextPath, String docBase) {
-        LifecycleListener listener = null;
-        try {
-            Class<?> clazz = Class.forName(getHost().getConfigClass());
-            listener = (LifecycleListener) clazz.getConstructor().newInstance();
-        } catch (ReflectiveOperationException e) {
-            // Wrap in IAE since we can't easily change the method signature to
-            // to throw the specific checked exceptions
-            throw new IllegalArgumentException(e);
-        }
-
-        return addWebapp(host,  contextPath, docBase, listener);
     }
 
     /**
