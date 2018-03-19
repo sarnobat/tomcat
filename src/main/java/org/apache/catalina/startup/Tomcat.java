@@ -482,6 +482,9 @@ public class Tomcat {
      * customizations. JNDI is disabled by default.
      * @return The Server
      */
+    public Server getServerVar() {
+        return server;
+    }
     public Server getServer() {
 
         if (server != null) {

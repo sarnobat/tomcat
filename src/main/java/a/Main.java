@@ -91,7 +91,7 @@ public class Main {
               + ":"
               + port
               + "/1.txt");
-      server.getServer().await();
+      server.getServerVar().await();
     } catch (ServletException e) {
       e.printStackTrace();
     } catch (LifecycleException e) {
