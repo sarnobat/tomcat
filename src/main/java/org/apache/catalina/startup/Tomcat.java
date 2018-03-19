@@ -173,21 +173,27 @@ public class Tomcat {
      * @return the deployed context
      * @throws ServletException if a deployment error occurs
      */
+    @Deprecated // inline
     public Context addWebapp(String contextPath, String docBase) throws ServletException {
         Host host = getHost();
     String configClass = host.getConfigClass();
-        LifecycleListener listener = null;
-    try {
-    Class<?> clazz = Class.forName(configClass);
-        listener = (LifecycleListener) clazz.getConstructor().newInstance();
-    } catch (ReflectiveOperationException e) {
-        // Wrap in IAE since we can't easily change the method signature to
-        // to throw the specific checked exceptions
-        throw new IllegalArgumentException(e);
-    }
+        LifecycleListener listener = createListenerViaReflection(configClass);
     
     return addWebapp(host,  contextPath, docBase, listener);
     }
+
+  private LifecycleListener createListenerViaReflection(String configClass) {
+    LifecycleListener listener = null;
+   try {
+   Class<?> clazz = Class.forName(configClass);
+    listener = (LifecycleListener) clazz.getConstructor().newInstance();
+   } catch (ReflectiveOperationException e) {
+    // Wrap in IAE since we can't easily change the method signature to
+    // to throw the specific checked exceptions
+    throw new IllegalArgumentException(e);
+   }
+    return listener;
+  }
 
 
     /**
