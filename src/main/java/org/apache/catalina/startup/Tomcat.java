@@ -159,36 +159,11 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname) {
+    public Tomcat(int port, String hostname,String basedir) {
+        initBaseDir();
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
-    }
-
-    /**
-     * Tomcat requires that the base directory is set because the defaults for
-     * a number of other locations, such as the work directory, are derived from
-     * the base directory. This should be the first method called.
-     * <p>
-     * If this method is not called then Tomcat will attempt to use these
-     * locations in the following order:
-     * <ol>
-     *  <li>if set, the catalina.base system property</li>
-     *  <li>if set, the catalina.home system property</li>
-     *  <li>The user.dir system property (the directory where Java was run from)
-     *      where a directory named tomcat.$PORT will be created. $PORT is the
-     *      value configured via {@link #setPort(int)} which defaults to 8080 if
-     *      not set</li>
-     * </ol>
-     * The user should ensure that the file permissions for the base directory
-     * are appropriate.
-     * <p>
-     * TODO: disable work dir if not needed ( no jsp, etc ).
-     *
-     * @param basedir The Tomcat base folder on which all others will be derived
-     */
-    public void setBaseDir(String basedir) {
-        this.basedir = basedir;
     }
 
     /**
@@ -688,7 +663,7 @@ public class Tomcat {
     }
 
 
-    protected void initBaseDir() {
+    private void initBaseDir() {
         String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
         if (basedir == null) {
             basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
