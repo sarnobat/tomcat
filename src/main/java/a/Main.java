@@ -33,8 +33,7 @@ public class Main {
 
     try {
       StandardContext appContext = (StandardContext)server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
-      WebdavServlet servlet = new WebdavServlet();
-      Tomcat.addServlet(appContext, "webdavservlet", servlet);
+      Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
       appContext
           .getServletContext()
