@@ -14,20 +14,16 @@ public class Main {
 
   public static void main(String[] args) {
 
-    int port = 4453;
-
-    String root = System.getProperty("user.home") + "/Desktop";
-    if (System.getProperties().containsKey("webdav.root")) {
-      root = System.getProperty("webdav.root");
-    }
-    Tomcat server = new Tomcat(port, "localhost", root);
+    String root = System.getProperty("webdav.root", System.getProperty("user.home") + "/Desktop");
+    Tomcat server = new Tomcat(4453, "localhost", root);
     File application = Paths.get(root).toFile();
     if (!application.exists()) {
       application.mkdirs();
     }
 
     try {
-      StandardContext appContext = (StandardContext)server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
+      StandardContext appContext =
+          (StandardContext) server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
       Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
       server.start();
