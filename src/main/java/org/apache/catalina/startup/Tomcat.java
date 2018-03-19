@@ -150,6 +150,7 @@ public class Tomcat {
 
     protected Server server;
 
+    // TODO: make private
     protected final int port;
     protected final String hostname;
     protected String basedir;
