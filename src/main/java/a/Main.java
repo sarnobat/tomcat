@@ -33,22 +33,7 @@ public class Main {
 
     try {
       Context appContext = server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
-      Tomcat.addServlet(
-          appContext,
-          "helloWorldServlet",
-          new HttpServlet() {
-
-            @Override
-            protected void service(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException {
-              response.setContentType("text/html;charset=utf-8");
-              response.setStatus(HttpServletResponse.SC_OK);
-              response.getWriter().println("<h1>Hello World</h1>");
-            }
-          });
       appContext.addParameter("listings", "true");
-      appContext.addServletMappingDecoded("/helloworld", "helloWorldServlet");
-
       WebdavServlet servlet = new WebdavServlet();
       Tomcat.addServlet(appContext, "webdavservlet", servlet);
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
