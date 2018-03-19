@@ -174,9 +174,11 @@ public class Tomcat {
      * @throws ServletException if a deployment error occurs
      */
     public Context addWebapp(String contextPath, String docBase) throws ServletException {
+        Host host = getHost();
+    String configClass = host.getConfigClass();
         LifecycleListener listener = null;
     try {
-        Class<?> clazz = Class.forName(getHost().getConfigClass());
+    Class<?> clazz = Class.forName(configClass);
         listener = (LifecycleListener) clazz.getConstructor().newInstance();
     } catch (ReflectiveOperationException e) {
         // Wrap in IAE since we can't easily change the method signature to
@@ -184,7 +186,7 @@ public class Tomcat {
         throw new IllegalArgumentException(e);
     }
     
-    return addWebapp(getHost(),  contextPath, docBase, listener);
+    return addWebapp(host,  contextPath, docBase, listener);
     }
 
 
