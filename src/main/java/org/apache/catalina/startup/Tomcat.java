@@ -316,18 +316,6 @@ public class Tomcat {
 
 
     /**
-     * Initialize the server.
-     *
-     * @throws LifecycleException Init error
-     */
-    public void init() throws LifecycleException {
-        getServer();
-        getConnector();
-        server.init();
-    }
-
-
-    /**
      * Start the server.
      *
      * @throws LifecycleException Start error
