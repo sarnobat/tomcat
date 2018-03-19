@@ -492,7 +492,62 @@ public class Tomcat {
 
         server = new StandardServer();
 
-        initBaseDir();
+        String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
+    if (basedir == null) {
+        basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
+    }
+    if (basedir == null) {
+        basedir = catalinaHome;
+    }
+    if (basedir == null) {
+        // Create a temp dir.
+        basedir = System.getProperty("user.dir") + "/tomcat." + port;
+    }
+    
+    File baseFile = new File(basedir);
+    if (baseFile.exists()) {
+        if (!baseFile.isDirectory()) {
+            throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
+        }
+    } else {
+        if (!baseFile.mkdirs()) {
+            // Failed to create base directory
+            throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
+        }
+        /*
+         * If file permissions were going to be set on the newly created
+         * directory, this is the place to do it. However, even simple
+         * calls such as File.setReadable(boolean,boolean) behaves
+         * differently on different platforms. Therefore, setBaseDir
+         * documents that the user needs to do this.
+         */
+    }
+    try {
+        baseFile = baseFile.getCanonicalFile();
+    } catch (IOException e) {
+        baseFile = baseFile.getAbsoluteFile();
+    }
+    server.setCatalinaBase(baseFile);
+    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+    basedir = baseFile.getPath();
+    
+    if (catalinaHome == null) {
+        server.setCatalinaHome(baseFile);
+    } else {
+        File homeFile = new File(catalinaHome);
+        if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
+            // Failed to create home directory
+            throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
+        }
+        try {
+            homeFile = homeFile.getCanonicalFile();
+        } catch (IOException e) {
+            homeFile = homeFile.getAbsoluteFile();
+        }
+        server.setCatalinaHome(homeFile);
+    }
+    System.setProperty(Globals.CATALINA_HOME_PROP,
+            server.getCatalinaHome().getPath());
 
         server.setPort( -1 );
 
@@ -663,65 +718,6 @@ public class Tomcat {
         }
     }
 
-
-    private void initBaseDir() {
-        String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
-        if (basedir == null) {
-            basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
-        }
-        if (basedir == null) {
-            basedir = catalinaHome;
-        }
-        if (basedir == null) {
-            // Create a temp dir.
-            basedir = System.getProperty("user.dir") + "/tomcat." + port;
-        }
-
-        File baseFile = new File(basedir);
-        if (baseFile.exists()) {
-            if (!baseFile.isDirectory()) {
-                throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
-            }
-        } else {
-            if (!baseFile.mkdirs()) {
-                // Failed to create base directory
-                throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
-            }
-            /*
-             * If file permissions were going to be set on the newly created
-             * directory, this is the place to do it. However, even simple
-             * calls such as File.setReadable(boolean,boolean) behaves
-             * differently on different platforms. Therefore, setBaseDir
-             * documents that the user needs to do this.
-             */
-        }
-        try {
-            baseFile = baseFile.getCanonicalFile();
-        } catch (IOException e) {
-            baseFile = baseFile.getAbsoluteFile();
-        }
-        server.setCatalinaBase(baseFile);
-        System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
-        basedir = baseFile.getPath();
-
-        if (catalinaHome == null) {
-            server.setCatalinaHome(baseFile);
-        } else {
-            File homeFile = new File(catalinaHome);
-            if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
-                // Failed to create home directory
-                throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
-            }
-            try {
-                homeFile = homeFile.getCanonicalFile();
-            } catch (IOException e) {
-                homeFile = homeFile.getAbsoluteFile();
-            }
-            server.setCatalinaHome(homeFile);
-        }
-        System.setProperty(Globals.CATALINA_HOME_PROP,
-                server.getCatalinaHome().getPath());
-    }
 
     static final String[] silences = new String[] {
         "org.apache.coyote.http11.Http11NioProtocol",
