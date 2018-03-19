@@ -22,9 +22,8 @@ public class Main {
     System.out.println(
         "SRIDHAR Main.main() - classpath = " + System.getProperty("java.class.path"));
 
-    Tomcat server = new Tomcat();
     int port = 4453;
-    server.setPort(port);
+    Tomcat server = new Tomcat(port);
 
     // Document root
     // Server context root

@@ -150,7 +150,7 @@ public class Tomcat {
 
     protected Server server;
 
-    protected int port = 8080;
+    protected final int port;
     protected String hostname = "localhost";
     protected String basedir;
 
@@ -158,7 +158,8 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat() {
+    public Tomcat(int port) {
+        this.port = port;
         ExceptionUtils.preload();
     }
 
@@ -186,15 +187,6 @@ public class Tomcat {
      */
     public void setBaseDir(String basedir) {
         this.basedir = basedir;
-    }
-
-    /**
-     * Set the port for the default connector. The default connector will
-     * only be created if getConnector is called.
-     * @param port The port number
-     */
-    public void setPort(int port) {
-        this.port = port;
     }
 
     /**
