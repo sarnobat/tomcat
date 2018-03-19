@@ -16,7 +16,6 @@ import org.apache.catalina.startup.Tomcat;
 
 public class Main {
 
-  @SuppressWarnings("serial")
   public static void main(String[] args) {
 
     int port = 4453;
@@ -33,7 +32,6 @@ public class Main {
 
     try {
       Context appContext = server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
-      appContext.addParameter("listings", "true");
       WebdavServlet servlet = new WebdavServlet();
       Tomcat.addServlet(appContext, "webdavservlet", servlet);
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
