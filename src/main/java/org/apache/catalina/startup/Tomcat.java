@@ -178,16 +178,12 @@ public class Tomcat {
 		File baseFile = getBaseFile(basedir);
 		this.basedir = baseFile.getPath();
 		this.basedirOld = basedir;
+
 		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
-		
-		
-		
 		StandardServer server = createServer(catalinaHome, baseFile, service);
-		    
-		    System.setProperty(Globals.CATALINA_HOME_PROP,
-		    		server.getCatalinaHome().getPath());
-		
-		    this.server = server;
+	    System.setProperty(Globals.CATALINA_HOME_PROP, server.getCatalinaHome().getPath());
+	
+	    this.server = server;
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
