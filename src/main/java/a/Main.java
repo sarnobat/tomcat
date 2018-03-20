@@ -33,32 +33,39 @@ public class Main {
 		String basedir = ensureBaseDir(port, root, catalinaHome);
 
 		File baseFile = getBaseFile(basedir);
-		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 
 		StandardServer server2 = createServer(catalinaHome, baseFile, service);
+
+		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 		System.setProperty(Globals.CATALINA_HOME_PROP, server2
 				.getCatalinaHome().getPath());
 
-		Tomcat server = new Tomcat(port, "localhost", root, service, basedir,
-				server2);
-		File application = Paths.get(root).toFile();
-		if (!application.exists()) {
-			application.mkdirs();
-		}
+		{
+			Tomcat server = new Tomcat(port, "localhost", root, service,
+					basedir, server2);
+			File application = Paths.get(root).toFile();
+			if (!application.exists()) {
+				application.mkdirs();
+			}
 
-		try {
-			// PICKUP create the app context separately from adding it to the
-			// server
-			StandardContext appContext = (StandardContext) server.addWebapp("",
-					Paths.get(root).toAbsolutePath().toString());
-			Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
-			appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
-			server.start();
-			server.getServerVar().await();
-		} catch (ServletException e) {
-			e.printStackTrace();
-		} catch (LifecycleException e) {
-			e.printStackTrace();
+			try {
+				// PICKUP create the app context separately from adding it to
+				// the
+				// server
+				StandardContext appContext = (StandardContext) server
+						.addWebapp("", Paths.get(root).toAbsolutePath()
+								.toString());
+				Tomcat.addServlet(appContext, "webdavservlet",
+						new WebdavServlet());
+				appContext.addServletMappingDecoded("/webdav/*",
+						"webdavservlet");
+				server.start();
+				server.getServerVar().await();
+			} catch (ServletException e) {
+				e.printStackTrace();
+			} catch (LifecycleException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
