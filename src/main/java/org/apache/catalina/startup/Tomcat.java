@@ -508,6 +508,8 @@ public class Tomcat {
     public Server getServerVar() {
         return server;
     }
+    
+    @Deprecated // has side effects AND returns something
     public Server getServer() {
 
         if (server != null) {
