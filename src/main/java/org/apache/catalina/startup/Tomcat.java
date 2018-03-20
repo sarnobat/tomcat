@@ -179,7 +179,22 @@ public class Tomcat {
     String configClass = host.getConfigClass();
         LifecycleListener listener = createListenerViaReflection(configClass);
     
-    return addWebapp(host,  contextPath, docBase, listener);
+    silence(host, contextPath);
+	
+	Context ctx = createAppContext(host, contextPath, docBase, listener);
+	
+	if (listener instanceof ContextConfig) {
+	    // prevent it from looking ( if it finds one - it'll have dup error )
+	    ((ContextConfig) listener).setDefaultWebXml(noDefaultWebXmlPath());
+	}
+	
+	if (host == null) {
+	    getHost().addChild(ctx);
+	} else {
+	    host.addChild(ctx);
+	}
+	
+	return ctx;
     }
 
   private LifecycleListener createListenerViaReflection(String configClass) {
@@ -604,38 +619,7 @@ public class Tomcat {
         return ctx;
     }
 
-    /**
-     * @param host The host in which the context will be deployed
-     * @param contextPath The context mapping to use, "" for root context.
-     * @param docBase Base directory for the context, for static files.
-     *  Must exist, relative to the server home
-     * @param config Custom context configurator helper
-     * @return the deployed context
-     */
-    // Webapp = Context
-    // This method shoudl just create the context, it should not add it
-    public Context addWebapp(Host host, String contextPath, String docBase,
-            LifecycleListener config) {
-
-        silence(host, contextPath);
-
-        Context ctx = createAppContext(host, contextPath, docBase, config);
-
-        if (config instanceof ContextConfig) {
-            // prevent it from looking ( if it finds one - it'll have dup error )
-            ((ContextConfig) config).setDefaultWebXml(noDefaultWebXmlPath());
-        }
-
-        if (host == null) {
-            getHost().addChild(ctx);
-        } else {
-            host.addChild(ctx);
-        }
-
-        return ctx;
-    }
-
-  private Context createAppContext(
+    private Context createAppContext(
       Host host, String contextPath, String docBase, LifecycleListener config) {
     Context ctx = createContext(host, contextPath);
     ctx.setPath(contextPath);
