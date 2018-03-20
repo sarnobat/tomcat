@@ -151,7 +151,6 @@ public class Tomcat {
 
     	this.server = server;
         this.hostname = hostname;
-        ExceptionUtils.preload();
     }
 
     /**
