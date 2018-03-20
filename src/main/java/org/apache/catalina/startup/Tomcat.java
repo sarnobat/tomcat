@@ -152,11 +152,52 @@ public class Tomcat {
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
     public Tomcat(int port, String hostname,String basedir) {
-        getServer();
+        getServer2();
         this.basedir = basedir;
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
+    }
+
+    public Server getServer2() {
+
+    	// Inject this
+        Service service = new StandardService();
+        service.setName("Tomcat");
+
+        // Do this in main()
+        System.setProperty("catalina.useNaming", "false");
+
+        // Inject this
+        String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
+
+        if (basedir == null) {
+        basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
+    }
+    if (basedir == null) {
+        basedir = catalinaHome;
+    }
+    if (basedir == null) {
+        // Create a temp dir.
+        basedir = System.getProperty("user.dir") + "/tomcat." + port;
+    }
+    if (basedir == null) {
+    	throw new RuntimeException("This is impossible");
+    }
+    
+    File baseFile = getBaseFile(basedir);
+    basedir = baseFile.getPath();
+    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+
+    
+
+    StandardServer server = createServer(catalinaHome, baseFile, service);
+        
+        System.setProperty(Globals.CATALINA_HOME_PROP,
+        		server.getCatalinaHome().getPath());
+
+        this.server = server; 
+        return server;
     }
 
     /**
