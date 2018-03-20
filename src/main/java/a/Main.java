@@ -49,10 +49,8 @@ public class Main {
 				}
 
 				try {
-					// PICKUP create the app context separately from adding it
-					// to
-					// the
-					// server
+					// TODO: create the app context separately from adding it
+					// to the server
 					StandardContext appContext = (StandardContext) server
 							.addWebapp("", Paths.get(root).toAbsolutePath()
 									.toString());
