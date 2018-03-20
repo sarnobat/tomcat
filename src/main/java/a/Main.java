@@ -21,6 +21,9 @@ public class Main {
     Service service = new StandardService();
     service.setName("Tomcat");
     
+    // Do this in main()
+    System.setProperty("catalina.useNaming", "false");
+    
     Tomcat server = new Tomcat(4453, "localhost", root, service);
     File application = Paths.get(root).toFile();
     if (!application.exists()) {

@@ -155,9 +155,6 @@ public class Tomcat {
 
     public Tomcat(int port, String hostname, final String iBasedir, Service service) {
 	
-	    // Do this in main()
-	    System.setProperty("catalina.useNaming", "false");
-	
 	    // Inject this
 	    String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 	
