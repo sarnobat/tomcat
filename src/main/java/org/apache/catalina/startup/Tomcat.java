@@ -145,7 +145,9 @@ public class Tomcat {
     protected final int port;
     protected final String hostname;
     // TODO: make final
-    protected final String basedir;
+    protected String basedir;
+    @Deprecated // remove
+    protected String basedirOld;
 
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
@@ -175,6 +177,7 @@ public class Tomcat {
 		
 		File baseFile = getBaseFile(basedir);
 		this.basedir = baseFile.getPath();
+		this.basedirOld = basedir;
 		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 		
 		
@@ -185,7 +188,6 @@ public class Tomcat {
 		    		server.getCatalinaHome().getPath());
 		
 		    this.server = server;
-		this.basedir = basedir;
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
@@ -560,17 +562,17 @@ public class Tomcat {
         // Inject this
         String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
-        if (basedir == null) {
-        basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
+        if (basedirOld == null) {
+        	basedirOld = System.getProperty(Globals.CATALINA_BASE_PROP);
     }
-    if (basedir == null) {
-        basedir = catalinaHome;
+    if (basedirOld == null) {
+    	basedirOld = catalinaHome;
     }
-    if (basedir == null) {
+    if (basedirOld == null) {
         // Create a temp dir.
-        basedir = System.getProperty("user.dir") + "/tomcat." + port;
+    	basedirOld = System.getProperty("user.dir") + "/tomcat." + port;
     }
-    if (basedir == null) {
+    if (basedirOld == null) {
     	throw new RuntimeException("This is impossible");
     }
     
