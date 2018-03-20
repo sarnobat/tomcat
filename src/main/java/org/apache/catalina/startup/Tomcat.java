@@ -486,6 +486,7 @@ public class Tomcat {
      * Access to the engine, for further customization.
      * @return The engine
      */
+    @Deprecated // refers to field
     public Engine getEngine() {
         Service service = getServer().findServices()[0];
         if (service.getContainer() != null) {
