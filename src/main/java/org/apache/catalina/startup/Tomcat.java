@@ -516,6 +516,8 @@ public class Tomcat {
         if (server != null) {
             return server;
         }
+        Service service = new StandardService();
+        service.setName("Tomcat");
 
         System.setProperty("catalina.useNaming", "false");
 
@@ -531,14 +533,15 @@ public class Tomcat {
         // Create a temp dir.
         basedir = System.getProperty("user.dir") + "/tomcat." + port;
     }
+    if (basedir == null) {
+    	throw new RuntimeException("This is impossible");
+    }
     
     File baseFile = getBaseFile(basedir);
     basedir = baseFile.getPath();
     System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 
     
-    Service service = new StandardService();
-    service.setName("Tomcat");
 
     StandardServer server = createServer(catalinaHome, baseFile, service);
         
