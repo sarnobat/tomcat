@@ -153,10 +153,7 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname, final String iBasedir) {
-        // Inject this
-	    Service service = new StandardService();
-	    service.setName("Tomcat");
+    public Tomcat(int port, String hostname, final String iBasedir, Service service) {
 	
 	    // Do this in main()
 	    System.setProperty("catalina.useNaming", "false");
@@ -173,6 +170,8 @@ public class Tomcat {
 		this.basedirOld = basedir;
 
 		System.setProperty(Globals.CATALINA_BASE_PROP, basedir2);
+
+		// Inject this
 		StandardServer server = createServer(catalinaHome, baseFile, service);
 	    System.setProperty(Globals.CATALINA_HOME_PROP, server.getCatalinaHome().getPath());
 	

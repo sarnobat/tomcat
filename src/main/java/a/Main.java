@@ -6,7 +6,9 @@ import java.nio.file.Paths;
 import javax.servlet.ServletException;
 
 import org.apache.catalina.LifecycleException;
+import org.apache.catalina.Service;
 import org.apache.catalina.core.StandardContext;
+import org.apache.catalina.core.StandardService;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
 
@@ -15,7 +17,11 @@ public class Main {
   public static void main(String[] args) {
 
     String root = System.getProperty("webdav.root", System.getProperty("user.home") + "/Desktop");
-    Tomcat server = new Tomcat(4453, "localhost", root);
+    
+    Service service = new StandardService();
+    service.setName("Tomcat");
+    
+    Tomcat server = new Tomcat(4453, "localhost", root, service);
     File application = Paths.get(root).toFile();
     if (!application.exists()) {
       application.mkdirs();
