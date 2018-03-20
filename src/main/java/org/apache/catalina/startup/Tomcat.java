@@ -153,7 +153,7 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname,String basedir) {
+    public Tomcat(int port, String hostname, final String iBasedir) {
         // Inject this
 	    Service service = new StandardService();
 	    service.setName("Tomcat");
@@ -164,16 +164,7 @@ public class Tomcat {
 	    // Inject this
 	    String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 	
-	    if (basedir == null) {
-	    	basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
-		}
-		if (basedir == null) {
-		    basedir = catalinaHome;
-		}
-		if (basedir == null) {
-		    // Create a temp dir.
-		    basedir = System.getProperty("user.dir") + "/tomcat." + port;
-		}
+	    String basedir = ensureBaseDir(port, iBasedir, catalinaHome);
 		
 		File baseFile = getBaseFile(basedir);
 		this.basedir = baseFile.getPath();
@@ -188,6 +179,22 @@ public class Tomcat {
         this.hostname = hostname;
         ExceptionUtils.preload();
     }
+
+	private static String ensureBaseDir(int port, final String iBasedir,
+			String catalinaHome) {
+		String basedir = iBasedir;
+	    if (basedir == null) {
+	    	basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
+		}
+		if (basedir == null) {
+		    basedir = catalinaHome;
+		}
+		if (basedir == null) {
+		    // Create a temp dir.
+		    basedir = System.getProperty("user.dir") + "/tomcat." + port;
+		}
+		return basedir;
+	}
 
     /**
      * This is equivalent to adding a web application to Tomcat's webapps
