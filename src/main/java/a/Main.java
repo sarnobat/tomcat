@@ -42,8 +42,7 @@ public class Main {
 					.getCatalinaHome().getPath());
 
 			{
-				Tomcat server = new Tomcat(port, "localhost", root, service,
-						basedir, server2);
+				Tomcat server = new Tomcat("localhost", server2);
 				File application = Paths.get(root).toFile();
 				if (!application.exists()) {
 					application.mkdirs();

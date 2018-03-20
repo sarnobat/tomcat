@@ -147,7 +147,7 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname, final String iBasedir, Service service, String basedir, Server server) {
+    public Tomcat(String hostname, Server server) {
 
     	this.server = server;
         this.hostname = hostname;
