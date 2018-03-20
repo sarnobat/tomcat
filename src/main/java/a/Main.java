@@ -27,9 +27,11 @@ public class Main {
 		String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
 		{
+			int port = 4453;
 			StandardServer server2 = createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(4453, root, catalinaHome)),
 					createService());
+			server2.setPort(port);
 
 			System.setProperty(Globals.CATALINA_BASE_PROP,
 					server2.getBaseFile());
@@ -100,13 +102,13 @@ public class Main {
 	}
 
 	private static StandardServer createServer(String catalinaHome,
-			File baseFile, Service service) {
+			File catalinaBase, Service service) {
 		StandardServer server = new StandardServer();
-		server.setCatalinaBase(baseFile);
+		server.setCatalinaBase(catalinaBase);
 
 		if (catalinaHome == null) {
 			// TODO: we should fail sooner than this
-			server.setCatalinaHome(baseFile);
+			server.setCatalinaHome(catalinaBase);
 		} else {
 			File homeFile = new File(catalinaHome);
 			if (!homeFile.isDirectory() && !homeFile.mkdirs()) {

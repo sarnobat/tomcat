@@ -83,6 +83,10 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         } else {
             namingContextListener = null;
         }
+        
+        if (this.port < 0) {
+        	throw new RuntimeException("Port is null");
+        }
 
     }
 
@@ -272,6 +276,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
      * @param port The new port number
      */
     @Override
+    @Deprecated // do this in the constructor
     public void setPort(int port) {
         this.port = port;
     }
@@ -620,6 +625,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
 
 
     @Override
+    @Deprecated // do this in the constructor
     public void setCatalinaBase(File catalinaBase) {
         this.catalinaBase = catalinaBase;
     }
@@ -632,6 +638,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
 
 
     @Override
+    @Deprecated // do this in the constructor
     public void setCatalinaHome(File catalinaHome) {
         this.catalinaHome = catalinaHome;
     }
