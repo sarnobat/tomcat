@@ -141,9 +141,6 @@ public class Tomcat {
     // TODO: make final
     protected Server server;
 
-    // TODO: make private
-    @Deprecated // TODO: we can get this from the server field
-    protected final int port;
     protected final String hostname;
     // TODO: make final
     @Deprecated // TODO: we can get this from the server field
@@ -160,7 +157,6 @@ public class Tomcat {
     	this.basedir = basedir;
     	this.basedirOld = basedir;
 	    this.server = server;
-        this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
     }
@@ -423,7 +419,7 @@ public class Tomcat {
         // configured (created) and Tomcat Native library is available.
         // Otherwise it creates a NIO HTTP connector.
         Connector connector = new Connector("HTTP/1.1");
-        connector.setPort(port);
+        connector.setPort(server.getPort());
         service.addConnector(connector);
         return connector;
     }
@@ -542,7 +538,7 @@ public class Tomcat {
     }
     if (basedirOld == null) {
         // Create a temp dir.
-    	basedirOld = System.getProperty("user.dir") + "/tomcat." + port;
+    	basedirOld = System.getProperty("user.dir") + "/tomcat." + server.getPort();
     }
     if (basedirOld == null) {
     	throw new RuntimeException("This is impossible");
