@@ -142,11 +142,6 @@ public class Tomcat {
     protected Server server;
 
     protected final String hostname;
-    // TODO: make final
-    @Deprecated // TODO: we can get this from the server field
-    protected String basedir;
-    @Deprecated // remove
-    protected String basedirOld;
 
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
@@ -154,9 +149,7 @@ public class Tomcat {
 
     public Tomcat(int port, String hostname, final String iBasedir, Service service, String basedir, Server server) {
 
-    	this.basedir = basedir;
-    	this.basedirOld = basedir;
-	    this.server = server;
+    	this.server = server;
         this.hostname = hostname;
         ExceptionUtils.preload();
     }
@@ -520,6 +513,8 @@ public class Tomcat {
             return server;
         }
         
+        //throw new RuntimeException("This can never happen");
+        
         // Inject this
         Service service = new StandardService();
         service.setName("Tomcat");
@@ -530,6 +525,7 @@ public class Tomcat {
         // Inject this
         String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
+        String  basedirOld = server.getCatalinaHome().getPath();
         if (basedirOld == null) {
         	basedirOld = System.getProperty(Globals.CATALINA_BASE_PROP);
     }
@@ -544,8 +540,8 @@ public class Tomcat {
     	throw new RuntimeException("This is impossible");
     }
     
-    File baseFile = getBaseFile(basedir);
-    basedir = baseFile.getPath();
+    File baseFile = getBaseFile(basedirOld);
+    basedirOld = baseFile.getPath();
     System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 
     
