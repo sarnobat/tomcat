@@ -928,4 +928,9 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         return "type=Server";
     }
 
+
+	public String getBaseFile() {
+		return getCatalinaHome().getPath();
+	}
+
 }

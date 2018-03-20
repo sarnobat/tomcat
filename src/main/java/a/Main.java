@@ -22,22 +22,17 @@ public class Main {
 		String root = System.getProperty("webdav.root",
 				System.getProperty("user.home") + "/Desktop");
 
-		Service service = createService();
-
 		System.setProperty("catalina.useNaming", "false");
 
 		String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
-		int port = 4453;
-
-		String basedir = ensureBaseDir(port, root, catalinaHome);
-
-		File baseFile = getBaseFile(basedir);
 		{
-			StandardServer server2 = createServer(catalinaHome, baseFile,
-					service);
+			StandardServer server2 = createServer(catalinaHome,
+					getBaseFile(ensureBaseDir(4453, root, catalinaHome)),
+					createService());
 
-			System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+			System.setProperty(Globals.CATALINA_BASE_PROP,
+					server2.getBaseFile());
 			System.setProperty(Globals.CATALINA_HOME_PROP, server2
 					.getCatalinaHome().getPath());
 
@@ -110,6 +105,7 @@ public class Main {
 		server.setCatalinaBase(baseFile);
 
 		if (catalinaHome == null) {
+			// TODO: we should fail sooner than this
 			server.setCatalinaHome(baseFile);
 		} else {
 			File homeFile = new File(catalinaHome);
