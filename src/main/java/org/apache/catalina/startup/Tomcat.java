@@ -164,13 +164,15 @@ public class Tomcat {
 	    // Inject this
 	    String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 	
+	    // Inject this
 	    String basedir = ensureBaseDir(port, iBasedir, catalinaHome);
 		
 		File baseFile = getBaseFile(basedir);
-		this.basedir = baseFile.getPath();
+		String basedir2 = baseFile.getPath();
+		this.basedir = basedir2;
 		this.basedirOld = basedir;
 
-		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+		System.setProperty(Globals.CATALINA_BASE_PROP, basedir2);
 		StandardServer server = createServer(catalinaHome, baseFile, service);
 	    System.setProperty(Globals.CATALINA_HOME_PROP, server.getCatalinaHome().getPath());
 	
