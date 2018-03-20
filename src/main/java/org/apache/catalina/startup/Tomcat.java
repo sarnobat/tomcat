@@ -513,17 +513,22 @@ public class Tomcat {
     @Deprecated // has side effects AND returns something
     public Server getServer() {
 
+    	// Remove this
         if (server != null) {
             return server;
         }
+        
+        // Inject this
         Service service = new StandardService();
         service.setName("Tomcat");
 
+        // Do this in main()
         System.setProperty("catalina.useNaming", "false");
 
-
+        // Inject this
         String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
-    if (basedir == null) {
+
+        if (basedir == null) {
         basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
     }
     if (basedir == null) {
