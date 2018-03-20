@@ -509,6 +509,7 @@ public class Tomcat {
         return server;
     }
     
+    // Inline this
     @Deprecated // has side effects AND returns something
     public Server getServer() {
 
