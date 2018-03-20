@@ -532,59 +532,75 @@ public class Tomcat {
         basedir = System.getProperty("user.dir") + "/tomcat." + port;
     }
     
-    File baseFile = new File(basedir);
-    if (baseFile.exists()) {
-        if (!baseFile.isDirectory()) {
-            throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
-        }
-    } else {
-        if (!baseFile.mkdirs()) {
-            // Failed to create base directory
-            throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
-        }
-        /*
-         * If file permissions were going to be set on the newly created
-         * directory, this is the place to do it. However, even simple
-         * calls such as File.setReadable(boolean,boolean) behaves
-         * differently on different platforms. Therefore, setBaseDir
-         * documents that the user needs to do this.
-         */
-    }
-    try {
-        baseFile = baseFile.getCanonicalFile();
-    } catch (IOException e) {
-        baseFile = baseFile.getAbsoluteFile();
-    }
-    server = new StandardServer();
-    server.setCatalinaBase(baseFile);
-    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+    File baseFile = getBaseFile(basedir);
     basedir = baseFile.getPath();
+    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+
     
-    if (catalinaHome == null) {
-        server.setCatalinaHome(baseFile);
-    } else {
-        File homeFile = new File(catalinaHome);
-        if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
-            // Failed to create home directory
-            throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
-        }
-        try {
-            homeFile = homeFile.getCanonicalFile();
-        } catch (IOException e) {
-            homeFile = homeFile.getAbsoluteFile();
-        }
-        server.setCatalinaHome(homeFile);
-    }
-    System.setProperty(Globals.CATALINA_HOME_PROP,
-            server.getCatalinaHome().getPath());
+    Service service = new StandardService();
+    service.setName("Tomcat");
 
-        server.setPort( -1 );
+    StandardServer server = createServer(catalinaHome, baseFile, service);
+        
+        System.setProperty(Globals.CATALINA_HOME_PROP,
+        		server.getCatalinaHome().getPath());
 
-        Service service = new StandardService();
-        service.setName("Tomcat");
-        server.addService(service);
+        this.server = server; 
         return server;
     }
+
+	private File getBaseFile(String basedir) {
+		File baseFile = new File(basedir);
+		if (baseFile.exists()) {
+		    if (!baseFile.isDirectory()) {
+		        throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
+		    }
+		} else {
+		    if (!baseFile.mkdirs()) {
+		        // Failed to create base directory
+		        throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
+		    }
+		    /*
+		     * If file permissions were going to be set on the newly created
+		     * directory, this is the place to do it. However, even simple
+		     * calls such as File.setReadable(boolean,boolean) behaves
+		     * differently on different platforms. Therefore, setBaseDir
+		     * documents that the user needs to do this.
+		     */
+		}
+		try {
+		    baseFile = baseFile.getCanonicalFile();
+		} catch (IOException e) {
+		    baseFile = baseFile.getAbsoluteFile();
+		}
+		return baseFile;
+	}
+
+	private StandardServer createServer(String catalinaHome, File baseFile,
+			Service service) {
+		StandardServer server = new StandardServer();
+		server.setCatalinaBase(baseFile);
+		
+		if (catalinaHome == null) {
+		    server.setCatalinaHome(baseFile);
+		} else {
+		    File homeFile = new File(catalinaHome);
+		    if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
+		        // Failed to create home directory
+		        throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
+		    }
+		    try {
+		        homeFile = homeFile.getCanonicalFile();
+		    } catch (IOException e) {
+		        homeFile = homeFile.getAbsoluteFile();
+		    }
+		    server.setCatalinaHome(homeFile);
+		}
+
+		    server.setPort( -1 );
+		    server.addService(service);
+		return server;
+	}
 
     /**
      * @param host The host in which the context will be deployed
