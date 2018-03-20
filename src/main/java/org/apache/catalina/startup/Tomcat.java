@@ -519,7 +519,6 @@ public class Tomcat {
 
         System.setProperty("catalina.useNaming", "false");
 
-        server = new StandardServer();
 
         String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
     if (basedir == null) {
@@ -556,6 +555,7 @@ public class Tomcat {
     } catch (IOException e) {
         baseFile = baseFile.getAbsoluteFile();
     }
+    server = new StandardServer();
     server.setCatalinaBase(baseFile);
     System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
     basedir = baseFile.getPath();
