@@ -142,9 +142,11 @@ public class Tomcat {
     protected Server server;
 
     // TODO: make private
+    @Deprecated // TODO: we can get this from the server field
     protected final int port;
     protected final String hostname;
     // TODO: make final
+    @Deprecated // TODO: we can get this from the server field
     protected String basedir;
     @Deprecated // remove
     protected String basedirOld;
@@ -153,46 +155,15 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname, final String iBasedir, Service service) {
-	
-	    // Inject this
-	    String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
-	
-	    // Inject this
-	    String basedir = ensureBaseDir(port, iBasedir, catalinaHome);
-		
-		File baseFile = getBaseFile(basedir);
-		String basedir2 = baseFile.getPath();
-		this.basedir = basedir2;
-		this.basedirOld = basedir;
+    public Tomcat(int port, String hostname, final String iBasedir, Service service, String basedir, Server server) {
 
-		System.setProperty(Globals.CATALINA_BASE_PROP, basedir2);
-
-		// Inject this
-		StandardServer server = createServer(catalinaHome, baseFile, service);
-	    System.setProperty(Globals.CATALINA_HOME_PROP, server.getCatalinaHome().getPath());
-	
+    	this.basedir = basedir;
+    	this.basedirOld = basedir;
 	    this.server = server;
         this.port = port;
         this.hostname = hostname;
         ExceptionUtils.preload();
     }
-
-	private static String ensureBaseDir(int port, final String iBasedir,
-			String catalinaHome) {
-		String basedir = iBasedir;
-	    if (basedir == null) {
-	    	basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
-		}
-		if (basedir == null) {
-		    basedir = catalinaHome;
-		}
-		if (basedir == null) {
-		    // Create a temp dir.
-		    basedir = System.getProperty("user.dir") + "/tomcat." + port;
-		}
-		return basedir;
-	}
 
     /**
      * This is equivalent to adding a web application to Tomcat's webapps
@@ -592,7 +563,7 @@ public class Tomcat {
         return server;
     }
 
-	private File getBaseFile(String basedir) {
+	private static File getBaseFile(String basedir) {
 		File baseFile = new File(basedir);
 		if (baseFile.exists()) {
 		    if (!baseFile.isDirectory()) {
@@ -619,7 +590,7 @@ public class Tomcat {
 		return baseFile;
 	}
 
-	private StandardServer createServer(String catalinaHome, File baseFile,
+	private static StandardServer createServer(String catalinaHome, File baseFile,
 			Service service) {
 		StandardServer server = new StandardServer();
 		server.setCatalinaBase(baseFile);
