@@ -22,8 +22,7 @@ public class Main {
 		String root = System.getProperty("webdav.root",
 				System.getProperty("user.home") + "/Desktop");
 
-		Service service = new StandardService();
-		service.setName("Tomcat");
+		Service service = createService();
 
 		System.setProperty("catalina.useNaming", "false");
 
@@ -34,9 +33,7 @@ public class Main {
 		String basedir = ensureBaseDir(port, root, catalinaHome);
 
 		File baseFile = getBaseFile(basedir);
-		String basedir2 = baseFile.getPath();
-
-		System.setProperty(Globals.CATALINA_BASE_PROP, basedir2);
+		System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
 
 		StandardServer server2 = createServer(catalinaHome, baseFile, service);
 		System.setProperty(Globals.CATALINA_HOME_PROP, server2
@@ -63,6 +60,12 @@ public class Main {
 		} catch (LifecycleException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static Service createService() {
+		Service service = new StandardService();
+		service.setName("Tomcat");
+		return service;
 	}
 
 	private static File getBaseFile(String basedir) {
