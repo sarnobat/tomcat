@@ -59,25 +59,25 @@ public class Main {
 			int port = 4453;
 
 			String hostname = "localhost";
-			Service createService = createService();
+			StandardService standardService = createService();
 
-			StandardHost host = createHost(hostname,
-					createEngine(hostname, createService));
+			StandardHost standardHost = createStandardHost(hostname,
+					createEngine(hostname, standardService));
 
 			StandardServer standardServer = createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
-					createService, port);
+					standardService, port);
 
 			String contextPath = "";
-			StandardContext standardContext = createAppContext(host,
+			StandardContext standardContext = createAppContext(standardHost,
 					contextPath, Paths.get(root).toAbsolutePath().toString(),
-					createListenerViaReflection(host.getConfigClass()))
+					createListenerViaReflection(standardHost.getConfigClass()))
 					.addChild2(
 							new ExistingStandardWrapper(new WebdavServlet(),
 									"webdavservlet"))
 					.addServletMappingDecoded2("/webdav/*", "webdavservlet");
 
-			Tomcat tomcat = new Tomcat(hostname, standardServer, host)
+			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost)
 					.addWebapp2(standardContext);
 
 			Server serverVar = tomcat.start2().getServerVar();
@@ -103,7 +103,7 @@ public class Main {
 		return engine.getObjectName().toString();
 	}
 
-	private static StandardHost createHost(String hostname, Engine engine) {
+	private static StandardHost createStandardHost(String hostname, Engine engine) {
 		StandardHost host1;
 		if (engine.findChildren().length > 0) {
 			host1 = (StandardHost) engine.findChildren()[0];
@@ -151,8 +151,8 @@ public class Main {
 		}
 	}
 
-	private static Service createService() {
-		Service service = new StandardService();
+	private static StandardService createService() {
+		StandardService service = new StandardService();
 		service.setName("Tomcat");
 		return service;
 	}

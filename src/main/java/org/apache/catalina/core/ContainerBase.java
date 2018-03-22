@@ -730,6 +730,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
                 throw new IllegalArgumentException("addChild:  Child name '" +
                                                    child.getName() +
                                                    "' is not unique");
+            // SRIDHAR - this is a circular dependency. I'm not sure whether that's good or bad yet.
             child.setParent(this);  // May throw IAE
             children.put(child.getName(), child);
         }
