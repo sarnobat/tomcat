@@ -64,20 +64,21 @@ public class Main {
 			Host host = createHost(hostname,
 					createEngine(hostname, createService));
 
-			StandardServer server = createServer(catalinaHome,
+			StandardServer standardServer = createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
 					createService, port);
 
-			StandardContext addServletMappingDecoded2 = createAppContext(host,
-					"", Paths.get(root).toAbsolutePath().toString(),
+			String contextPath = "";
+			StandardContext standardContext = createAppContext(host,
+					contextPath, Paths.get(root).toAbsolutePath().toString(),
 					createListenerViaReflection(host.getConfigClass()))
 					.addChild2(
 							new ExistingStandardWrapper(new WebdavServlet(),
 									"webdavservlet"))
 					.addServletMappingDecoded2("/webdav/*", "webdavservlet");
 
-			Tomcat tomcat = new Tomcat(hostname, server, host)
-					.addWebapp2(addServletMappingDecoded2);
+			Tomcat tomcat = new Tomcat(hostname, standardServer, host)
+					.addWebapp2(standardContext);
 
 			Server serverVar = tomcat.start2().getServerVar();
 
@@ -248,6 +249,7 @@ public class Main {
 
 	private static Context createAppContext(Host host, String contextPath,
 			String docBase, LifecycleListener config) {
+
 		Context ctx = createContext(host, contextPath);
 		ctx.setPath(contextPath);
 		ctx.setDocBase(docBase);
@@ -259,15 +261,7 @@ public class Main {
 	}
 
 	private static Context createContext(Host host, String url) {
-		String contextClass = StandardContext.class.getName();
-		if (host == null) {
-			throw new RuntimeException("This should never happen");
-		}
-		if (host instanceof StandardHost) {
-			contextClass = ((StandardHost) host).getContextClass();
-		} else {
-			throw new RuntimeException("This should never happen");
-		}
+		String contextClass = getContextClassName(host);
 		try {
 			return (Context) Class.forName(contextClass).getConstructor()
 					.newInstance();
@@ -277,6 +271,19 @@ public class Main {
 					"Can't instantiate context-class " + contextClass
 							+ " for host " + host + " and url " + url, e);
 		}
+	}
+
+	private static String getContextClassName(Host host) {
+		String contextClass = StandardContext.class.getName();
+		if (host == null) {
+			throw new RuntimeException("This should never happen");
+		}
+		if (host instanceof StandardHost) {
+			contextClass = ((StandardHost) host).getContextClass();
+		} else {
+			throw new RuntimeException("This should never happen");
+		}
+		return contextClass;
 	}
 
 	private static LifecycleListener getDefaultWebXmlListener() {

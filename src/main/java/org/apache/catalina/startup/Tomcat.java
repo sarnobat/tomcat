@@ -139,9 +139,11 @@ import org.apache.tomcat.util.descriptor.web.LoginConfig;
 public class Tomcat {
 
     // TODO: make final
+	// TODO: change type to StandardServer
     protected Server server;
-
+    @Deprecated // I'm not even sure we need to hold a reference to this
     protected final String hostname;
+    @Deprecated // I'm not even sure we need to hold a reference to this
     private final Host host;
 
     private final Map<String, String> userPass = new HashMap<>();
@@ -410,6 +412,7 @@ public class Tomcat {
      *
      * @return The connector object
      */
+    @Deprecated // Badly named. It is more of ensureConnector(). Call it from the constructor, not the starter.
     public Connector getConnector() {
         Service service = getService();
         if (service.findConnectors().length > 0) {
@@ -487,6 +490,7 @@ public class Tomcat {
         return host;
     }
     
+    @Deprecated // Demeter
     public Host getHost() {
         return host;
     }
