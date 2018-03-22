@@ -709,6 +709,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      * @exception IllegalStateException if this Container does not support
      *  child Containers
      */
+    @Deprecated // fluent
     @Override
     public void addChild(Container child) {
         if (Globals.IS_SECURITY_ENABLED) {

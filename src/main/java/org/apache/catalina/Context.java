@@ -28,7 +28,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletSecurityElement;
 import javax.servlet.descriptor.JspConfigDescriptor;
 
+import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.deploy.NamingResourcesImpl;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.apache.tomcat.ContextBind;
 import org.apache.tomcat.InstanceManager;
 import org.apache.tomcat.JarScanner;
@@ -1843,4 +1845,8 @@ public interface Context extends Container, ContextBind {
      * @return The default response body encoding
      */
     public String getResponseCharacterEncoding();
+
+    // Remove this, don't bother with the interface
+	public StandardContext addChild2(
+			ExistingStandardWrapper existingStandardWrapper);
 }

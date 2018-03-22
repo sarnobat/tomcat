@@ -19,7 +19,8 @@ import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 
 public class Main {
 
-	// TODO: Why does this only work in a web browser, not when mapped from Apple finder?
+	// TODO: Why does this only work in a web browser, not when mapped from
+	// Apple finder?
 	// It worked with the Spring boot version.
 	public static void main(String[] args) throws LifecycleException,
 			ServletException {
@@ -60,12 +61,12 @@ public class Main {
 					// it
 					// to the server
 					StandardContext appContext = (StandardContext) server
-							.addWebapp("", Paths.get(root).toAbsolutePath()
-									.toString());
-					// will do class for name and set init params
-					ExistingStandardWrapper sw = new ExistingStandardWrapper(new WebdavServlet());
-					sw.setName("webdavservlet");
-					appContext.addChild(sw);
+							.addWebapp("",
+									Paths.get(root).toAbsolutePath().toString())
+							.addChild2(
+									new ExistingStandardWrapper(
+											new WebdavServlet(),
+											"webdavservlet"));
 					appContext.addServletMappingDecoded("/webdav/*",
 							"webdavservlet");
 				}

@@ -101,6 +101,7 @@ import org.apache.catalina.Wrapper;
 import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.catalina.loader.WebappLoader;
 import org.apache.catalina.session.StandardManager;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.apache.catalina.util.CharsetMapper;
 import org.apache.catalina.util.ContextName;
 import org.apache.catalina.util.ErrorPageSupport;
@@ -2762,6 +2763,19 @@ public class StandardContext extends ContainerBase
      * @exception IllegalArgumentException if the proposed container is
      *  not an implementation of Wrapper
      */
+    public StandardContext addChild2(Container child) {
+    	this.addChild(child);
+    	return this;
+}
+
+	@Override
+	public StandardContext addChild2(
+			ExistingStandardWrapper existingStandardWrapper) {
+		this.addChild(existingStandardWrapper);
+    	return this;
+	}
+    
+    @Deprecated
     @Override
     public void addChild(Container child) {
 
