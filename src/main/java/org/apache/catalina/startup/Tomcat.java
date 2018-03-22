@@ -173,7 +173,9 @@ public class Tomcat {
     	addWebapp(contextPath, docBase);
     	return this;
     }
-    @Deprecated // inline
+    
+    
+    @Deprecated // inline. mutates state and returns something other than self.
     public Context addWebapp(String contextPath, String docBase) throws ServletException {
         Host host = getHost();
     String configClass = host.getConfigClass();
@@ -187,12 +189,7 @@ public class Tomcat {
 	    // prevent it from looking ( if it finds one - it'll have dup error )
 	    ((ContextConfig) listener).setDefaultWebXml(noDefaultWebXmlPath());
 	}
-	
-	if (host == null) {
-	    getHost().addChild(ctx);
-	} else {
 	    host.addChild(ctx);
-	}
 	
 	return ctx;
     }
