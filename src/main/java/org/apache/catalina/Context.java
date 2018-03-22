@@ -881,6 +881,11 @@ public interface Context extends Container, ContextBind {
         addServletMappingDecoded(pattern, name, false);
     }
 
+    public default StandardContext addServletMappingDecoded2(String pattern, String name) {
+        addServletMappingDecoded(pattern, name, false);
+        return (StandardContext) this;
+    }
+
 
     /**
      * Add a new servlet mapping, replacing any existing mapping for
