@@ -40,11 +40,6 @@ public class Main {
 				server2 = createServer(catalinaHome,
 						getBaseFile(ensureBaseDir(port, root, catalinaHome)),
 						createService(), port);
-
-				System.setProperty(Globals.CATALINA_BASE_PROP,
-						server2.getBaseFile());
-				System.setProperty(Globals.CATALINA_HOME_PROP, server2
-						.getCatalinaHome().getPath());
 			}
 
 			{
