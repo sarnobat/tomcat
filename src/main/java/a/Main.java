@@ -60,23 +60,26 @@ public class Main {
 
 			String hostname = "localhost";
 			Service createService = createService();
+
 			Host host = createHost(hostname,
-			createEngine(hostname, createService));
-			Tomcat server = new Tomcat(hostname, createServer(catalinaHome,
+					createEngine(hostname, createService));
+
+			StandardServer server = createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
-					createService, port), host);
+					createService, port);
 
-			server.addWebapp2(createAppContext(
-					host,
-					"",
-					Paths.get(root).toAbsolutePath().toString(),
-					createListenerViaReflection(server.getHost()
-							.getConfigClass())).addChild2(
-					new ExistingStandardWrapper(new WebdavServlet(),
-							"webdavservlet")).addServletMappingDecoded2(
-					"/webdav/*", "webdavservlet"));
+			StandardContext addServletMappingDecoded2 = createAppContext(host,
+					"", Paths.get(root).toAbsolutePath().toString(),
+					createListenerViaReflection(host.getConfigClass()))
+					.addChild2(
+							new ExistingStandardWrapper(new WebdavServlet(),
+									"webdavservlet"))
+					.addServletMappingDecoded2("/webdav/*", "webdavservlet");
 
-			server.start2().getServerVar().await();
+			Tomcat tomcat = new Tomcat(hostname, server, host)
+					.addWebapp2(addServletMappingDecoded2);
+
+			tomcat.start2().getServerVar().await();
 		}
 	}
 
