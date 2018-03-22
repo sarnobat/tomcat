@@ -61,7 +61,7 @@ public class Main {
 			String hostname = "localhost";
 			Service createService = createService();
 
-			Host host = createHost(hostname,
+			StandardHost host = createHost(hostname,
 					createEngine(hostname, createService));
 
 			StandardServer standardServer = createServer(catalinaHome,
@@ -103,10 +103,10 @@ public class Main {
 		return engine.getObjectName().toString();
 	}
 
-	private static Host createHost(String hostname, Engine engine) {
-		Host host1;
+	private static StandardHost createHost(String hostname, Engine engine) {
+		StandardHost host1;
 		if (engine.findChildren().length > 0) {
-			host1 = (Host) engine.findChildren()[0];
+			host1 = (StandardHost) engine.findChildren()[0];
 		} else {
 			host1 = new StandardHost();
 			host1.setName(hostname);
