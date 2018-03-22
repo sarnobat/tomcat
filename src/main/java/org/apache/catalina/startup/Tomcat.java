@@ -170,19 +170,15 @@ public class Tomcat {
      * @throws ServletException if a deployment error occurs
      */
     public Tomcat addWebapp2(String contextPath, String docBase) throws ServletException {
-    	addWebapp(contextPath, docBase);
+    	addWebapp(contextPath, docBase, getHost());
     	return this;
     }
     
     
     @Deprecated // inline. mutates state and returns something other than self.
-    public Context addWebapp(String contextPath, String docBase) throws ServletException {
-        Host host = getHost();
-    String configClass = host.getConfigClass();
-        LifecycleListener listener = createListenerViaReflection(configClass);
+    public Context addWebapp(String contextPath, String docBase, Host host) throws ServletException {
+        LifecycleListener listener = createListenerViaReflection(host.getConfigClass());
     
-    silence(host, contextPath);
-	
 	Context ctx = createAppContext(host, contextPath, docBase, listener);
 	
 	if (listener instanceof ContextConfig) {
@@ -636,7 +632,6 @@ public class Tomcat {
      */
     public Context addContext(Host host, String contextPath, String contextName,
             String dir) {
-        silence(host, contextName);
         Context ctx = createContext(host, contextPath);
         ctx.setName(contextName);
         ctx.setPath(contextPath);
@@ -748,13 +743,6 @@ public class Tomcat {
             }
         }
     }
-
-    private void silence(Host host, String contextPath) {
-        String loggerName = getLoggerName(host, contextPath);
-        Logger logger = Logger.getLogger(loggerName);
-            logger.setLevel(Level.INFO);
-    }
-
 
     /*
      * Uses essentially the same logic as {@link ContainerBase#logName()}.

@@ -48,7 +48,8 @@ public class Main {
 				// TODO: create the app context separately from adding it to
 				// the server
 				server.addWebapp("",
-						Paths.get(root).toAbsolutePath().toString())
+						Paths.get(root).toAbsolutePath().toString(),
+						server.getHost())
 						.addChild2(
 								new ExistingStandardWrapper(
 										new WebdavServlet(), "webdavservlet"))
