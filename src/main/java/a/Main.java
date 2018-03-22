@@ -47,28 +47,23 @@ public class Main {
 			Paths.get(root).toFile().mkdirs();
 		}
 		{
-			StandardServer server2;
-			{
-				int port = 4453;
-				server2 = createServer(catalinaHome,
-						getBaseFile(ensureBaseDir(port, root, catalinaHome)),
-						createService(), port);
-			}
+			int port = 4453;
+			
+			Tomcat server = new Tomcat("localhost", createServer(catalinaHome,
+					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
+					createService(), port));
 
-			{
-				Tomcat server = new Tomcat("localhost", server2);
-				server.addWebapp2(createAppContext(
-						server.getHost(),
-						"",
-						Paths.get(root).toAbsolutePath().toString(),
-						createListenerViaReflection(server.getHost()
-								.getConfigClass())).addChild2(
-						new ExistingStandardWrapper(new WebdavServlet(),
-								"webdavservlet")).addServletMappingDecoded2(
-						"/webdav/*", "webdavservlet"));
+			server.addWebapp2(createAppContext(
+					server.getHost(),
+					"",
+					Paths.get(root).toAbsolutePath().toString(),
+					createListenerViaReflection(server.getHost()
+							.getConfigClass())).addChild2(
+					new ExistingStandardWrapper(new WebdavServlet(),
+							"webdavservlet")).addServletMappingDecoded2(
+					"/webdav/*", "webdavservlet"));
 
-				server.start2().getServerVar().await();
-			}
+			server.start2().getServerVar().await();
 		}
 	}
 
@@ -201,11 +196,11 @@ public class Main {
 		}
 	}
 
-	public static LifecycleListener getDefaultWebXmlListener() {
+	private static LifecycleListener getDefaultWebXmlListener() {
 		return new DefaultWebXmlListener();
 	}
 
-	protected static URL getWebappConfigFile(String path, String contextName,
+	private static URL getWebappConfigFile(String path, String contextName,
 			Host host) {
 		File docBase = new File(path);
 		if (docBase.isDirectory()) {
