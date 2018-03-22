@@ -177,7 +177,7 @@ public class Tomcat {
 		return createAppContext;
     }
 
-    public Tomcat addWebapp2(String contextPath, String docBase, Host host, LifecycleListener createListenerViaReflection, Context createAppContext) throws ServletException {
+    public Tomcat addWebapp2(Context createAppContext) throws ServletException {
 		host.addChild(createAppContext);
 		return this;
     }

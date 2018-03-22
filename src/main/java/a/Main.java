@@ -57,23 +57,15 @@ public class Main {
 
 			{
 				Tomcat server = new Tomcat("localhost", server2);
-
-				// TODO: create the app context separately from adding it to
-				// the server
-				server.addWebapp(
+				server.addWebapp2(createAppContext(
+						server.getHost(),
 						"",
 						Paths.get(root).toAbsolutePath().toString(),
-						server.getHost(),
 						createListenerViaReflection(server.getHost()
-								.getConfigClass()),
-						createAppContext(server.getHost(), "", Paths.get(root)
-								.toAbsolutePath().toString(),
-								createListenerViaReflection(server.getHost()
-										.getConfigClass())))
-						.addChild2(
-								new ExistingStandardWrapper(
-										new WebdavServlet(), "webdavservlet"))
-						.addServletMappingDecoded2("/webdav/*", "webdavservlet");
+								.getConfigClass())).addChild2(
+						new ExistingStandardWrapper(new WebdavServlet(),
+								"webdavservlet")).addServletMappingDecoded2(
+						"/webdav/*", "webdavservlet"));
 
 				server.start2().getServerVar().await();
 			}
