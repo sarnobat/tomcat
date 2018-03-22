@@ -17,6 +17,8 @@ import org.apache.catalina.startup.Tomcat;
 
 public class Main {
 
+	// TODO: Why does this only work in a web browser, not when mapped from Apple finder?
+	// It worked with the Spring boot version.
 	public static void main(String[] args) throws LifecycleException,
 			ServletException {
 
