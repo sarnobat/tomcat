@@ -155,6 +155,22 @@ public class Tomcat {
         this.hostname = hostname;
         this.host = ensureHost();
     }
+    
+    @Deprecated
+    public Tomcat(String hostname, Server server, Engine engine) {
+
+    	this.server = server;
+        this.hostname = hostname;
+		Host host1 ;
+		if (engine.findChildren().length > 0) {
+		    host1 = (Host) engine.findChildren()[0];
+		} else {
+			host1 = new StandardHost();
+			host1.setName(hostname);
+			getEngine().addChild(host1);
+		}
+        this.host = host1;
+    }
 
     public Tomcat(String hostname, Server server, Host host) {
 
