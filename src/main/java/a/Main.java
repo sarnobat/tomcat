@@ -78,24 +78,24 @@ public class Main {
 		}
 	}
 
-	 public String createStandardServiceEngine(String domain,
-	            String defaultHost, String baseDir, Server server) throws Exception{
+	public String createStandardServiceEngine(String domain,
+			String defaultHost, String baseDir, Server server) throws Exception {
 
-	        StandardEngine engine = new StandardEngine();
-	        engine.setDomain(domain);
-	        engine.setName(domain);
-	        engine.setDefaultHost(defaultHost);
+		StandardEngine engine = new StandardEngine();
+		engine.setDomain(domain);
+		engine.setName(domain);
+		engine.setDefaultHost(defaultHost);
 
-	        Service service = new StandardService();
-	        service.setContainer(engine);
-	        service.setName(domain);
+		Service service = new StandardService();
+		service.setContainer(engine);
+		service.setName(domain);
 
-	        server.addService(service);
+		server.addService(service);
 
-	        return engine.getObjectName().toString();
-	    }
+		return engine.getObjectName().toString();
+	}
 
-	 private static Engine createEngine(String hostname, Service service) {
+	private static Engine createEngine(String hostname, Service service) {
 		Engine engine = new StandardEngine();
 		engine.setName("Tomcat");
 		engine.setDefaultHost(hostname);
@@ -105,9 +105,9 @@ public class Main {
 
 	}
 
-	 private static final Map<String, String> userPass = new HashMap<>();
-	 private static final Map<String, List<String>> userRoles = new HashMap<>();
-	 private static final Map<String, Principal> userPrincipals = new HashMap<>();
+	private static final Map<String, String> userPass = new HashMap<>();
+	private static final Map<String, List<String>> userRoles = new HashMap<>();
+	private static final Map<String, Principal> userPrincipals = new HashMap<>();
 
 	private static class SimpleRealm extends RealmBase {
 
