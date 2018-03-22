@@ -496,6 +496,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      *  added to the children of a parent Container (after which the name
      *  may not be changed)
      */
+    @Deprecated
     @Override
     public void setName(String name) {
         if (name == null) {

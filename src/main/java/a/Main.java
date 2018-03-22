@@ -63,7 +63,7 @@ public class Main {
 							.addWebapp("", Paths.get(root).toAbsolutePath()
 									.toString());
 					// will do class for name and set init params
-					Wrapper sw = new ExistingStandardWrapper(new WebdavServlet());
+					ExistingStandardWrapper sw = new ExistingStandardWrapper(new WebdavServlet());
 					sw.setName("webdavservlet");
 					appContext.addChild(sw);
 					appContext.addServletMappingDecoded("/webdav/*",
