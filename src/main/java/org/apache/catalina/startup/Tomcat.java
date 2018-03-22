@@ -451,6 +451,7 @@ public class Tomcat {
         }
     }
 
+    @Deprecated // Host should be built outside the Tomcat class
     private Host ensureHost() {
         Engine engine = getEngine();
         Host host ;
@@ -473,6 +474,7 @@ public class Tomcat {
      * Access to the engine, for further customization.
      * @return The engine
      */
+    // Engine should not be built inside the Tomcat class
     @Deprecated // refers to field
     public Engine getEngine() {
         Service service = getServer().findServices()[0];
