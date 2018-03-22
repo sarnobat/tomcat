@@ -515,8 +515,8 @@ public class Tomcat {
      * customizations. JNDI is disabled by default.
      * @return The Server
      */
-    public Server getServerVar() {
-        return server;
+    public StandardServer getServerVar() {
+        return (StandardServer) server;
     }
     
     // Inline this

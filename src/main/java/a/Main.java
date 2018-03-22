@@ -79,7 +79,9 @@ public class Main {
 			Tomcat tomcat = new Tomcat(hostname, server, host)
 					.addWebapp2(addServletMappingDecoded2);
 
-			tomcat.start2().getServerVar().await();
+			Server serverVar = tomcat.start2().getServerVar();
+
+			serverVar.await();
 		}
 	}
 
