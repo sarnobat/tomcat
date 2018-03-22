@@ -318,6 +318,7 @@ public class Tomcat {
      * @param servlet       The Servlet to add
      * @return The wrapper for the servlet
      */
+    @Deprecated // mutating parameter. Inline it
     public static Wrapper addServlet(Context ctx,
                                       String servletName,
                                       Servlet servlet) {
@@ -534,9 +535,6 @@ public class Tomcat {
     if (basedirOld == null) {
         // Create a temp dir.
     	basedirOld = System.getProperty("user.dir") + "/tomcat." + server.getPort();
-    }
-    if (basedirOld == null) {
-    	throw new RuntimeException("This is impossible");
     }
     
     File baseFile = getBaseFile(basedirOld);
