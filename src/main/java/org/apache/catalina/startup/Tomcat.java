@@ -167,6 +167,10 @@ public class Tomcat {
      * @return the deployed context
      * @throws ServletException if a deployment error occurs
      */
+    public Tomcat addWebapp2(String contextPath, String docBase) throws ServletException {
+    	addWebapp(contextPath, docBase);
+    	return this;
+    }
     @Deprecated // inline
     public Context addWebapp(String contextPath, String docBase) throws ServletException {
         Host host = getHost();
@@ -1227,4 +1231,9 @@ public ExistingStandardWrapper(Servlet existing, String name) {
         }
         return result;
     }
+
+	public Tomcat start2() throws LifecycleException {
+		this.start();
+		return this;
+	}
 }

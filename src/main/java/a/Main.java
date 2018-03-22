@@ -9,8 +9,6 @@ import javax.servlet.ServletException;
 import org.apache.catalina.Globals;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Service;
-import org.apache.catalina.Wrapper;
-import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.core.StandardService;
 import org.apache.catalina.servlets.WebdavServlet;
@@ -43,9 +41,8 @@ public class Main {
 			{
 				int port = 4453;
 				server2 = createServer(catalinaHome,
-						getBaseFile(ensureBaseDir(4453, root, catalinaHome)),
-						createService());
-				server2.setPort(port);
+						getBaseFile(ensureBaseDir(port, root, catalinaHome)),
+						createService(), port);
 
 				System.setProperty(Globals.CATALINA_BASE_PROP,
 						server2.getBaseFile());
@@ -56,21 +53,16 @@ public class Main {
 			{
 				Tomcat server = new Tomcat("localhost", server2);
 
-				{
-					// TODO: create the app context separately from adding it to
-					// the server
-					StandardContext appContext = (StandardContext) server
-							.addWebapp("",
-									Paths.get(root).toAbsolutePath().toString())
-							.addChild2(
-									new ExistingStandardWrapper(
-											new WebdavServlet(),
-											"webdavservlet"))
-							.addServletMappingDecoded2("/webdav/*",
-									"webdavservlet");
-				}
-				server.start();
-				server.getServerVar().await();
+				// TODO: create the app context separately from adding it to
+				// the server
+				server.addWebapp("",
+						Paths.get(root).toAbsolutePath().toString())
+						.addChild2(
+								new ExistingStandardWrapper(
+										new WebdavServlet(), "webdavservlet"))
+						.addServletMappingDecoded2("/webdav/*", "webdavservlet");
+
+				server.start2().getServerVar().await();
 			}
 		}
 	}
@@ -111,9 +103,10 @@ public class Main {
 	}
 
 	private static StandardServer createServer(String catalinaHome,
-			File catalinaBase, Service service) {
+			File catalinaBase, Service service, int port) {
 		StandardServer server = new StandardServer();
 		server.setCatalinaBase(catalinaBase);
+		server.setPort(port);
 
 		if (catalinaHome == null) {
 			// TODO: we should fail sooner than this
@@ -133,7 +126,6 @@ public class Main {
 			server.setCatalinaHome(homeFile);
 		}
 
-		server.setPort(-1);
 		server.addService(service);
 		return server;
 	}
