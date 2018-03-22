@@ -471,13 +471,15 @@ public class Tomcat {
     @Deprecated // refers to field
     public Host getHost() {
         Engine engine = getEngine();
+        Host host ;
         if (engine.findChildren().length > 0) {
-            return (Host) engine.findChildren()[0];
-        }
+            host = (Host) engine.findChildren()[0];
+        } else {
 
-        Host host = new StandardHost();
+        host = new StandardHost();
         host.setName(hostname);
         getEngine().addChild(host);
+        }
         return host;
     }
 
