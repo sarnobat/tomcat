@@ -950,7 +950,7 @@ public class Tomcat {
     public static class ExistingStandardWrapper extends StandardWrapper {
         private final Servlet existing;
 
-        @SuppressWarnings("deprecation")
+@Deprecated
         public ExistingStandardWrapper( Servlet existing ) {
             this.existing = existing;
             if (existing instanceof javax.servlet.SingleThreadModel) {
@@ -959,6 +959,11 @@ public class Tomcat {
             }
             this.asyncSupported = hasAsync(existing);
         }
+
+public ExistingStandardWrapper(Servlet existing, String name) {
+	this(existing);
+	this.setName(name);
+}
 
         private static boolean hasAsync(Servlet existing) {
             boolean result = false;
