@@ -17,7 +17,8 @@ import org.apache.catalina.startup.Tomcat;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws LifecycleException,
+			ServletException {
 
 		String root = System.getProperty("webdav.root",
 				System.getProperty("user.home") + "/Desktop");
@@ -27,26 +28,32 @@ public class Main {
 		String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
 		{
-			int port = 4453;
-			StandardServer server2 = createServer(catalinaHome,
-					getBaseFile(ensureBaseDir(4453, root, catalinaHome)),
-					createService());
-			server2.setPort(port);
+			File application = Paths.get(root).toFile();
+			if (!application.exists()) {
+				application.mkdirs();
+			}
+		}
+		{
+			StandardServer server2;
+			{
+				int port = 4453;
+				server2 = createServer(catalinaHome,
+						getBaseFile(ensureBaseDir(4453, root, catalinaHome)),
+						createService());
+				server2.setPort(port);
 
-			System.setProperty(Globals.CATALINA_BASE_PROP,
-					server2.getBaseFile());
-			System.setProperty(Globals.CATALINA_HOME_PROP, server2
-					.getCatalinaHome().getPath());
+				System.setProperty(Globals.CATALINA_BASE_PROP,
+						server2.getBaseFile());
+				System.setProperty(Globals.CATALINA_HOME_PROP, server2
+						.getCatalinaHome().getPath());
+			}
 
 			{
 				Tomcat server = new Tomcat("localhost", server2);
-				File application = Paths.get(root).toFile();
-				if (!application.exists()) {
-					application.mkdirs();
-				}
 
-				try {
-					// TODO: create the app context separately from adding it
+				{
+					// TODO: create the app context separately from adding
+					// it
 					// to the server
 					StandardContext appContext = (StandardContext) server
 							.addWebapp("", Paths.get(root).toAbsolutePath()
@@ -55,13 +62,9 @@ public class Main {
 							new WebdavServlet());
 					appContext.addServletMappingDecoded("/webdav/*",
 							"webdavservlet");
-					server.start();
-					server.getServerVar().await();
-				} catch (ServletException e) {
-					e.printStackTrace();
-				} catch (LifecycleException e) {
-					e.printStackTrace();
 				}
+				server.start();
+				server.getServerVar().await();
 			}
 		}
 	}
