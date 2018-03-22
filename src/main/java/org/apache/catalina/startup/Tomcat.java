@@ -183,9 +183,11 @@ public class Tomcat {
 	
 	if (listener instanceof ContextConfig) {
 	    // prevent it from looking ( if it finds one - it'll have dup error )
-	    ((ContextConfig) listener).setDefaultWebXml(noDefaultWebXmlPath());
+	    ((ContextConfig) listener).setDefaultWebXml(Constants.NoDefaultWebXml);
+	} else {
+		throw new RuntimeException("Does this ever happen? If not, get rid of the cast");
 	}
-	    host.addChild(ctx);
+	host.addChild(ctx);
 	
 	return ctx;
     }
