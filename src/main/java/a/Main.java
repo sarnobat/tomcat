@@ -30,11 +30,8 @@ public class Main {
 
 		String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
 
-		{
-			File application = Paths.get(root).toFile();
-			if (!application.exists()) {
-				application.mkdirs();
-			}
+		if (!Paths.get(root).toFile().exists()) {
+			Paths.get(root).toFile().mkdirs();
 		}
 		{
 			StandardServer server2;
@@ -86,13 +83,6 @@ public class Main {
 				throw new IllegalStateException("tomcat.baseDirMakeFail"
 						+ baseFile);
 			}
-			/*
-			 * If file permissions were going to be set on the newly created
-			 * directory, this is the place to do it. However, even simple calls
-			 * such as File.setReadable(boolean,boolean) behaves differently on
-			 * different platforms. Therefore, setBaseDir documents that the
-			 * user needs to do this.
-			 */
 		}
 		try {
 			baseFile = baseFile.getCanonicalFile();
