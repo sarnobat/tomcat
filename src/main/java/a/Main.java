@@ -2,18 +2,31 @@ package a;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Paths;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 import javax.servlet.ServletException;
 
+import org.apache.catalina.Context;
 import org.apache.catalina.Globals;
+import org.apache.catalina.Host;
 import org.apache.catalina.LifecycleException;
+import org.apache.catalina.LifecycleListener;
 import org.apache.catalina.Service;
+import org.apache.catalina.core.StandardContext;
+import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.core.StandardService;
 import org.apache.catalina.servlets.WebdavServlet;
+import org.apache.catalina.startup.Constants;
+import org.apache.catalina.startup.ContextConfig;
 import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.startup.Tomcat.DefaultWebXmlListener;
 import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
+import org.apache.tomcat.util.buf.UriUtil;
 
 public class Main {
 
@@ -47,9 +60,16 @@ public class Main {
 
 				// TODO: create the app context separately from adding it to
 				// the server
-				server.addWebapp("",
+				server.addWebapp(
+						"",
 						Paths.get(root).toAbsolutePath().toString(),
-						server.getHost())
+						server.getHost(),
+						createListenerViaReflection(server.getHost()
+								.getConfigClass()),
+						createAppContext(server.getHost(), "", Paths.get(root)
+								.toAbsolutePath().toString(),
+								createListenerViaReflection(server.getHost()
+										.getConfigClass())))
 						.addChild2(
 								new ExistingStandardWrapper(
 										new WebdavServlet(), "webdavservlet"))
@@ -130,5 +150,106 @@ public class Main {
 			basedir = System.getProperty("user.dir") + "/tomcat." + port;
 		}
 		return basedir;
+	}
+
+	private static LifecycleListener createListenerViaReflection(
+			String configClass) {
+		LifecycleListener listener = null;
+		try {
+			Class<?> clazz = Class.forName(configClass);
+			listener = (LifecycleListener) clazz.getConstructor().newInstance();
+		} catch (ReflectiveOperationException e) {
+			// Wrap in IAE since we can't easily change the method signature to
+			// to throw the specific checked exceptions
+			throw new IllegalArgumentException(e);
+		}
+
+		if (listener instanceof ContextConfig) {
+			// prevent it from looking ( if it finds one - it'll have dup error
+			// )
+			((ContextConfig) listener)
+					.setDefaultWebXml(Constants.NoDefaultWebXml);
+		} else {
+			throw new RuntimeException(
+					"Does this ever happen? If not, get rid of the cast");
+		}
+		return listener;
+	}
+
+	private static Context createAppContext(Host host, String contextPath,
+			String docBase, LifecycleListener config) {
+		Context ctx = createContext(host, contextPath);
+		ctx.setPath(contextPath);
+		ctx.setDocBase(docBase);
+		ctx.addLifecycleListener(getDefaultWebXmlListener());
+		ctx.setConfigFile(getWebappConfigFile(docBase, contextPath, host));
+
+		ctx.addLifecycleListener(config);
+		return ctx;
+	}
+
+	private static Context createContext(Host host, String url) {
+		String contextClass = StandardContext.class.getName();
+		if (host == null) {
+			throw new RuntimeException("This should never happen");
+		}
+		if (host instanceof StandardHost) {
+			contextClass = ((StandardHost) host).getContextClass();
+		} else {
+			throw new RuntimeException("This should never happen");
+		}
+		try {
+			return (Context) Class.forName(contextClass).getConstructor()
+					.newInstance();
+		} catch (ReflectiveOperationException | IllegalArgumentException
+				| SecurityException e) {
+			throw new IllegalArgumentException(
+					"Can't instantiate context-class " + contextClass
+							+ " for host " + host + " and url " + url, e);
+		}
+	}
+
+	public static LifecycleListener getDefaultWebXmlListener() {
+		return new DefaultWebXmlListener();
+	}
+
+	protected static URL getWebappConfigFile(String path, String contextName,
+			Host host) {
+		File docBase = new File(path);
+		if (docBase.isDirectory()) {
+			return getWebappConfigFileFromDirectory(docBase, contextName, host);
+		} else {
+			return getWebappConfigFileFromJar(docBase, contextName, host);
+		}
+	}
+
+	private static URL getWebappConfigFileFromDirectory(File docBase,
+			String contextName, Host host) {
+		URL result = null;
+		File webAppContextXml = new File(docBase,
+				Constants.ApplicationContextXml);
+		if (webAppContextXml.exists()) {
+			try {
+				result = webAppContextXml.toURI().toURL();
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+
+	private static URL getWebappConfigFileFromJar(File docBase,
+			String contextName, Host host) {
+		URL result = null;
+		try (JarFile jar = new JarFile(docBase)) {
+			JarEntry entry = jar.getJarEntry(Constants.ApplicationContextXml);
+			if (entry != null) {
+				result = UriUtil.buildJarUrl(docBase,
+						Constants.ApplicationContextXml);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

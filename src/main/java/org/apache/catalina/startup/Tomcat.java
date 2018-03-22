@@ -166,46 +166,23 @@ public class Tomcat {
      * @param contextPath The context mapping to use, "" for root context.
      * @param docBase Base directory for the context, for static files.
      *  Must exist, relative to the server home
+     * @param createListenerViaReflection TODO
+     * @param createAppContext TODO
      * @return the deployed context
      * @throws ServletException if a deployment error occurs
      */
-    public Tomcat addWebapp2(String contextPath, String docBase) throws ServletException {
-    	addWebapp(contextPath, docBase, getHost());
-    	return this;
-    }
-    
-    
     @Deprecated // inline. mutates state and returns something other than self.
-    public Context addWebapp(String contextPath, String docBase, Host host) throws ServletException {
-        LifecycleListener listener = createListenerViaReflection(host.getConfigClass());
-    
-	Context ctx = createAppContext(host, contextPath, docBase, listener);
-	
-	if (listener instanceof ContextConfig) {
-	    // prevent it from looking ( if it finds one - it'll have dup error )
-	    ((ContextConfig) listener).setDefaultWebXml(Constants.NoDefaultWebXml);
-	} else {
-		throw new RuntimeException("Does this ever happen? If not, get rid of the cast");
-	}
-	host.addChild(ctx);
-	
-	return ctx;
+    public Context addWebapp(String contextPath, String docBase, Host host, LifecycleListener createListenerViaReflection, Context createAppContext) throws ServletException {
+		host.addChild(createAppContext);
+		return createAppContext;
     }
 
-  private LifecycleListener createListenerViaReflection(String configClass) {
-    LifecycleListener listener = null;
-   try {
-   Class<?> clazz = Class.forName(configClass);
-    listener = (LifecycleListener) clazz.getConstructor().newInstance();
-   } catch (ReflectiveOperationException e) {
-    // Wrap in IAE since we can't easily change the method signature to
-    // to throw the specific checked exceptions
-    throw new IllegalArgumentException(e);
-   }
-    return listener;
-  }
+    public Tomcat addWebapp2(String contextPath, String docBase, Host host, LifecycleListener createListenerViaReflection, Context createAppContext) throws ServletException {
+		host.addChild(createAppContext);
+		return this;
+    }
 
-
+    
     /**
      * Add a context - programmatic mode, no default web.xml used. This means
      * that there is no JSP support (no JSP servlet), no default servlet and
@@ -647,18 +624,6 @@ public class Tomcat {
         }
         return ctx;
     }
-
-    private Context createAppContext(
-      Host host, String contextPath, String docBase, LifecycleListener config) {
-    Context ctx = createContext(host, contextPath);
-    ctx.setPath(contextPath);
-    ctx.setDocBase(docBase);
-    ctx.addLifecycleListener(getDefaultWebXmlListener());
-    ctx.setConfigFile(getWebappConfigFile(docBase, contextPath));
-
-    ctx.addLifecycleListener(config);
-    return ctx;
-  }
 
     /**
      * Return a listener that provides the required configuration items for JSP
