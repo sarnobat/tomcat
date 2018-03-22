@@ -161,6 +161,11 @@ public class Tomcat {
 
     	this.server = server;
         this.hostname = hostname;
+		Host host1 = createHost(hostname, engine);
+        this.host = host1;
+    }
+
+	private Host createHost(String hostname, Engine engine) {
 		Host host1 ;
 		if (engine.findChildren().length > 0) {
 		    host1 = (Host) engine.findChildren()[0];
@@ -169,8 +174,8 @@ public class Tomcat {
 			host1.setName(hostname);
 			getEngine().addChild(host1);
 		}
-        this.host = host1;
-    }
+		return host1;
+	}
 
     public Tomcat(String hostname, Server server, Host host) {
 

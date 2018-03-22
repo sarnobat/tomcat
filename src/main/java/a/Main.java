@@ -60,12 +60,14 @@ public class Main {
 
 			String hostname = "localhost";
 			Service createService = createService();
+			Host host = createHost(hostname,
+			createEngine(hostname, createService));
 			Tomcat server = new Tomcat(hostname, createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
-					createService, port), createEngine(hostname, createService));
+					createService, port), host);
 
 			server.addWebapp2(createAppContext(
-					server.getHost(),
+					host,
 					"",
 					Paths.get(root).toAbsolutePath().toString(),
 					createListenerViaReflection(server.getHost()
@@ -93,6 +95,18 @@ public class Main {
 		server.addService(service);
 
 		return engine.getObjectName().toString();
+	}
+
+	private static Host createHost(String hostname, Engine engine) {
+		Host host1;
+		if (engine.findChildren().length > 0) {
+			host1 = (Host) engine.findChildren()[0];
+		} else {
+			host1 = new StandardHost();
+			host1.setName(hostname);
+			engine.addChild(host1);
+		}
+		return host1;
 	}
 
 	private static Engine createEngine(String hostname, Service service) {
