@@ -148,6 +148,7 @@ public class Tomcat {
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
+    @Deprecated
     public Tomcat(String hostname, Server server) {
 
     	this.server = server;
@@ -155,6 +156,14 @@ public class Tomcat {
         this.host = ensureHost();
     }
 
+    public Tomcat(String hostname, Server server, Host host) {
+
+    	this.server = server;
+        this.hostname = hostname;
+        this.host = host;
+    }
+
+    
     /**
      * This is equivalent to adding a web application to Tomcat's webapps
      * directory. The equivalent of the default web.xml will be applied  to the
