@@ -142,6 +142,7 @@ public class Tomcat {
     protected Server server;
 
     protected final String hostname;
+    private final Host host;
 
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
@@ -151,6 +152,7 @@ public class Tomcat {
 
     	this.server = server;
         this.hostname = hostname;
+        this.host = ensureHost();
     }
 
     /**
@@ -468,8 +470,7 @@ public class Tomcat {
         }
     }
 
-    @Deprecated // refers to field
-    public Host getHost() {
+    private Host ensureHost() {
         Engine engine = getEngine();
         Host host ;
         if (engine.findChildren().length > 0) {
@@ -480,6 +481,10 @@ public class Tomcat {
         host.setName(hostname);
         getEngine().addChild(host);
         }
+        return host;
+    }
+    
+    public Host getHost() {
         return host;
     }
 
