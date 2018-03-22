@@ -493,7 +493,7 @@ public class Tomcat {
     // Engine should not be built inside the Tomcat class
     @Deprecated // refers to field
     public Engine getEngine() {
-        Service service = getServer().findServices()[0];
+        Service service = ((StandardServer)getServer()).findServices()[0];
         if (service.getContainer() != null) {
             return service.getContainer();
         }

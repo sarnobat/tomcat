@@ -5,21 +5,30 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.security.Principal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 import javax.servlet.ServletException;
 
 import org.apache.catalina.Context;
+import org.apache.catalina.Engine;
 import org.apache.catalina.Globals;
 import org.apache.catalina.Host;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.LifecycleListener;
+import org.apache.catalina.Server;
 import org.apache.catalina.Service;
 import org.apache.catalina.core.StandardContext;
+import org.apache.catalina.core.StandardEngine;
 import org.apache.catalina.core.StandardHost;
 import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.core.StandardService;
+import org.apache.catalina.realm.GenericPrincipal;
+import org.apache.catalina.realm.RealmBase;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Constants;
 import org.apache.catalina.startup.ContextConfig;
@@ -48,10 +57,12 @@ public class Main {
 		}
 		{
 			int port = 4453;
-			
-			Tomcat server = new Tomcat("localhost", createServer(catalinaHome,
+
+			String hostname = "localhost";
+			Service createService = createService();
+			Tomcat server = new Tomcat(hostname, createServer(catalinaHome,
 					getBaseFile(ensureBaseDir(port, root, catalinaHome)),
-					createService(), port));
+					createService, port), createEngine(hostname, createService));
 
 			server.addWebapp2(createAppContext(
 					server.getHost(),
@@ -64,6 +75,59 @@ public class Main {
 					"/webdav/*", "webdavservlet"));
 
 			server.start2().getServerVar().await();
+		}
+	}
+
+	 public String createStandardServiceEngine(String domain,
+	            String defaultHost, String baseDir, Server server) throws Exception{
+
+	        StandardEngine engine = new StandardEngine();
+	        engine.setDomain(domain);
+	        engine.setName(domain);
+	        engine.setDefaultHost(defaultHost);
+
+	        Service service = new StandardService();
+	        service.setContainer(engine);
+	        service.setName(domain);
+
+	        server.addService(service);
+
+	        return engine.getObjectName().toString();
+	    }
+
+	 private static Engine createEngine(String hostname, Service service) {
+		Engine engine = new StandardEngine();
+		engine.setName("Tomcat");
+		engine.setDefaultHost(hostname);
+		engine.setRealm(new SimpleRealm());
+		service.setContainer(engine);
+		return engine;
+
+	}
+
+	 private static final Map<String, String> userPass = new HashMap<>();
+	 private static final Map<String, List<String>> userRoles = new HashMap<>();
+	 private static final Map<String, Principal> userPrincipals = new HashMap<>();
+
+	private static class SimpleRealm extends RealmBase {
+
+		@Override
+		protected String getPassword(String username) {
+			return userPass.get(username);
+		}
+
+		@Override
+		protected Principal getPrincipal(String username) {
+			Principal p = userPrincipals.get(username);
+			if (p == null) {
+				String pass = userPass.get(username);
+				if (pass != null) {
+					p = new GenericPrincipal(username, pass,
+							userRoles.get(username));
+					userPrincipals.put(username, p);
+				}
+			}
+			return p;
 		}
 	}
 
