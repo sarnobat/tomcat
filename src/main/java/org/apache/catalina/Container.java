@@ -231,6 +231,7 @@ public interface Container extends Lifecycle {
      *  added to the children of a parent Container (after which the name
      *  may not be changed)
      */
+    @Deprecated
     public void setName(String name);
 
 

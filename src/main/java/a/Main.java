@@ -9,11 +9,13 @@ import javax.servlet.ServletException;
 import org.apache.catalina.Globals;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.Service;
+import org.apache.catalina.Wrapper;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.core.StandardServer;
 import org.apache.catalina.core.StandardService;
 import org.apache.catalina.servlets.WebdavServlet;
 import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 
 public class Main {
 
@@ -60,8 +62,10 @@ public class Main {
 					StandardContext appContext = (StandardContext) server
 							.addWebapp("", Paths.get(root).toAbsolutePath()
 									.toString());
-					Tomcat.addServlet(appContext, "webdavservlet",
-							new WebdavServlet());
+					// will do class for name and set init params
+					Wrapper sw = new ExistingStandardWrapper(new WebdavServlet());
+					sw.setName("webdavservlet");
+					appContext.addChild(sw);
 					appContext.addServletMappingDecoded("/webdav/*",
 							"webdavservlet");
 				}
