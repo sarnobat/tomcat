@@ -178,8 +178,8 @@ class DirectJDKLog implements Log {
                 method = caller.getMethodName();
             }
             if (ex==null) {
-            	System.out.println("DirectJDKLog.log() - deprecated");
-                logger.logp(level, cname, method, msg);
+            	System.out.println(" DirectJDKLog.log() - deprecated: " + msg);
+//                logger.logp(level, cname, method, msg);
             } else {
                 logger.logp(level, cname, method, msg, ex);
             }
