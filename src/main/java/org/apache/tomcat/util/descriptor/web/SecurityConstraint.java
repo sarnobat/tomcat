@@ -722,7 +722,6 @@ public class SecurityConstraint extends XmlEncodingBase implements Serializable 
             handleOmittedMethods(entry.getValue(), pattern, denyUncoveredHttpMethods,
                     newConstraints, log);
         }
-System.out.println("SRIDHAR SecurityConstraint.findUncoveredHttpMethods() - newConstraints " + newConstraints);
         return newConstraints.toArray(new SecurityConstraint[newConstraints.size()]);
     }
 

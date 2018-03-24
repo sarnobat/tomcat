@@ -153,7 +153,6 @@ public class ErrorReportValve extends ValveBase {
     protected void report(Request request, Response response, Throwable throwable) {
 
         int statusCode = response.getStatus();
-        System.out.println("SRIDHAR ErrorReportValve.report() - http status code " + statusCode);
 
         // Do nothing on a 1xx, 2xx and 3xx status
         // Do nothing if anything has been written already
