@@ -628,7 +628,9 @@ public class ApplicationContext implements ServletContext {
 
 
     @Override
+    @Deprecated
     public void log(String message) {
+    	System.out.println("ApplicationContext.log() - deprecated");
         context.getLogger().info(message);
     }
 

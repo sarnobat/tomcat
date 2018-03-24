@@ -756,6 +756,7 @@ public class DefaultServlet extends HttpServlet {
      * @exception IOException if an input/output error occurs
      * @exception ServletException if a servlet-specified error occurs
      */
+    @Deprecated // mutating parameter (by writing to response output stream)
     protected void serveResource(HttpServletRequest request,
                                  HttpServletResponse response,
                                  boolean content,
