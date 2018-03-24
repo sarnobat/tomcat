@@ -1089,7 +1089,7 @@ public class DefaultServlet extends HttpServlet {
                                     renderResult = resource.getInputStream();
                                 } else {
                                     // Use the resource content directly
-                                	System.out.println("DefaultServlet.serveResource() returning file contents to client");
+                                	System.out.println("DefaultServlet.serveResource() returning file contents (in bytes): " + resource.getWebappPath() + " to response output stream");
                                     ostream.write(resourceBody);
                                 }
                             }
