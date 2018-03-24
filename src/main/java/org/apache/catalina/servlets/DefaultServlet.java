@@ -176,7 +176,7 @@ public class DefaultServlet extends HttpServlet {
     /**
      * The debugging detail level for this servlet.
      */
-    protected int debug = 0;
+    protected final int debug = 50;
 
     /**
      * The input buffer size to use when serving resources.
@@ -273,8 +273,8 @@ public class DefaultServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
 
-        if (getServletConfig().getInitParameter("debug") != null)
-            debug = Integer.parseInt(getServletConfig().getInitParameter("debug"));
+//        if (getServletConfig().getInitParameter("debug") != null)
+//            debug = Integer.parseInt(getServletConfig().getInitParameter("debug"));
 
         if (getServletConfig().getInitParameter("input") != null)
             input = Integer.parseInt(getServletConfig().getInitParameter("input"));
@@ -840,7 +840,8 @@ public class DefaultServlet extends HttpServlet {
             included = (request.getAttribute(
                     RequestDispatcher.INCLUDE_CONTEXT_PATH) != null);
             if (!included && !isError && !checkIfHeaders(request, response, resource)) {
-                return;
+            	System.out.println("DefaultServlet.serveResource() - ETag caching has been disabled for code comprehension purposes.");
+//                return;
             }
         }
 
@@ -1088,6 +1089,7 @@ public class DefaultServlet extends HttpServlet {
                                     renderResult = resource.getInputStream();
                                 } else {
                                     // Use the resource content directly
+                                	System.out.println("DefaultServlet.serveResource() returning file contents to client");
                                     ostream.write(resourceBody);
                                 }
                             }
