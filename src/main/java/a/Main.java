@@ -67,6 +67,7 @@ public class Main {
 		{
 			int port = Integer.parseInt(System.getProperty("webdav.port",
 					"4453"));
+			System.out.println("Main.main() port = " + port);
 
 			String hostname = "localhost";
 			StandardService standardService = createService();
