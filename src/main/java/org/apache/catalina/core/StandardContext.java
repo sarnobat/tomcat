@@ -353,6 +353,7 @@ public class StandardContext extends ContainerBase
     /**
      * Override the default web xml location.
      */
+    @Deprecated // don't use web.xml
     private String defaultWebXml;
 
 
@@ -1609,7 +1610,8 @@ public class StandardContext extends ContainerBase
     public void setDefaultContextXml(String defaultContextXml) {
         this.defaultContextXml = defaultContextXml;
     }
-
+    
+    @Deprecated // don't use web.xml
     public String getDefaultWebXml() {
         return defaultWebXml;
     }
@@ -1621,6 +1623,7 @@ public class StandardContext extends ContainerBase
      *
      * @param defaultWebXml The default web xml
      */
+    @Deprecated // don't use web.xml
     public void setDefaultWebXml(String defaultWebXml) {
         this.defaultWebXml = defaultWebXml;
     }
