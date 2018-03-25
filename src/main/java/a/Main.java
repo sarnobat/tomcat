@@ -13,6 +13,8 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Context;
 import org.apache.catalina.Engine;
@@ -73,7 +75,17 @@ public class Main {
 					contextPath, Paths.get(root).toAbsolutePath().toString(),
 					createListenerViaReflection(standardHost.getConfigClass()))
 					.addChild2(
-							new ExistingStandardWrapper(new WebdavServlet(),
+							new ExistingStandardWrapper(new WebdavServlet() {
+								@Override
+								public void service(HttpServletRequest req, HttpServletResponse resp)
+							            throws ServletException, IOException {
+									System.out
+											.println("Main.main(...).new WebdavServlet() {...}.service()");
+									super.service(req, resp);
+									
+									
+								}
+							},
 									"webdavservlet"))
 					.addServletMappingDecoded2("/webdav/*", "webdavservlet");
 
@@ -286,6 +298,7 @@ public class Main {
 		return contextClass;
 	}
 
+	@Deprecated // Create your own listener that doesn't use web.xml
 	private static LifecycleListener getDefaultWebXmlListener() {
 		return new DefaultWebXmlListener();
 	}

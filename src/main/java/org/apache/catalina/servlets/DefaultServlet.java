@@ -127,7 +127,7 @@ import org.xml.sax.ext.EntityResolver2;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  */
-public class DefaultServlet extends HttpServlet {
+public abstract class DefaultServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -257,7 +257,10 @@ public class DefaultServlet extends HttpServlet {
 
 
     // --------------------------------------------------------- Public Methods
-
+public DefaultServlet() {
+	System.out.println("DefaultServlet.DefaultServlet()");
+	System.out.println("DefaultServlet.DefaultServlet()");
+}
     /**
      * Finalize this servlet.
      */

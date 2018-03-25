@@ -258,6 +258,7 @@ public class ContextConfig implements LifecycleListener {
      * @param path The path to the default web.xml. If not absolute, it is
      *             relative to CATALINA_BASE.
      */
+    @Deprecated // not just a setter, but using a declarative non-compile-time dependency.
     public void setDefaultWebXml(String path) {
         this.defaultWebXml = path;
     }

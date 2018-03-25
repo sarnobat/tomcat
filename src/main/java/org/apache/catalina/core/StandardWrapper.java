@@ -476,6 +476,7 @@ public class StandardWrapper extends ContainerBase
      *
      * @param servletClass Servlet class name
      */
+    @Deprecated
     @Override
     public void setServletClass(String servletClass) {
 
@@ -498,6 +499,7 @@ public class StandardWrapper extends ContainerBase
      *
      * @param name The new name of this servlet
      */
+    @Deprecated
     public void setServletName(String name) {
 
         setName(name);

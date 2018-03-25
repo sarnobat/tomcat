@@ -669,8 +669,10 @@ public class Tomcat {
      * {@link ContextConfig#setDefaultWebXml(String)}.
      * @return a listener object that configures default JSP processing.
      */
+    @Deprecated
     public LifecycleListener getDefaultWebXmlListener() {
-        return new DefaultWebXmlListener();
+        //return new DefaultWebXmlListener();
+    	throw new RuntimeException("This will instantiate DefaultServlet, which we don't want");
     }
 
     /**
@@ -678,6 +680,7 @@ public class Tomcat {
      * {@link ContextConfig#setDefaultWebXml(String)} when using
      * {@link #getDefaultWebXmlListener()}.
      */
+    @Deprecated // No one is using this
     public String noDefaultWebXmlPath() {
         return Constants.NoDefaultWebXml;
     }
@@ -842,6 +845,8 @@ public class Tomcat {
     }
 
     /**
+     * THIS IS WHAT WE WANT FOR web.xml
+     * 
      * Provide default configuration for a context. This is the programmatic
      * equivalent of the default web.xml.
      *
@@ -850,6 +855,7 @@ public class Tomcat {
      *
      * @param contextPath   The context to set the defaults for
      */
+    @Deprecated
     public void initWebappDefaults(String contextPath) {
         Container ctx = getHost().findChild(contextPath);
         initWebappDefaults((Context) ctx);
@@ -859,6 +865,10 @@ public class Tomcat {
      * Static version of {@link #initWebappDefaults(String)}
      * @param ctx   The context to set the defaults for
      */
+	@Deprecated
+	// Inject the servlet class name if you must, and don't use reflection. But
+	// we don't want DefaultServlet to be instantiated so don't even call this method.
+	// Mutating parameter, bad.
     public static void initWebappDefaults(Context ctx) {
         // Default servlet
         Wrapper servlet = addServlet(
@@ -931,9 +941,16 @@ public class Tomcat {
      * When a context is reloaded, any programmatic configuration is lost. This
      * listener sets the equivalent of conf/web.xml when the context starts.
      */
+    @Deprecated // Since we aren't going to change web.xml while the app is running, there really is no point in having a listener to reload the servlet mappings
     public static class DefaultWebXmlListener implements LifecycleListener {
+    	@Deprecated // stop using this, the initWebappDefaults method uses DefaultServlet, which we don't want to override. We want to override Webdav
+    	public DefaultWebXmlListener() {
+    		//throw new IllegalAccessException("stop using this, the initWebappDefaults method uses DefaultServlet, which we don't want to override. We want to override Webdav");
+    	}
+    	
         @Override
         public void lifecycleEvent(LifecycleEvent event) {
+        	System.out.println("Tomcat.DefaultWebXmlListener.lifecycleEvent() event " + event.getClass().getName()); 
             if (Lifecycle.BEFORE_START_EVENT.equals(event.getType())) {
                 initWebappDefaults((Context) event.getLifecycle());
             }
