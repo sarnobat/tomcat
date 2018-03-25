@@ -44,6 +44,9 @@ public class Main {
 	// TODO: Why does this only work in a web browser, not when mapped from
 	// Apple finder?
 	// It worked with the Spring boot version.
+	/**
+	 * If using a desktop shell, make sure you connect to http://localhost:4453/webdav/ and NOT simply http://localhost:4453/. The former invokes WebdavServlet (which is what we want). The latter invokes DefaultServlet (which, misleadingly, works in the browser but is not communicating via the webdav protocol).
+	 */
 	public static void main(String[] args) throws LifecycleException,
 			ServletException {
 
@@ -265,7 +268,11 @@ public class Main {
 		Context ctx = createContext(host, contextPath);
 		ctx.setPath(contextPath);
 		ctx.setDocBase(docBase);
+		
+		// TODO: I think we can remove this. We aren't listening for changes to the servlet. Once it's loaded, it's loaded.
 		ctx.addLifecycleListener(getDefaultWebXmlListener());
+		
+		
 		ctx.setConfigFile(getWebappConfigFile(docBase, contextPath, host));
 
 		ctx.addLifecycleListener(config);

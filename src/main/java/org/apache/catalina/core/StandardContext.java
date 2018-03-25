@@ -271,6 +271,7 @@ public class StandardContext extends ContainerBase
     /**
      * The URL of the XML descriptor for this context.
      */
+    @Deprecated // Don't use web.xml. Do all configuration programmatically.
     private URL configFile = null;
 
 
@@ -1384,13 +1385,14 @@ public class StandardContext extends ContainerBase
         return getCharsetMapper().getCharset(locale);
     }
 
-
+@Deprecated
     @Override
     public URL getConfigFile() {
         return this.configFile;
     }
 
 
+    @Deprecated
     @Override
     public void setConfigFile(URL configFile) {
         this.configFile = configFile;

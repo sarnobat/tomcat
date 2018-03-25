@@ -950,7 +950,7 @@ public class Tomcat {
     	
         @Override
         public void lifecycleEvent(LifecycleEvent event) {
-        	System.out.println("Tomcat.DefaultWebXmlListener.lifecycleEvent() event " + event.getClass().getName()); 
+        	System.out.println("Tomcat.DefaultWebXmlListener.lifecycleEvent() event " + event.getType() + "\t" + event.getLifecycle().getStateName());
             if (Lifecycle.BEFORE_START_EVENT.equals(event.getType())) {
                 initWebappDefaults((Context) event.getLifecycle());
             }
