@@ -765,7 +765,9 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
      */
     @Override
     protected void startInternal() throws LifecycleException {
+    	System.out.println("StandardServer.startInternal()");
 
+    	// It's better to just call the subscriber's routines directly. All this "loose coupling" nonsense just makes the logic fractured and cryptic.
         fireLifecycleEvent(CONFIGURE_START_EVENT, null);
         setState(LifecycleState.STARTING);
 

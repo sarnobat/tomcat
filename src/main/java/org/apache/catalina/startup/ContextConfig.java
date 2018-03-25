@@ -286,6 +286,7 @@ public class ContextConfig implements LifecycleListener {
      *
      * @param event The lifecycle event that has occurred
      */
+    @Deprecated // this event publishing and subscription pattern is a waste of time. You just push compile time inconsistencies to runtime.
     @Override
     public void lifecycleEvent(LifecycleEvent event) {
 

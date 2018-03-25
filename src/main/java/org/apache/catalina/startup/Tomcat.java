@@ -347,6 +347,7 @@ public class Tomcat {
      * @throws LifecycleException Start error
      */
     public void start() throws LifecycleException {
+    	System.out.println("Tomcat.start()");
         getServer();
         getConnector();
         server.start();

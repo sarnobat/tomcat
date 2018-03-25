@@ -4832,6 +4832,7 @@ public class StandardContext extends ContainerBase
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
+    	System.out.println("StandardContext.startInternal() - this method is very long");
 
         if(log.isDebugEnabled())
             log.debug("Starting " + getBaseName());

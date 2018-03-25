@@ -926,6 +926,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
+    	System.out.println("ContainerBase.startInternal()");
 
         // Start our subordinate components, if any
         logger = null;
