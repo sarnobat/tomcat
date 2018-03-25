@@ -45,7 +45,11 @@ public class Main {
 	// Apple finder?
 	// It worked with the Spring boot version.
 	/**
-	 * If using a desktop shell, make sure you connect to http://localhost:4453/webdav/ and NOT simply http://localhost:4453/. The former invokes WebdavServlet (which is what we want). The latter invokes DefaultServlet (which, misleadingly, works in the browser but is not communicating via the webdav protocol).
+	 * If using a desktop shell, make sure you connect to
+	 * http://localhost:4453/webdav/ and NOT simply http://localhost:4453/. The
+	 * former invokes WebdavServlet (which is what we want). The latter invokes
+	 * DefaultServlet (which, misleadingly, works in the browser but is not
+	 * communicating via the webdav protocol).
 	 */
 	public static void main(String[] args) throws LifecycleException,
 			ServletException {
@@ -61,7 +65,8 @@ public class Main {
 			Paths.get(root).toFile().mkdirs();
 		}
 		{
-			int port = 4453;
+			int port = Integer.parseInt(System.getProperty("webdav.port",
+					"4453"));
 
 			String hostname = "localhost";
 			StandardService standardService = createService();
@@ -77,20 +82,18 @@ public class Main {
 			StandardContext standardContext = createAppContext(standardHost,
 					contextPath, Paths.get(root).toAbsolutePath().toString(),
 					createListenerViaReflection(standardHost.getConfigClass()))
-					.addChild2(
-							new ExistingStandardWrapper(new WebdavServlet() {
-								@Override
-								public void service(HttpServletRequest req, HttpServletResponse resp)
-							            throws ServletException, IOException {
-									System.out
-											.println("Main.main(...).new WebdavServlet() {...}.service()");
-									super.service(req, resp);
-									
-									
-								}
-							},
-									"webdavservlet"))
-					.addServletMappingDecoded2("/webdav/*", "webdavservlet");
+					.addChild2(new ExistingStandardWrapper(new WebdavServlet() {
+						@Override
+						public void service(HttpServletRequest req,
+								HttpServletResponse resp)
+								throws ServletException, IOException {
+							System.out
+									.println("Main.main(...).new WebdavServlet() {...}.service()");
+							super.service(req, resp);
+
+						}
+					}, "webdavservlet")).addServletMappingDecoded2("/webdav/*",
+							"webdavservlet");
 
 			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost)
 					.addWebapp2(standardContext);
@@ -118,7 +121,8 @@ public class Main {
 		return engine.getObjectName().toString();
 	}
 
-	private static StandardHost createStandardHost(String hostname, Engine engine) {
+	private static StandardHost createStandardHost(String hostname,
+			Engine engine) {
 		StandardHost host1;
 		if (engine.findChildren().length > 0) {
 			host1 = (StandardHost) engine.findChildren()[0];
@@ -268,11 +272,11 @@ public class Main {
 		Context ctx = createContext(host, contextPath);
 		ctx.setPath(contextPath);
 		ctx.setDocBase(docBase);
-		
-		// TODO: I think we can remove this. We aren't listening for changes to the servlet. Once it's loaded, it's loaded.
+
+		// TODO: I think we can remove this. We aren't listening for changes to
+		// the servlet. Once it's loaded, it's loaded.
 		ctx.addLifecycleListener(getDefaultWebXmlListener());
-		
-		
+
 		ctx.setConfigFile(getWebappConfigFile(docBase, contextPath, host));
 
 		ctx.addLifecycleListener(config);
@@ -305,7 +309,8 @@ public class Main {
 		return contextClass;
 	}
 
-	@Deprecated // Create your own listener that doesn't use web.xml
+	@Deprecated
+	// Create your own listener that doesn't use web.xml
 	private static LifecycleListener getDefaultWebXmlListener() {
 		return new DefaultWebXmlListener();
 	}
