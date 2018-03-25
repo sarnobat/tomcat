@@ -56,7 +56,7 @@ public class Main {
 
 		String root = System.getProperty("webdav.root",
 				System.getProperty("user.home") + "/Desktop");
-
+System.out.println("Main.main() root = " + root);
 		System.setProperty("catalina.useNaming", "false");
 
 		String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
