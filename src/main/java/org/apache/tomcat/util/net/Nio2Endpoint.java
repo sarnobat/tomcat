@@ -91,9 +91,11 @@ public class Nio2Endpoint extends AbstractJsseEndpoint<Nio2Channel,AsynchronousS
 
 
     public Nio2Endpoint() {
+        System.out.println("SRIDHAR Nio2Endpoint.Nio2Endpoint() - ");
         // Override the defaults for NIO2
         // Disable maxConnections by default for NIO2 (see BZ58103)
         setMaxConnections(-1);
+        throw new RuntimeException("unused");
     }
 
 

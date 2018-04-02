@@ -68,7 +68,9 @@ import org.apache.tomcat.util.net.jsse.JSSESupport;
  */
 public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> {
 
-
+public NioEndpoint() {
+System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
+}
     // -------------------------------------------------------------- Constants
 
 
