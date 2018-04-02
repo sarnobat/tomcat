@@ -126,7 +126,7 @@ final class StandardWrapperValve
             }
             unavailable = true;
         }
-
+System.out.println("SRIDHAR StandardWrapperValve.invoke() - creating servlet to process request");
         // Allocate a servlet instance to process this request
         try {
             if (!unavailable) {

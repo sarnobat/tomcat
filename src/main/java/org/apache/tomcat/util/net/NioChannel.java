@@ -144,6 +144,7 @@ public class NioChannel implements ByteChannel {
      */
     @Override
     public int read(ByteBuffer dst) throws IOException {
+        System.out.println("SRIDHAR NioChannel.read() - " + new String(dst.array()));
         return sc.read(dst);
     }
 

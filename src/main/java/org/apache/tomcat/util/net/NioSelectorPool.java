@@ -231,6 +231,7 @@ public class NioSelectorPool {
      * @throws IOException if an IO Exception occurs in the underlying socket logic
      */
     public int read(ByteBuffer buf, NioChannel socket, Selector selector, long readTimeout, boolean block) throws IOException {
+        System.out.println("SRIDHAR NioSelectorPool.read() - ");
         if ( SHARED && block ) {
             return blockingSelector.read(buf,socket,readTimeout);
         }

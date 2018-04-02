@@ -211,6 +211,7 @@ public class StandardService extends LifecycleMBeanBase implements Service {
      * @param connector The Connector to be added
      */
     @Override
+    @Deprecated // mutating state. It should be constructor injected.
     public void addConnector(Connector connector) {
 
         synchronized (connectorsLock) {

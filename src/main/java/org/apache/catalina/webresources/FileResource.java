@@ -187,7 +187,7 @@ public class FileResource extends AbstractResource {
     }
 
     @Override
-    public final byte[] getContent() {
+    public final byte[] getContent() {System.out.println("SRIDHAR FileResource.getContent() - ");
         // Use internal version to avoid loop when needConvert is true
         long len = getContentLengthInternal(false);
 
@@ -210,6 +210,7 @@ public class FileResource extends AbstractResource {
         try (InputStream is = new FileInputStream(resource)) {
             while (pos < size) {
                 int n = is.read(result, pos, size - pos);
+                System.out.println("SRIDHAR FileResource.getContent() - bytes read = " + n);
                 if (n < 0) {
                     break;
                 }
@@ -235,6 +236,7 @@ public class FileResource extends AbstractResource {
                 result = null;
             }
         }
+        System.out.println("SRIDHAR FileResource.getContent() - " + new String(result));
         return result;
     }
 

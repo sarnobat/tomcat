@@ -762,7 +762,7 @@ public class DefaultServlet extends HttpServlet {
                                  String inputEncoding)
         throws IOException, ServletException {
 
-        boolean serveContent = content;
+        boolean serveContent = content;// maybe hardcode this to false for learning?
 
         // Identify the requested resource path
         String path = getRelativePath(request, true);

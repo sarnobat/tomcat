@@ -128,7 +128,7 @@ public class CoyoteAdapter implements Adapter {
     @Override
     public boolean asyncDispatch(org.apache.coyote.Request req, org.apache.coyote.Response res,
             SocketEvent status) throws Exception {
-
+System.out.println("SRIDHAR CoyoteAdapter.asyncDispatch() - ");
         Request request = (Request) req.getNote(ADAPTER_NOTES);
         Response response = (Response) res.getNote(ADAPTER_NOTES);
 
@@ -198,6 +198,7 @@ public class CoyoteAdapter implements Adapter {
                         request.getContext().unbind(false, oldCL);
                     }
                 } else if (readListener != null && status == SocketEvent.OPEN_READ) {
+                    System.out.println("SRIDHAR CoyoteAdapter.asyncDispatch() - ");
                     ClassLoader oldCL = null;
                     try {
                         oldCL = request.getContext().bind(false, null);

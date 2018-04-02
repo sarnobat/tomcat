@@ -226,6 +226,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
         serverSock = ServerSocketChannel.open();
         socketProperties.setProperties(serverSock.socket());
         InetSocketAddress addr = (getAddress()!=null?new InetSocketAddress(getAddress(),getPort()):new InetSocketAddress(getPort()));
+        System.out.println("SRIDHAR NioEndpoint.initServerSocket() - " + addr.toString());
         serverSock.socket().bind(addr,getAcceptCount());
         serverSock.configureBlocking(true); //mimic APR behavior
     }
@@ -529,6 +530,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
     /**
      * Poller class.
      */
+    // TODO: inject this
     public class Poller implements Runnable {
 
         private Selector selector;
@@ -544,6 +546,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
 
         public Poller() throws IOException {
             this.selector = Selector.open();
+            System.out.println("SRIDHAR NioEndpoint.Poller.enclosing_method() - ");
         }
 
         public int getKeyCount() { return keyCount; }
@@ -697,6 +700,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
         @Override
         public void run() {
             // Loop until destroy() is called
+            // TODO: this is the dependency we want to inject right from the top
             while (true) {
 
                 boolean hasEvents = false;
@@ -1336,7 +1340,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
         protected void doRun() {
             NioChannel socket = socketWrapper.getSocket();
             SelectionKey key = socket.getIOChannel().keyFor(socket.getPoller().getSelector());
-
+System.out.println("SRIDHAR NioEndpoint.SocketProcessor.doRun() - using selection key (so you know it's NIO). Processing request from socket.");
             try {
                 int handshake = -1;
 
