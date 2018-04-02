@@ -283,6 +283,7 @@ public class CachedResource implements WebResource {
 
     @Override
     public byte[] getContent() {
+    	System.out.println("CachedResource.getContent() "  + this.webAppPath);
         byte[] cachedContent = this.cachedContent;
         if (cachedContent == null) {
             if (getContentLength() > objectMaxSizeBytes) {

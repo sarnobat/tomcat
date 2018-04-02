@@ -208,7 +208,6 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
 
     private WebResource getResource(String path, boolean validate,
             boolean useClassLoaderResources) {
-        System.out.println("SRIDHAR StandardRoot.getResource() - " + path);
         if (validate) {
             path = validate(path);
         }
@@ -277,7 +276,6 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
         WebResource mainEmpty = null;
         for (List<WebResourceSet> list : allResources) {
             for (WebResourceSet webResourceSet : list) {
-                //System.out.println("SRIDHAR StandardRoot.getResourceInternal() - " + webResourceSet);
                 if (!useClassLoaderResources &&  !webResourceSet.getClassLoaderOnly() ||
                         useClassLoaderResources && !webResourceSet.getStaticOnly()) {
                     result = webResourceSet.getResource(path);

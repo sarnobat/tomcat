@@ -207,6 +207,7 @@ public class FileResource extends AbstractResource {
         byte[] result = new byte[size];
 
         int pos = 0;
+        System.out.println("FileResource.getContent() " + resource.getAbsolutePath());
         try (InputStream is = new FileInputStream(resource)) {
             while (pos < size) {
                 int n = is.read(result, pos, size - pos);

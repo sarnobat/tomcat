@@ -496,6 +496,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      *  added to the children of a parent Container (after which the name
      *  may not be changed)
      */
+    @Deprecated
     @Override
     public void setName(String name) {
         if (name == null) {
@@ -708,6 +709,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      * @exception IllegalStateException if this Container does not support
      *  child Containers
      */
+    @Deprecated // fluent
     @Override
     public void addChild(Container child) {
         if (Globals.IS_SECURITY_ENABLED) {
@@ -728,6 +730,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
                 throw new IllegalArgumentException("addChild:  Child name '" +
                                                    child.getName() +
                                                    "' is not unique");
+            // SRIDHAR - this is a circular dependency. I'm not sure whether that's good or bad yet.
             child.setParent(this);  // May throw IAE
             children.put(child.getName(), child);
         }
@@ -923,6 +926,7 @@ public abstract class ContainerBase extends LifecycleMBeanBase
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
+    	System.out.println("ContainerBase.startInternal()");
 
         // Start our subordinate components, if any
         logger = null;

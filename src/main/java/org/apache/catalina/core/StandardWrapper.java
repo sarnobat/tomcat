@@ -476,6 +476,7 @@ public class StandardWrapper extends ContainerBase
      *
      * @param servletClass Servlet class name
      */
+    @Deprecated
     @Override
     public void setServletClass(String servletClass) {
 
@@ -498,6 +499,7 @@ public class StandardWrapper extends ContainerBase
      *
      * @param name The new name of this servlet
      */
+    @Deprecated
     public void setServletName(String name) {
 
         setName(name);
@@ -1007,7 +1009,6 @@ public class StandardWrapper extends ContainerBase
      * @throws ServletException for a Servlet load error
      */
     public synchronized Servlet loadServlet() throws ServletException {
-System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + servletClass);
         // Nothing to do if we already have an instance or an instance pool
         if (!singleThreadModel && (instance != null))
             return instance;
@@ -1029,7 +1030,6 @@ System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + s
 
             InstanceManager instanceManager = ((StandardContext)getParent()).getInstanceManager();
             try {
-                System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + servletClass);
                 servlet = (Servlet) instanceManager.newInstance(servletClass);
             } catch (ClassCastException e) {
                 unavailable(null);
@@ -1101,7 +1101,6 @@ System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + s
 
     private synchronized void initServlet(Servlet servlet)
             throws ServletException {
-        System.out.println("SRIDHAR StandardWrapper.initServlet() - " + servlet.getClass().getName());
 
         if (instanceInitialized && !singleThreadModel) return;
 
@@ -1211,7 +1210,6 @@ System.out.println("SRIDHAR StandardWrapper.loadServlet() - servletClass = " + s
      */
     @Override
     public void unavailable(UnavailableException unavailable) {
-        System.out.println("SRIDHAR StandardWrapper.unavailable() - ");
         getServletContext().log(sm.getString("standardWrapper.unavailable", getName()));
         if (unavailable == null)
             setAvailable(Long.MAX_VALUE);

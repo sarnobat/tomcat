@@ -132,7 +132,6 @@ public class Catalina {
 
     public Catalina() {
         setSecurityProtection();
-        ExceptionUtils.preload();
     }
 
 

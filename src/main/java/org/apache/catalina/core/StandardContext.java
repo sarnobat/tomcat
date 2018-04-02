@@ -101,6 +101,7 @@ import org.apache.catalina.Wrapper;
 import org.apache.catalina.deploy.NamingResourcesImpl;
 import org.apache.catalina.loader.WebappLoader;
 import org.apache.catalina.session.StandardManager;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.apache.catalina.util.CharsetMapper;
 import org.apache.catalina.util.ContextName;
 import org.apache.catalina.util.ErrorPageSupport;
@@ -270,6 +271,7 @@ public class StandardContext extends ContainerBase
     /**
      * The URL of the XML descriptor for this context.
      */
+    @Deprecated // Don't use web.xml. Do all configuration programmatically.
     private URL configFile = null;
 
 
@@ -351,6 +353,7 @@ public class StandardContext extends ContainerBase
     /**
      * Override the default web xml location.
      */
+    @Deprecated // don't use web.xml
     private String defaultWebXml;
 
 
@@ -1383,13 +1386,14 @@ public class StandardContext extends ContainerBase
         return getCharsetMapper().getCharset(locale);
     }
 
-
+@Deprecated
     @Override
     public URL getConfigFile() {
         return this.configFile;
     }
 
 
+    @Deprecated
     @Override
     public void setConfigFile(URL configFile) {
         this.configFile = configFile;
@@ -1606,7 +1610,8 @@ public class StandardContext extends ContainerBase
     public void setDefaultContextXml(String defaultContextXml) {
         this.defaultContextXml = defaultContextXml;
     }
-
+    
+    @Deprecated // don't use web.xml
     public String getDefaultWebXml() {
         return defaultWebXml;
     }
@@ -1618,6 +1623,7 @@ public class StandardContext extends ContainerBase
      *
      * @param defaultWebXml The default web xml
      */
+    @Deprecated // don't use web.xml
     public void setDefaultWebXml(String defaultWebXml) {
         this.defaultWebXml = defaultWebXml;
     }
@@ -2762,6 +2768,19 @@ public class StandardContext extends ContainerBase
      * @exception IllegalArgumentException if the proposed container is
      *  not an implementation of Wrapper
      */
+    public StandardContext addChild2(Container child) {
+    	this.addChild(child);
+    	return this;
+}
+
+	@Override
+	public StandardContext addChild2(
+			ExistingStandardWrapper existingStandardWrapper) {
+		this.addChild(existingStandardWrapper);
+    	return this;
+	}
+    
+    @Deprecated
     @Override
     public void addChild(Container child) {
 
@@ -4813,6 +4832,7 @@ public class StandardContext extends ContainerBase
      */
     @Override
     protected synchronized void startInternal() throws LifecycleException {
+    	System.out.println("StandardContext.startInternal() - this method is very long");
 
         if(log.isDebugEnabled())
             log.debug("Starting " + getBaseName());
@@ -5949,7 +5969,6 @@ public class StandardContext extends ContainerBase
                 workDir = "work" + File.separator + engineName +
                     File.separator + hostName + File.separator + temp;
             }
-            System.out.println("SRIDHAR StandardContext.postWorkDirectory() - workDir = " + workDir);
             setWorkDir(workDir);
         }
 

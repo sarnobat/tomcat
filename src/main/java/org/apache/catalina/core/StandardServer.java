@@ -83,6 +83,10 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
         } else {
             namingContextListener = null;
         }
+        
+        if (this.port < 0) {
+        	throw new RuntimeException("Port is null");
+        }
 
     }
 
@@ -272,6 +276,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
      * @param port The new port number
      */
     @Override
+    @Deprecated // do this in the constructor
     public void setPort(int port) {
         this.port = port;
     }
@@ -620,6 +625,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
 
 
     @Override
+    @Deprecated // do this in the constructor
     public void setCatalinaBase(File catalinaBase) {
         this.catalinaBase = catalinaBase;
     }
@@ -632,6 +638,7 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
 
 
     @Override
+    @Deprecated // do this in the constructor
     public void setCatalinaHome(File catalinaHome) {
         this.catalinaHome = catalinaHome;
     }
@@ -758,7 +765,9 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
      */
     @Override
     protected void startInternal() throws LifecycleException {
+    	System.out.println("StandardServer.startInternal()");
 
+    	// It's better to just call the subscriber's routines directly. All this "loose coupling" nonsense just makes the logic fractured and cryptic.
         fireLifecycleEvent(CONFIGURE_START_EVENT, null);
         setState(LifecycleState.STARTING);
 
@@ -927,5 +936,10 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
     protected final String getObjectNameKeyProperties() {
         return "type=Server";
     }
+
+
+	public String getBaseFile() {
+		return getCatalinaHome().getPath();
+	}
 
 }

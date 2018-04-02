@@ -184,6 +184,7 @@ public abstract class GenericServlet implements Servlet, ServletConfig,
      *            a <code>String</code> specifying the message to be written to
      *            the log file
      */
+    @Deprecated // Too much logging framework junk in output
     public void log(String msg) {
         getServletContext().log(getServletName() + ": " + msg);
     }

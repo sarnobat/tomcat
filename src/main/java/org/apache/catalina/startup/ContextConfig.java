@@ -188,6 +188,7 @@ public class ContextConfig implements LifecycleListener {
     /**
      * The default web application's deployment descriptor location.
      */
+    @Deprecated // don't use web.xml
     protected String defaultWebXml = null;
 
 
@@ -244,6 +245,7 @@ public class ContextConfig implements LifecycleListener {
      * @return The path to the default web.xml. If not absolute, it is relative
      *         to CATALINA_BASE.
      */
+    @Deprecated // don't use web.xml
     public String getDefaultWebXml() {
         if (defaultWebXml == null) {
             defaultWebXml = Constants.DefaultWebXml;
@@ -258,6 +260,7 @@ public class ContextConfig implements LifecycleListener {
      * @param path The path to the default web.xml. If not absolute, it is
      *             relative to CATALINA_BASE.
      */
+    @Deprecated // not just a setter, but using a declarative non-compile-time dependency.
     public void setDefaultWebXml(String path) {
         this.defaultWebXml = path;
     }
@@ -283,6 +286,7 @@ public class ContextConfig implements LifecycleListener {
      *
      * @param event The lifecycle event that has occurred
      */
+    @Deprecated // this event publishing and subscription pattern is a waste of time. You just push compile time inconsistencies to runtime.
     @Override
     public void lifecycleEvent(LifecycleEvent event) {
 
@@ -748,6 +752,7 @@ public class ContextConfig implements LifecycleListener {
     /**
      * Process a "contextConfig" event for this Context.
      */
+    @Deprecated // pass parameters explicitly
     protected synchronized void configureStart() {
         // Called from StandardContext.start()
 
@@ -1065,6 +1070,7 @@ public class ContextConfig implements LifecycleListener {
      * an application's web.xml takes precedence over the host level or global
      * web.xml file.
      */
+    @Deprecated // pass parameters
     protected void webConfig() {
         /*
          * Anything and everything can override the global and host defaults.
@@ -1478,7 +1484,7 @@ public class ContextConfig implements LifecycleListener {
         return webXmlTomcatFragment;
     }
 
-
+    @Deprecated // don't use web.xml
     private WebXml getDefaultWebXmlFragment(WebXmlParser webXmlParser) {
 
         // Host should never be null
@@ -1752,6 +1758,7 @@ public class ContextConfig implements LifecycleListener {
      * it.
      * @return an input source to the default web.xml
      */
+    @Deprecated // don't use web.xml
     protected InputSource getGlobalWebXmlSource() {
         // Is a default web.xml specified for the Context?
         if (defaultWebXml == null && context instanceof StandardContext) {
@@ -1775,6 +1782,7 @@ public class ContextConfig implements LifecycleListener {
      * it.
      * @return an input source to the default per host web.xml
      */
+    @Deprecated // don't use web.xml
     protected InputSource getHostWebXmlSource() {
         File hostConfigBase = getHostConfigBase();
         if (hostConfigBase == null)
@@ -1850,6 +1858,7 @@ public class ContextConfig implements LifecycleListener {
      * @param path      Location that filename is relative to
      * @return the input source
      */
+    @Deprecated // don't use web.xml
     protected InputSource getWebXmlSource(String filename, String path) {
         File file = new File(filename);
         if (!file.isAbsolute()) {

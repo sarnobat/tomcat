@@ -127,7 +127,7 @@ import org.xml.sax.ext.EntityResolver2;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  */
-public class DefaultServlet extends HttpServlet {
+public abstract class DefaultServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -176,7 +176,7 @@ public class DefaultServlet extends HttpServlet {
     /**
      * The debugging detail level for this servlet.
      */
-    protected int debug = 0;
+    protected final int debug = 50;
 
     /**
      * The input buffer size to use when serving resources.
@@ -257,7 +257,10 @@ public class DefaultServlet extends HttpServlet {
 
 
     // --------------------------------------------------------- Public Methods
-
+public DefaultServlet() {
+	System.out.println("DefaultServlet.DefaultServlet()");
+	System.out.println("DefaultServlet.DefaultServlet()");
+}
     /**
      * Finalize this servlet.
      */
@@ -273,8 +276,8 @@ public class DefaultServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
 
-        if (getServletConfig().getInitParameter("debug") != null)
-            debug = Integer.parseInt(getServletConfig().getInitParameter("debug"));
+//        if (getServletConfig().getInitParameter("debug") != null)
+//            debug = Integer.parseInt(getServletConfig().getInitParameter("debug"));
 
         if (getServletConfig().getInitParameter("input") != null)
             input = Integer.parseInt(getServletConfig().getInitParameter("input"));
@@ -756,6 +759,7 @@ public class DefaultServlet extends HttpServlet {
      * @exception IOException if an input/output error occurs
      * @exception ServletException if a servlet-specified error occurs
      */
+    @Deprecated // mutating parameter (by writing to response output stream)
     protected void serveResource(HttpServletRequest request,
                                  HttpServletResponse response,
                                  boolean content,
@@ -840,7 +844,8 @@ public class DefaultServlet extends HttpServlet {
             included = (request.getAttribute(
                     RequestDispatcher.INCLUDE_CONTEXT_PATH) != null);
             if (!included && !isError && !checkIfHeaders(request, response, resource)) {
-                return;
+            	System.out.println("DefaultServlet.serveResource() - ETag caching has been disabled for code comprehension purposes.");
+//                return;
             }
         }
 
@@ -1088,6 +1093,7 @@ public class DefaultServlet extends HttpServlet {
                                     renderResult = resource.getInputStream();
                                 } else {
                                     // Use the resource content directly
+                                	System.out.println("DefaultServlet.serveResource() returning file contents (in bytes): " + resource.getWebappPath() + " to response output stream");
                                     ostream.write(resourceBody);
                                 }
                             }

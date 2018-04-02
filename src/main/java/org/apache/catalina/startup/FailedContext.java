@@ -49,7 +49,9 @@ import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
+import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.deploy.NamingResourcesImpl;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.apache.catalina.util.ContextName;
 import org.apache.catalina.util.LifecycleMBeanBase;
 import org.apache.juli.logging.Log;
@@ -801,4 +803,10 @@ public class FailedContext extends LifecycleMBeanBase implements Context {
     public void setResponseCharacterEncoding(String encoding) { /* NO-OP */ }
     @Override
     public String getResponseCharacterEncoding() { return null; }
+    
+	@Override
+	public StandardContext addChild2(
+			ExistingStandardWrapper existingStandardWrapper) {
+		throw new RuntimeException("replace addChild with addChild2");
+	}
 }

@@ -28,7 +28,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletSecurityElement;
 import javax.servlet.descriptor.JspConfigDescriptor;
 
+import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.deploy.NamingResourcesImpl;
+import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 import org.apache.tomcat.ContextBind;
 import org.apache.tomcat.InstanceManager;
 import org.apache.tomcat.JarScanner;
@@ -877,6 +879,11 @@ public interface Context extends Container, ContextBind {
      */
     public default void addServletMappingDecoded(String pattern, String name) {
         addServletMappingDecoded(pattern, name, false);
+    }
+
+    public default StandardContext addServletMappingDecoded2(String pattern, String name) {
+        addServletMappingDecoded(pattern, name, false);
+        return (StandardContext) this;
     }
 
 
@@ -1843,4 +1850,8 @@ public interface Context extends Container, ContextBind {
      * @return The default response body encoding
      */
     public String getResponseCharacterEncoding();
+
+    // Remove this, don't bother with the interface
+	public StandardContext addChild2(
+			ExistingStandardWrapper existingStandardWrapper);
 }

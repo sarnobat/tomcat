@@ -139,26 +139,54 @@ import org.apache.tomcat.util.descriptor.web.LoginConfig;
 public class Tomcat {
 
     // TODO: make final
+	// TODO: change type to StandardServer
     protected Server server;
-
-    // TODO: make private
-    protected final int port;
+    @Deprecated // I'm not even sure we need to hold a reference to this
     protected final String hostname;
-    // TODO: make final
-    protected String basedir;
+    @Deprecated // I'm not even sure we need to hold a reference to this
+    private final Host host;
 
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
 
-    public Tomcat(int port, String hostname,String basedir) {
-        getServer();
-        this.basedir = basedir;
-        this.port = port;
+    @Deprecated
+    public Tomcat(String hostname, Server server) {
+
+    	this.server = server;
         this.hostname = hostname;
-        ExceptionUtils.preload();
+        this.host = ensureHost();
+    }
+    
+    @Deprecated
+    public Tomcat(String hostname, Server server, Engine engine) {
+
+    	this.server = server;
+        this.hostname = hostname;
+		Host host1 = createHost(hostname, engine);
+        this.host = host1;
     }
 
+	private Host createHost(String hostname, Engine engine) {
+		Host host1 ;
+		if (engine.findChildren().length > 0) {
+		    host1 = (Host) engine.findChildren()[0];
+		} else {
+			host1 = new StandardHost();
+			host1.setName(hostname);
+			getEngine().addChild(host1);
+		}
+		return host1;
+	}
+
+    public Tomcat(String hostname, Server server, Host host) {
+
+    	this.server = server;
+        this.hostname = hostname;
+        this.host = host;
+    }
+
+    
     /**
      * This is equivalent to adding a web application to Tomcat's webapps
      * directory. The equivalent of the default web.xml will be applied  to the
@@ -170,32 +198,23 @@ public class Tomcat {
      * @param contextPath The context mapping to use, "" for root context.
      * @param docBase Base directory for the context, for static files.
      *  Must exist, relative to the server home
+     * @param createListenerViaReflection TODO
+     * @param createAppContext TODO
      * @return the deployed context
      * @throws ServletException if a deployment error occurs
      */
-    @Deprecated // inline
-    public Context addWebapp(String contextPath, String docBase) throws ServletException {
-        Host host = getHost();
-    String configClass = host.getConfigClass();
-        LifecycleListener listener = createListenerViaReflection(configClass);
-    
-    return addWebapp(host,  contextPath, docBase, listener);
+    @Deprecated // inline. mutates state and returns something other than self.
+    public Context addWebapp(String contextPath, String docBase, Host host, LifecycleListener createListenerViaReflection, Context createAppContext) throws ServletException {
+		host.addChild(createAppContext);
+		return createAppContext;
     }
 
-  private LifecycleListener createListenerViaReflection(String configClass) {
-    LifecycleListener listener = null;
-   try {
-   Class<?> clazz = Class.forName(configClass);
-    listener = (LifecycleListener) clazz.getConstructor().newInstance();
-   } catch (ReflectiveOperationException e) {
-    // Wrap in IAE since we can't easily change the method signature to
-    // to throw the specific checked exceptions
-    throw new IllegalArgumentException(e);
-   }
-    return listener;
-  }
+    public Tomcat addWebapp2(Context createAppContext) throws ServletException {
+		host.addChild(createAppContext);
+		return this;
+    }
 
-
+    
     /**
      * Add a context - programmatic mode, no default web.xml used. This means
      * that there is no JSP support (no JSP servlet), no default servlet and
@@ -309,6 +328,7 @@ public class Tomcat {
      * @param servlet       The Servlet to add
      * @return The wrapper for the servlet
      */
+    @Deprecated // mutating parameter. Inline it
     public static Wrapper addServlet(Context ctx,
                                       String servletName,
                                       Servlet servlet) {
@@ -327,6 +347,7 @@ public class Tomcat {
      * @throws LifecycleException Start error
      */
     public void start() throws LifecycleException {
+    	System.out.println("Tomcat.start()");
         getServer();
         getConnector();
         server.start();
@@ -392,6 +413,7 @@ public class Tomcat {
      *
      * @return The connector object
      */
+    @Deprecated // Badly named. It is more of ensureConnector(). Call it from the constructor, not the starter.
     public Connector getConnector() {
         Service service = getService();
         if (service.findConnectors().length > 0) {
@@ -402,7 +424,7 @@ public class Tomcat {
         // configured (created) and Tomcat Native library is available.
         // Otherwise it creates a NIO HTTP connector.
         Connector connector = new Connector("HTTP/1.1");
-        connector.setPort(port);
+        connector.setPort(server.getPort());
         service.addConnector(connector);
         return connector;
     }
@@ -454,15 +476,23 @@ public class Tomcat {
         }
     }
 
-    public Host getHost() {
+    @Deprecated // Host should be built outside the Tomcat class
+    private Host ensureHost() {
         Engine engine = getEngine();
+        Host host ;
         if (engine.findChildren().length > 0) {
-            return (Host) engine.findChildren()[0];
-        }
+            host = (Host) engine.findChildren()[0];
+        } else {
 
-        Host host = new StandardHost();
+        host = new StandardHost();
         host.setName(hostname);
         getEngine().addChild(host);
+        }
+        return host;
+    }
+    
+    @Deprecated // Demeter
+    public Host getHost() {
         return host;
     }
 
@@ -470,8 +500,10 @@ public class Tomcat {
      * Access to the engine, for further customization.
      * @return The engine
      */
+    // Engine should not be built inside the Tomcat class
+    @Deprecated // refers to field
     public Engine getEngine() {
-        Service service = getServer().findServices()[0];
+        Service service = ((StandardServer)getServer()).findServices()[0];
         if (service.getContainer() != null) {
             return service.getContainer();
         }
@@ -488,83 +520,110 @@ public class Tomcat {
      * customizations. JNDI is disabled by default.
      * @return The Server
      */
-    public Server getServerVar() {
-        return server;
+    public StandardServer getServerVar() {
+        return (StandardServer) server;
     }
+    
+    // Inline this
+    @Deprecated // has side effects AND returns something
     public Server getServer() {
 
+    	// Remove this
         if (server != null) {
             return server;
         }
-
-        System.setProperty("catalina.useNaming", "false");
-
-        server = new StandardServer();
-
-        String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
-    if (basedir == null) {
-        basedir = System.getProperty(Globals.CATALINA_BASE_PROP);
-    }
-    if (basedir == null) {
-        basedir = catalinaHome;
-    }
-    if (basedir == null) {
-        // Create a temp dir.
-        basedir = System.getProperty("user.dir") + "/tomcat." + port;
-    }
-    
-    File baseFile = new File(basedir);
-    if (baseFile.exists()) {
-        if (!baseFile.isDirectory()) {
-            throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
-        }
-    } else {
-        if (!baseFile.mkdirs()) {
-            // Failed to create base directory
-            throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
-        }
-        /*
-         * If file permissions were going to be set on the newly created
-         * directory, this is the place to do it. However, even simple
-         * calls such as File.setReadable(boolean,boolean) behaves
-         * differently on different platforms. Therefore, setBaseDir
-         * documents that the user needs to do this.
-         */
-    }
-    try {
-        baseFile = baseFile.getCanonicalFile();
-    } catch (IOException e) {
-        baseFile = baseFile.getAbsoluteFile();
-    }
-    server.setCatalinaBase(baseFile);
-    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
-    basedir = baseFile.getPath();
-    
-    if (catalinaHome == null) {
-        server.setCatalinaHome(baseFile);
-    } else {
-        File homeFile = new File(catalinaHome);
-        if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
-            // Failed to create home directory
-            throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
-        }
-        try {
-            homeFile = homeFile.getCanonicalFile();
-        } catch (IOException e) {
-            homeFile = homeFile.getAbsoluteFile();
-        }
-        server.setCatalinaHome(homeFile);
-    }
-    System.setProperty(Globals.CATALINA_HOME_PROP,
-            server.getCatalinaHome().getPath());
-
-        server.setPort( -1 );
-
+        
+        //throw new RuntimeException("This can never happen");
+        
+        // Inject this
         Service service = new StandardService();
         service.setName("Tomcat");
-        server.addService(service);
+
+        // Do this in main()
+        System.setProperty("catalina.useNaming", "false");
+
+        // Inject this
+        String catalinaHome = System.getProperty(Globals.CATALINA_HOME_PROP);
+
+        String  basedirOld = server.getCatalinaHome().getPath();
+        if (basedirOld == null) {
+        	basedirOld = System.getProperty(Globals.CATALINA_BASE_PROP);
+    }
+    if (basedirOld == null) {
+    	basedirOld = catalinaHome;
+    }
+    if (basedirOld == null) {
+        // Create a temp dir.
+    	basedirOld = System.getProperty("user.dir") + "/tomcat." + server.getPort();
+    }
+    
+    File baseFile = getBaseFile(basedirOld);
+    basedirOld = baseFile.getPath();
+    System.setProperty(Globals.CATALINA_BASE_PROP, baseFile.getPath());
+
+    
+
+    StandardServer server = createServer(catalinaHome, baseFile, service);
+        
+        System.setProperty(Globals.CATALINA_HOME_PROP,
+        		server.getCatalinaHome().getPath());
+
+        this.server = server; 
         return server;
     }
+
+	private static File getBaseFile(String basedir) {
+		File baseFile = new File(basedir);
+		if (baseFile.exists()) {
+		    if (!baseFile.isDirectory()) {
+		        throw new IllegalArgumentException("tomcat.baseDirNotDir" + baseFile);
+		    }
+		} else {
+		    if (!baseFile.mkdirs()) {
+		        // Failed to create base directory
+		        throw new IllegalStateException("tomcat.baseDirMakeFail" + baseFile);
+		    }
+		    /*
+		     * If file permissions were going to be set on the newly created
+		     * directory, this is the place to do it. However, even simple
+		     * calls such as File.setReadable(boolean,boolean) behaves
+		     * differently on different platforms. Therefore, setBaseDir
+		     * documents that the user needs to do this.
+		     */
+		}
+		try {
+		    baseFile = baseFile.getCanonicalFile();
+		} catch (IOException e) {
+		    baseFile = baseFile.getAbsoluteFile();
+		}
+		return baseFile;
+	}
+
+	private static StandardServer createServer(String catalinaHome, File baseFile,
+			Service service) {
+		StandardServer server = new StandardServer();
+		server.setCatalinaBase(baseFile);
+		
+		if (catalinaHome == null) {
+		    server.setCatalinaHome(baseFile);
+		} else {
+		    File homeFile = new File(catalinaHome);
+		    if (!homeFile.isDirectory() && !homeFile.mkdirs()) {
+		        // Failed to create home directory
+		        throw new IllegalStateException("tomcat.homeDirMakeFail" + homeFile);
+		    }
+		    try {
+		        homeFile = homeFile.getCanonicalFile();
+		    } catch (IOException e) {
+		        homeFile = homeFile.getAbsoluteFile();
+		    }
+		    server.setCatalinaHome(homeFile);
+		}
+
+		    server.setPort( -1 );
+		    server.addService(service);
+		return server;
+	}
 
     /**
      * @param host The host in which the context will be deployed
@@ -589,7 +648,6 @@ public class Tomcat {
      */
     public Context addContext(Host host, String contextPath, String contextName,
             String dir) {
-        silence(host, contextName);
         Context ctx = createContext(host, contextPath);
         ctx.setName(contextName);
         ctx.setPath(contextPath);
@@ -605,49 +663,6 @@ public class Tomcat {
     }
 
     /**
-     * @param host The host in which the context will be deployed
-     * @param contextPath The context mapping to use, "" for root context.
-     * @param docBase Base directory for the context, for static files.
-     *  Must exist, relative to the server home
-     * @param config Custom context configurator helper
-     * @return the deployed context
-     */
-    // Webapp = Context
-    // This method shoudl just create the context, it should not add it
-    public Context addWebapp(Host host, String contextPath, String docBase,
-            LifecycleListener config) {
-
-        silence(host, contextPath);
-
-        Context ctx = createAppContext(host, contextPath, docBase, config);
-
-        if (config instanceof ContextConfig) {
-            // prevent it from looking ( if it finds one - it'll have dup error )
-            ((ContextConfig) config).setDefaultWebXml(noDefaultWebXmlPath());
-        }
-
-        if (host == null) {
-            getHost().addChild(ctx);
-        } else {
-            host.addChild(ctx);
-        }
-
-        return ctx;
-    }
-
-  private Context createAppContext(
-      Host host, String contextPath, String docBase, LifecycleListener config) {
-    Context ctx = createContext(host, contextPath);
-    ctx.setPath(contextPath);
-    ctx.setDocBase(docBase);
-    ctx.addLifecycleListener(getDefaultWebXmlListener());
-    ctx.setConfigFile(getWebappConfigFile(docBase, contextPath));
-
-    ctx.addLifecycleListener(config);
-    return ctx;
-  }
-
-    /**
      * Return a listener that provides the required configuration items for JSP
      * processing. From the standard Tomcat global web.xml. Pass this to
      * {@link Context#addLifecycleListener(LifecycleListener)} and then pass the
@@ -655,8 +670,10 @@ public class Tomcat {
      * {@link ContextConfig#setDefaultWebXml(String)}.
      * @return a listener object that configures default JSP processing.
      */
+    @Deprecated
     public LifecycleListener getDefaultWebXmlListener() {
-        return new DefaultWebXmlListener();
+        //return new DefaultWebXmlListener();
+    	throw new RuntimeException("This will instantiate DefaultServlet, which we don't want");
     }
 
     /**
@@ -664,6 +681,7 @@ public class Tomcat {
      * {@link ContextConfig#setDefaultWebXml(String)} when using
      * {@link #getDefaultWebXmlListener()}.
      */
+    @Deprecated // No one is using this
     public String noDefaultWebXmlPath() {
         return Constants.NoDefaultWebXml;
     }
@@ -732,13 +750,6 @@ public class Tomcat {
             }
         }
     }
-
-    private void silence(Host host, String contextPath) {
-        String loggerName = getLoggerName(host, contextPath);
-        Logger logger = Logger.getLogger(loggerName);
-            logger.setLevel(Level.INFO);
-    }
-
 
     /*
      * Uses essentially the same logic as {@link ContainerBase#logName()}.
@@ -835,6 +846,8 @@ public class Tomcat {
     }
 
     /**
+     * THIS IS WHAT WE WANT FOR web.xml
+     * 
      * Provide default configuration for a context. This is the programmatic
      * equivalent of the default web.xml.
      *
@@ -843,6 +856,7 @@ public class Tomcat {
      *
      * @param contextPath   The context to set the defaults for
      */
+    @Deprecated
     public void initWebappDefaults(String contextPath) {
         Container ctx = getHost().findChild(contextPath);
         initWebappDefaults((Context) ctx);
@@ -852,6 +866,10 @@ public class Tomcat {
      * Static version of {@link #initWebappDefaults(String)}
      * @param ctx   The context to set the defaults for
      */
+	@Deprecated
+	// Inject the servlet class name if you must, and don't use reflection. But
+	// we don't want DefaultServlet to be instantiated so don't even call this method.
+	// Mutating parameter, bad.
     public static void initWebappDefaults(Context ctx) {
         // Default servlet
         Wrapper servlet = addServlet(
@@ -924,9 +942,16 @@ public class Tomcat {
      * When a context is reloaded, any programmatic configuration is lost. This
      * listener sets the equivalent of conf/web.xml when the context starts.
      */
+    @Deprecated // Since we aren't going to change web.xml while the app is running, there really is no point in having a listener to reload the servlet mappings
     public static class DefaultWebXmlListener implements LifecycleListener {
+    	@Deprecated // stop using this, the initWebappDefaults method uses DefaultServlet, which we don't want to override. We want to override Webdav
+    	public DefaultWebXmlListener() {
+    		//throw new IllegalAccessException("stop using this, the initWebappDefaults method uses DefaultServlet, which we don't want to override. We want to override Webdav");
+    	}
+    	
         @Override
         public void lifecycleEvent(LifecycleEvent event) {
+        	System.out.println("Tomcat.DefaultWebXmlListener.lifecycleEvent() event " + event.getType() + "\t" + event.getLifecycle().getStateName());
             if (Lifecycle.BEFORE_START_EVENT.equals(event.getType())) {
                 initWebappDefaults((Context) event.getLifecycle());
             }
@@ -942,7 +967,7 @@ public class Tomcat {
     public static class ExistingStandardWrapper extends StandardWrapper {
         private final Servlet existing;
 
-        @SuppressWarnings("deprecation")
+@Deprecated
         public ExistingStandardWrapper( Servlet existing ) {
             this.existing = existing;
             if (existing instanceof javax.servlet.SingleThreadModel) {
@@ -951,6 +976,11 @@ public class Tomcat {
             }
             this.asyncSupported = hasAsync(existing);
         }
+
+public ExistingStandardWrapper(Servlet existing, String name) {
+	this(existing);
+	this.setName(name);
+}
 
         private static boolean hasAsync(Servlet existing) {
             boolean result = false;
@@ -1214,4 +1244,9 @@ public class Tomcat {
         }
         return result;
     }
+
+	public Tomcat start2() throws LifecycleException {
+		this.start();
+		return this;
+	}
 }
