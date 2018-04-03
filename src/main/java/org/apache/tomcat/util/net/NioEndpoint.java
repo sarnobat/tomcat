@@ -69,10 +69,18 @@ import org.apache.tomcat.util.net.jsse.JSSESupport;
  * @author Remy Maucherat
  */
 public class NioEndpoint extends AbstractJsseEndpoint<NioChannel,SocketChannel> {
-
+	private final Iterable<Thread> pollerThreads;
+	@Deprecated
 public NioEndpoint() {
 System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
+pollerThreads = null;
+this.pollerThreadCount= Math.min(2,Runtime.getRuntime().availableProcessors());
 }
+	public NioEndpoint(Iterable<Thread> pollerThreads) {
+		System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
+		this.pollerThreads = pollerThreads;
+		this.pollerThreadCount= Math.min(2,Runtime.getRuntime().availableProcessors());
+		}
     // -------------------------------------------------------------- Constants
 
 
@@ -139,9 +147,13 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
     /**
      * Poller thread count.
      */
-    private int pollerThreadCount = Math.min(2,Runtime.getRuntime().availableProcessors());
+    private final int pollerThreadCount;
     @Deprecated // this is preventing us injecting the pollers
-    public void setPollerThreadCount(int pollerThreadCount) { this.pollerThreadCount = pollerThreadCount; }
+    public void setPollerThreadCount(int pollerThreadCount) { 
+    	//this.pollerThreadCount = pollerThreadCount;
+    	System.out.println("NioEndpoint.setPollerThreadCount() - this method is still needed");
+    	System.exit(-1);
+    	}
     public int getPollerThreadCount() { return pollerThreadCount; }
 
     private long selectorTimeout = 1000;
@@ -213,7 +225,9 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
         }
         if (pollerThreadCount <= 0) {
             //minimum one poller thread
-            pollerThreadCount = 1;
+            //pollerThreadCount = 1;
+        	System.out.println("NioEndpoint.bind() - we still need to modify pllerThreadCount");
+        	System.exit(-1);
         }
         setStopLatch(new CountDownLatch(pollerThreadCount));
 
@@ -263,8 +277,8 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
             // Start poller threads
             int pollerThreadCount2 = getPollerThreadCount();
 			pollers = createPollers(pollerThreadCount2);
-            
-            startPollers(createPollerThreads(pollerThreadCount2), threadPriority);
+            Set<Thread> createPollerThreads = createPollerThreads(pollerThreadCount2);
+			startPollers(createPollerThreads, threadPriority);
 
             startAcceptorThreads();
         }

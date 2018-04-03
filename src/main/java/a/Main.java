@@ -37,7 +37,9 @@ import org.apache.catalina.startup.ContextConfig;
 import org.apache.catalina.startup.Tomcat;
 import org.apache.catalina.startup.Tomcat.DefaultWebXmlListener;
 import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
+import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.tomcat.util.buf.UriUtil;
+import org.apache.tomcat.util.net.NioEndpoint;
 
 public class Main {
 
@@ -96,7 +98,7 @@ System.out.println("Main.main() root = " + root);
 					}, "webdavservlet")).addServletMappingDecoded2("/webdav/*",
 							"webdavservlet");
 
-			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost)
+			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost, new Http11NioProtocol(new NioEndpoint()))
 					.addWebapp2(standardContext);
 
 			Server serverVar = tomcat.start2().getServerVar();

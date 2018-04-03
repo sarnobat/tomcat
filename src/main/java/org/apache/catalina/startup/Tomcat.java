@@ -60,6 +60,7 @@ import org.apache.catalina.core.StandardService;
 import org.apache.catalina.core.StandardWrapper;
 import org.apache.catalina.realm.GenericPrincipal;
 import org.apache.catalina.realm.RealmBase;
+import org.apache.coyote.ProtocolHandler;
 import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.tomcat.util.ExceptionUtils;
 import org.apache.tomcat.util.buf.UriUtil;
@@ -151,22 +152,25 @@ public class Tomcat {
     private final Map<String, String> userPass = new HashMap<>();
     private final Map<String, List<String>> userRoles = new HashMap<>();
     private final Map<String, Principal> userPrincipals = new HashMap<>();
+    private final  ProtocolHandler protocol; 
 
     @Deprecated
-    public Tomcat(String hostname, Server server) {
+    public Tomcat(String hostname, Server server, ProtocolHandler protocol) {
 
     	this.server = server;
         this.hostname = hostname;
         this.host = ensureHost();
+        this.protocol = protocol;
     }
     
     @Deprecated
-    public Tomcat(String hostname, Server server, Engine engine) {
+    public Tomcat(String hostname, Server server, Engine engine, ProtocolHandler protocol) {
 
     	this.server = server;
         this.hostname = hostname;
 		Host host1 = createHost(hostname, engine);
         this.host = host1;
+        this.protocol = protocol;
     }
 
 	private Host createHost(String hostname, Engine engine) {
@@ -181,11 +185,12 @@ public class Tomcat {
 		return host1;
 	}
 
-    public Tomcat(String hostname, Server server, Host host) {
+    public Tomcat(String hostname, Server server, Host host, ProtocolHandler protocol) {
 
     	this.server = server;
         this.hostname = hostname;
         this.host = host;
+        this.protocol = protocol;
     }
 
     
@@ -425,7 +430,7 @@ public class Tomcat {
         // This creates an APR HTTP connector if AprLifecycleListener has been
         // configured (created) and Tomcat Native library is available.
         // Otherwise it creates a NIO HTTP connector.
-        Connector connector = new Connector("HTTP/1.1", new Http11NioProtocol(new NioEndpoint()));
+        Connector connector = new Connector("HTTP/1.1", this.protocol);
         connector.setPort(server.getPort());
         service.addConnector(connector);
         return connector;
