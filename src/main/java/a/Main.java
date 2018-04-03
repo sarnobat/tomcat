@@ -43,9 +43,6 @@ import org.apache.tomcat.util.net.NioEndpoint;
 
 public class Main {
 
-	// TODO: Why does this only work in a web browser, not when mapped from
-	// Apple finder?
-	// It worked with the Spring boot version.
 	/**
 	 * If using a desktop shell, make sure you connect to
 	 * http://localhost:4453/webdav/ and NOT simply http://localhost:4453/. The
