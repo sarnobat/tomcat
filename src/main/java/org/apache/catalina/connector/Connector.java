@@ -74,7 +74,7 @@ public class Connector extends LifecycleMBeanBase  {
         this("org.apache.coyote.http11.Http11NioProtocol");
     }
 
-
+    @Deprecated
     public Connector(String protocol) {
         boolean aprConnector = AprLifecycleListener.isAprAvailable() &&
                 AprLifecycleListener.getUseAprConnector();
@@ -106,6 +106,33 @@ public class Connector extends LifecycleMBeanBase  {
         } finally {
             this.protocolHandler = p;
         }
+
+        // Default for Connector depends on this system property
+        setThrowOnFailure(Boolean.getBoolean("org.apache.catalina.startup.EXIT_ON_INIT_FAILURE"));
+    }
+    
+    public Connector(String protocol, ProtocolHandler protocolHandler) {
+        boolean aprConnector = AprLifecycleListener.isAprAvailable() &&
+                AprLifecycleListener.getUseAprConnector();
+
+        if ("HTTP/1.1".equals(protocol) || protocol == null) {
+            if (aprConnector) {
+                protocolHandlerClassName = "org.apache.coyote.http11.Http11AprProtocol";
+            } else {
+                protocolHandlerClassName = "org.apache.coyote.http11.Http11NioProtocol";
+            }
+        } else if ("AJP/1.3".equals(protocol)) {
+            if (aprConnector) {
+                protocolHandlerClassName = "org.apache.coyote.ajp.AjpAprProtocol";
+            } else {
+                protocolHandlerClassName = "org.apache.coyote.ajp.AjpNioProtocol";
+            }
+        } else {
+            protocolHandlerClassName = protocol;
+        }
+
+        
+        this.protocolHandler = protocolHandler;
 
         // Default for Connector depends on this system property
         setThrowOnFailure(Boolean.getBoolean("org.apache.catalina.startup.EXIT_ON_INIT_FAILURE"));

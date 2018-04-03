@@ -60,9 +60,11 @@ import org.apache.catalina.core.StandardService;
 import org.apache.catalina.core.StandardWrapper;
 import org.apache.catalina.realm.GenericPrincipal;
 import org.apache.catalina.realm.RealmBase;
+import org.apache.coyote.http11.Http11NioProtocol;
 import org.apache.tomcat.util.ExceptionUtils;
 import org.apache.tomcat.util.buf.UriUtil;
 import org.apache.tomcat.util.descriptor.web.LoginConfig;
+import org.apache.tomcat.util.net.NioEndpoint;
 
 // TODO: lazy init for the temp dir - only when a JSP is compiled or
 // get temp dir is called we need to create it. This will avoid the
@@ -423,7 +425,7 @@ public class Tomcat {
         // This creates an APR HTTP connector if AprLifecycleListener has been
         // configured (created) and Tomcat Native library is available.
         // Otherwise it creates a NIO HTTP connector.
-        Connector connector = new Connector("HTTP/1.1");
+        Connector connector = new Connector("HTTP/1.1", new Http11NioProtocol(new NioEndpoint()));
         connector.setPort(server.getPort());
         service.addConnector(connector);
         return connector;
