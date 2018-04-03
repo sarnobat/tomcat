@@ -1035,6 +1035,7 @@ public abstract class AbstractEndpoint<S,U> {
 
     public abstract void bind() throws Exception;
     public abstract void unbind() throws Exception;
+    @Deprecated
     public abstract void startInternal() throws Exception;
     public abstract void stopInternal() throws Exception;
 
@@ -1110,7 +1111,8 @@ public abstract class AbstractEndpoint<S,U> {
         startInternal();
     }
 
-
+    // inject acceptors
+    @Deprecated
     protected final void startAcceptorThreads() {
         int count = getAcceptorThreadCount();
         acceptors = new ArrayList<>(count);

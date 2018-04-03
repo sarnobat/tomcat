@@ -34,7 +34,9 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.nio.channels.WritableByteChannel;
 import java.util.ConcurrentModificationException;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -138,6 +140,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
      * Poller thread count.
      */
     private int pollerThreadCount = Math.min(2,Runtime.getRuntime().availableProcessors());
+    @Deprecated // this is preventing us injecting the pollers
     public void setPollerThreadCount(int pollerThreadCount) { this.pollerThreadCount = pollerThreadCount; }
     public int getPollerThreadCount() { return pollerThreadCount; }
 
@@ -235,6 +238,7 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
     /**
      * Start the NIO endpoint, creating acceptor, poller threads.
      */
+    @Deprecated // inject the poller
     @Override
     public void startInternal() throws Exception {
 
@@ -257,18 +261,37 @@ System.out.println("SRIDHAR NioEndpoint.NioEndpoint() - ");
             initializeConnectionLatch();
 
             // Start poller threads
-            pollers = new Poller[getPollerThreadCount()];
-            for (int i=0; i<pollers.length; i++) {
-                pollers[i] = new Poller();
-                Thread pollerThread = new Thread(pollers[i], getName() + "-ClientPoller-"+i);
-                pollerThread.setPriority(threadPriority);
-                pollerThread.setDaemon(true);
-                pollerThread.start();
-            }
+            int pollerThreadCount2 = getPollerThreadCount();
+			pollers = createPollers(pollerThreadCount2);
+            
+            startPollers(createPollerThreads(pollerThreadCount2), threadPriority);
 
             startAcceptorThreads();
         }
     }
+
+    private void startPollers(Set<Thread> pollerThreads, int threadPriority2) {
+		for (Thread pollerThread : pollerThreads) {
+			pollerThread.setPriority(threadPriority2);
+		    pollerThread.setDaemon(true);
+		    pollerThread.start();
+		}
+	}
+	private Set<Thread> createPollerThreads(int pollerThreadCount2) {
+		Set<Thread> pollerThreads = new HashSet<Thread>();
+		for (int i=0; i<pollerThreadCount2; i++) {
+		    Thread pollerThread = new Thread(pollers[i], getName() + "-ClientPoller-"+i);
+		    pollerThreads.add(pollerThread);
+		}
+		return pollerThreads;
+	}
+	private Poller[] createPollers(int pollerThreadCount2) throws IOException {
+		Poller[] pollers1 = new Poller[pollerThreadCount2];
+		for (int i=0; i<pollerThreadCount2; i++) {
+		    pollers1[i] = new Poller();
+		}
+		return pollers1;
+	}
 
 
     /**

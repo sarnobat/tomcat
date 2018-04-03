@@ -10,6 +10,8 @@ Runs (also runs when run with eclipse):
 
 	java -cp /Users/ssarnobat/trash/tomcat.trash/target/ProjectName.jar a.Main
 
+    java -cp /home/sarnobat/github/tomcat_full_forked/target/ProjectName.jar -Dwebdav.port=4455 -Dwebdav.root=/tmp a.Main
+
 ## Welcome to Apache Tomcat!
 
 ### What Is It?

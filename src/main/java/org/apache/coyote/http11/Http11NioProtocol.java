@@ -35,10 +35,14 @@ public class Http11NioProtocol extends AbstractHttp11JsseProtocol<NioChannel> {
     private static final Log log = LogFactory.getLog(Http11NioProtocol.class);
 
 
+    @Deprecated // use dependency injection
     public Http11NioProtocol() {
         super(new NioEndpoint());
     }
 
+    public Http11NioProtocol(NioEndpoint nioEndpoint) {
+        super(nioEndpoint);
+    }
 
     @Override
     protected Log getLog() { return log; }
