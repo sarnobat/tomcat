@@ -79,6 +79,7 @@ System.out.println("Main.main() root = " + root);
 					standardService, port);
 
 			String contextPath = "";
+			@SuppressWarnings("serial")
 			StandardContext standardContext = createAppContext(standardHost,
 					contextPath, Paths.get(root).toAbsolutePath().toString(),
 					createListenerViaReflection(standardHost.getConfigClass()))
