@@ -1,7 +1,11 @@
 # Sridhar
+This branch has my version of the code.
 
+	git checkout mavenized.immutable
+	
+The main class is:
 
-	git checkout mavenized
+        a.Main.java
 
 ## Build
 	ant
