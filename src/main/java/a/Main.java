@@ -35,6 +35,10 @@ public class Main {
       StandardContext appContext = (StandardContext)server.addWebapp("", Paths.get(root).toAbsolutePath().toString());
       Tomcat.addServlet(appContext, "webdavservlet", new WebdavServlet());
       appContext.addServletMappingDecoded("/webdav/*", "webdavservlet");
+      org.apache.catalina.webresources.StandardRoot r = new org.apache.catalina.webresources.StandardRoot();
+      r.setAllowLinking(true);
+      appContext.setResources(r);
+
       appContext
           .getServletContext()
           .getServletRegistrations()
