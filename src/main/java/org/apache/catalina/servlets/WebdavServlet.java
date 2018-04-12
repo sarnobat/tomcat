@@ -317,7 +317,9 @@ public class WebdavServlet extends DefaultServlet {
         throws ServletException, IOException {
 
         final String path = getRelativePath(req);
-
+resp.setHeader("Access-Control-Allow-Origin", "*");
+resp.setHeader("Access-Control-Allow-Methods", "*");
+resp.setHeader("Access-Control-Allow-Headers","*");
         // Error page check needs to come before special path check since
         // custom error pages are often located below WEB-INF so they are
         // not directly accessible.
