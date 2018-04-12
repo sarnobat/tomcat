@@ -96,6 +96,10 @@ System.out.println("Main.main() root = " + root);
 					}, "webdavservlet")).addServletMappingDecoded2("/webdav/*",
 							"webdavservlet");
 
+			org.apache.catalina.webresources.StandardRoot r = new org.apache.catalina.webresources.StandardRoot();
+		        r.setAllowLinking(true);
+		        standardContext.setResources(r);
+
 			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost, new Http11NioProtocol(new NioEndpoint()))
 					.addWebapp2(standardContext);
 
