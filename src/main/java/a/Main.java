@@ -19,7 +19,7 @@ public class Main {
 
   public static void main(String[] args) {
 
-    int port = 4453;
+    int port = Integer.parseInt(System.getProperty("webdav.port", "4453"));
 
     String root = System.getProperty("user.home") + "/Desktop";
     if (System.getProperties().containsKey("webdav.root")) {
