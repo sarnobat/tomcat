@@ -157,7 +157,20 @@ public abstract class LifecycleBase implements Lifecycle {
     public final synchronized void start() throws LifecycleException {
     	// This gets called too frequently.
     	System.out.println("LifecycleBase.start()");
+{
+	int port2 = 4453;
+ try {
+    (new java.net.Socket("localhost", port2)).close();
+System.out.println("port " + port2 + " is in use.");
+    // Successful connection means the port is taken.
+  }
+  catch(java.net.SocketException e) {
+	System.out.println("port " + port2 + " is free.");
 
+  } catch (Exception e) {
+	throw new RuntimeException(e);
+}
+}
         if (LifecycleState.STARTING_PREP.equals(state) || LifecycleState.STARTING.equals(state) ||
                 LifecycleState.STARTED.equals(state)) {
 

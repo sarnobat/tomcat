@@ -99,12 +99,51 @@ System.out.println("Main.main() root = " + root);
 			org.apache.catalina.webresources.StandardRoot r = new org.apache.catalina.webresources.StandardRoot();
 		        r.setAllowLinking(true);
 		        standardContext.setResources(r);
+{
+	int port2 = 4453;
+ try {
+    (new java.net.Socket("localhost", port2)).close();
+System.out.println("port " + port + " is in use.");
+    // Successful connection means the port is taken.
+  }
+  catch(java.net.SocketException e) {
+	System.out.println("port " + port2 + " is free.");
 
+  } catch (Exception e) {
+	throw new RuntimeException(e);
+}
+}
 			Tomcat tomcat = new Tomcat(hostname, standardServer, standardHost, new Http11NioProtocol(new NioEndpoint()))
 					.addWebapp2(standardContext);
+{
+	int port2 = 4453;
+ try {
+    (new java.net.Socket("localhost", port2)).close();
+System.out.println("port " + port + " is in use.");
+    // Successful connection means the port is taken.
+  }
+  catch(java.net.SocketException e) {
+	System.out.println("port " + port2 + " is free.");
 
+  } catch (Exception e) {
+	throw new RuntimeException(e);
+}
+}
 			Server serverVar = tomcat.start2().getServerVar();
+{
+	int port2 = 4453;
+ try {
+    (new java.net.Socket("localhost", port2)).close();
+System.out.println("port " + port + " is in use.");
+    // Successful connection means the port is taken.
+  }
+  catch(java.net.SocketException e) {
+	System.out.println("port " + port2 + " is free.");
 
+  } catch (Exception e) {
+	throw new RuntimeException(e);
+}
+}
 			serverVar.await();
 		}
 	}
