@@ -44,12 +44,33 @@ public class Main {
           .getServletRegistrations()
           .get("webdavservlet")
           .setInitParameter("listings", "true");
+boolean taken = true;
+{
+	int port2 = port;
+	try {
+		(new java.net.Socket("localhost", port2)).close();
+		System.out.println("port " + port2 + " is in use.");
+		// Successful connection means the port is taken.
+System.exit(-1);
+	}
+	catch(java.net.SocketException e) {
+		System.out.println("port " + port2 + " is free.");
+		taken = false;
+	} catch (Exception e) {
+		throw new RuntimeException(e);
+	}
+}
       server.start();
+System.out.println("after start()");
       server.getServerVar().await();
+System.out.println("after await()");
     } catch (ServletException e) {
       e.printStackTrace();
     } catch (LifecycleException e) {
       e.printStackTrace();
-    }
+    } catch (Exception e) {
+	e.printStackTrace();
+	System.exit(-1);
+}
   }
 }
