@@ -155,6 +155,11 @@ public class ErrorReportValve extends ValveBase {
         int statusCode = response.getStatus();
         System.out.println("SRIDHAR ErrorReportValve.report() - http status code " + statusCode);
 
+
+response.setHeader("Access-Control-Allow-Origin", "*");
+response.setHeader("Access-Control-Allow-Methods", "*");
+response.setHeader("Access-Control-Allow-Headers","*");
+
         // Do nothing on a 1xx, 2xx and 3xx status
         // Do nothing if anything has been written already
         // Do nothing if the response hasn't been explicitly marked as in error
