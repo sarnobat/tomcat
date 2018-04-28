@@ -191,7 +191,7 @@ public class DefaultServlet extends HttpServlet {
     /**
      * Read only flag. By default, it's set to true.
      */
-    protected boolean readOnly = true;
+    protected boolean readOnly = false;
 
     /**
      * List of compression formats to serve and their preference order.
