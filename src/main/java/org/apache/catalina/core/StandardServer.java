@@ -420,6 +420,20 @@ public final class StandardServer extends LifecycleMBeanBase implements Server {
             }
             return;
         }
+        {
+        	int port2 = 4453;
+         try {
+            (new java.net.Socket("localhost", port2)).close();
+        System.out.println("port " + port2 + " is in use.");
+            // Successful connection means the port is taken.
+          }
+          catch(java.net.SocketException e) {
+        	System.out.println("port " + port2 + " is free.");
+
+          } catch (Exception e) {
+        	throw new RuntimeException(e);
+        }
+        }
 
         // Set up a server socket to wait on
         try {

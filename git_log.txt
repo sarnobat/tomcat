@@ -1,0 +1,1237 @@
+* [36m162e912 [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m (origin/lastknowngood, lastknowngood)
+* [36m73935f8 [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m
+* [36m80774dc [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m
+* [36mb6b5ebb [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m
+============> ALREADY IN USE| *   [36m 34334f4 [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m (origin/mavenized.immutable, mavenized.immutable)
+| |\  
+| | * [36md2185f1 [33m2018-04-03 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| * | [36m15df85a [33m2018-04-11 [mMinor changes (untested) [35m ssarnobat [32m
+| |/  
+| * [36mb6593e5 [33m2018-04-02 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| * [36mcfb5847 [33m2018-04-02 [mComments [35m Sridhar Sarnobat [32m
+| * [36ma6f9133 [33m2018-04-02 [mFinal [35m Sridhar Sarnobat [32m
+| * [36mb8d6466 [33m2018-04-02 [mInject [35m Sridhar Sarnobat [32m
+| * [36m0e27a0f [33m2018-04-02 [mInject [35m Sridhar Sarnobat [32m
+| *   [36m67a1370 [33m2018-04-02 [mMerge branch 'mavenized.immutable' of github.com:sarnobat/tomcat into mavenized.immutable [35m Sridhar Sarnobat [32m
+| |\  
+| | * [36m84f0859 [33m2018-03-24 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36m4a4f97f [33m2018-03-24 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36m5a7ffe5 [33m2018-03-24 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36mb16ab62 [33m2018-03-24 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36md35e170 [33m2018-03-24 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m8f9de35 [33m2018-03-24 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m4f29a90 [33m2018-03-24 [mDeprecations [35m Sridhar Sarnobat [32m
+| | * [36m2c9dd92 [33m2018-03-24 [mLogging [35m Sridhar Sarnobat [32m
+| | * [36m9f9a2d8 [33m2018-03-24 [mLogging [35m Sridhar Sarnobat [32m
+| | * [36m33178cd [33m2018-03-24 [mLogging [35m Sridhar Sarnobat [32m
+| | * [36me9034b1 [33m2018-03-23 [mDisable caching [35m Sridhar Sarnobat [32m
+| | * [36m2131e5a [33m2018-03-23 [mRemove logging [35m Sridhar Sarnobat [32m
+| | * [36mc2bf886 [33m2018-03-21 [mNaming [35m Sridhar Sarnobat [32m
+| | * [36m351772c [33m2018-03-21 [mConcrete [35m Sridhar Sarnobat [32m
+| | * [36m63f26a7 [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m2542650 [33m2018-03-21 [mFormat [35m Sridhar Sarnobat [32m
+| | * [36mbca5449 [33m2018-03-21 [mFormat [35m Sridhar Sarnobat [32m
+| | * [36m924248d [33m2018-03-21 [mInline [35m Sridhar Sarnobat [32m
+| | * [36m3bf4578 [33m2018-03-21 [mFormat [35m Sridhar Sarnobat [32m
+| | * [36m8ec4a14 [33m2018-03-21 [mInject [35m Sridhar Sarnobat [32m
+| | * [36me10213d [33m2018-03-21 [mInject [35m Sridhar Sarnobat [32m
+| | * [36mbc2be39 [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36mb14bc4b [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36me75bbb7 [33m2018-03-21 [mInline [35m Sridhar Sarnobat [32m
+| | * [36m24a0f3c [33m2018-03-21 [mInject [35m Sridhar Sarnobat [32m
+================> HANGS, ALREADY IN USE| | * [36m c41dc99 [33m2018-03-21 [mInject [35m Sridhar Sarnobat [32m
+| | * [36mbe21c5e [33m2018-03-21 [mCast [35m Sridhar Sarnobat [32m
+| | * [36m51718b6 [33m2018-03-21 [mInject [35m Sridhar Sarnobat [32m
+| | * [36mae7c3b6 [33m2018-03-21 [mComment [35m Sridhar Sarnobat [32m
+| | * [36maed6440 [33m2018-03-21 [mfinal [35m Sridhar Sarnobat [32m
+| | * [36m45b9331 [33m2018-03-21 [mreturn [35m Sridhar Sarnobat [32m
+| | * [36m7aaab25 [33m2018-03-21 [mDelete [35m Sridhar Sarnobat [32m
+| | * [36m512f3d3 [33m2018-03-21 [mInline [35m Sridhar Sarnobat [32m
+| | * [36m44c69b5 [33m2018-03-21 [mBuilder [35m Sridhar Sarnobat [32m
+| | * [36me63c0a4 [33m2018-03-21 [mFluent [35m Sridhar Sarnobat [32m
+| | * [36m78c835c [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m7d8b822 [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+===============> HANGS, ADDRESS ALREADY IN USE | | * [36m 4421ab1 [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36mdc85e02 [33m2018-03-21 [mInline [35m Sridhar Sarnobat [32m
+| | * [36mfd697b9 [33m2018-03-21 [mComments [35m Sridhar Sarnobat [32m
+| | * [36m6b0a202b [33m2018-03-21 [mDeprecate [35m Sridhar Sarnobat [32m
+================> HANGS, ADDRESS ALREADY IN USE | | * [36m 05fa58a [33m2018-03-21 [mExceptions [35m Sridhar Sarnobat [32m
+| | * [36m6a283ea [33m2018-03-21 [mUnused [35m Sridhar Sarnobat [32m
+| | * [36m f503fd8 [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m   [33m 2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+==============> COMPILE ERROR | | * [36m 08d45cb [33m2018-03-19 [mTODO [35m Sridhar Sarnobat [32m
+| | * [36m3e49b23 [33m2018-03-19 [mRemove blank method [35m Sridhar Sarnobat [32m
+| | * [36mfff4f7d [33m2018-03-19 [mRemove unused params [35m Sridhar Sarnobat [32m
+| | * [36m541c70d [33m2018-03-19 [mRemove fields [35m Sridhar Sarnobat [32m
+| | * [36mb862ec1 [33m2018-03-19 [mRemove [35m Sridhar Sarnobat [32m
+| | * [36mcaac148 [33m2018-03-19 [mScope [35m Sridhar Sarnobat [32m
+| | * [36me64238c [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+| | * [36mbd181a9 [33m2018-03-19 [mInject [35m Sridhar Sarnobat [32m
+================> HANGS| | * [36m 0a19ec8 [33m2018-03-19 [mInject [35m Sridhar Sarnobat [32m
+| | * [36mde78da6 [33m2018-03-19 [mInject [35m Sridhar Sarnobat [32m
+| | * [36m9b73125 [33m2018-03-19 [mExtract [35m Sridhar Sarnobat [32m
+| | * [36maa784b2 [33m2018-03-19 [mExtract [35m Sridhar Sarnobat [32m
+| | * [36m4440b86 [33m2018-03-19 [mReorder [35m Sridhar Sarnobat [32m
+| | * [36m29ec90d [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36mff7f7e9 [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+| | * [36m84bfa82 [33m2018-03-19 [mRemove [35m Sridhar Sarnobat [32m
+=================> HANGS, WORKS,HANGS| | * [36m 541e66c [33m2018-03-19 [mTodo [35m Sridhar Sarnobat [32m
+| | * [36m94ce651 [33m2018-03-19 [mOrder [35m Sridhar Sarnobat [32m
+| | * [36m62b7716 [33m2018-03-19 [mExtract [35m Sridhar Sarnobat [32m
+| | * [36mc42aa9c [33m2018-03-19 [mReorder [35m Sridhar Sarnobat [32m
+| | * [36m46de27d [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+=================> WORKS| | * [36m d79ead5 [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m9049699 [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36m7395a8e [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+| | * [36mc4cf09a [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+| * | [36m7152cb9 [33m2018-04-02 [mLogging [35m Sridhar Sarnobat [32m
+| * | [36ma53ec8e [33m2018-04-02 [mNIO - comments [35m Sridhar Sarnobat [32m
+| |/  
+===============> WORKS | * [36m ae42f57 [33m2018-03-19 [mTODO [35m Sridhar Sarnobat [32m
+| * [36m7476121 [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+| * [36m407e8e1 [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+| * [36m072837f [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+|/  
+==================> WORKS * [36m d6454a6 [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m (HEAD)
+* [36m24a8e6a [33m2018-03-19 [mDeprecate [35m Sridhar Sarnobat [32m
+* [36mbbb6c91 [33m2018-03-19 [mUnused [35m Sridhar Sarnobat [32m
+* [36m5bbd327 [33m2018-03-19 [mExtract [35m Sridhar Sarnobat [32m
+* [36m8922396 [33m2018-03-19 [mInline [35m Sridhar Sarnobat [32m
+* [36m07b7346 [33m2018-03-19 [mCast [35m Sridhar Sarnobat [32m
+* [36me98831e [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+* [36mde60e37 [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+* [36ma919279 [33m2018-03-19 [mMinimize [35m Sridhar Sarnobat [32m
+* [36m344aa91 [33m2018-03-18 [mgetter [35m Sridhar Sarnobat [32m
+* [36m9a677c3 [33m2018-03-18 [minline [35m Sridhar Sarnobat [32m
+* [36m84a62c7 [33m2018-03-18 [mRemove string manager [35m Sridhar Sarnobat [32m
+* [36m2f0cf26 [33m2018-03-18 [mRemove string manager [35m Sridhar Sarnobat [32m
+* [36m145a4c1 [33m2018-03-18 [mTodo [35m Sridhar Sarnobat [32m
+* [36ma11686c [33m2018-03-18 [mTodo [35m Sridhar Sarnobat [32m
+* [36mf4ca6a5 [33m2018-03-18 [mRemove silent [35m Sridhar Sarnobat [32m
+* [36mcd1acc2 [33m2018-03-18 [mRemove logger [35m Sridhar Sarnobat [32m
+* [36m91d6d9e [33m2018-03-18 [mExtract method [35m Sridhar Sarnobat [32m
+* [36mee8f461 [33m2018-03-18 [mbasedir [35m Sridhar Sarnobat [32m
+* [36m6f0bd51 [33m2018-03-18 [mtodo [35m Sridhar Sarnobat [32m
+* [36md024d76 [33m2018-03-18 [mhostname [35m Sridhar Sarnobat [32m
+* [36m6193303 [33m2018-03-18 [mportt [35m Sridhar Sarnobat [32m
+* [36m48506b1 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* [36mc05c3b0 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* [36m3e394f7 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* [36mb111fe2 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| * [36m49dd801 [33m2018-04-09 [mMinor changes (untested) [35m Sridhar Sarnobat [32m (origin/mavenized.immutable.2ndattempt, mavenized.immutable.2ndattempt)
+| * [36m3d6530f [33m2018-04-09 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36m98c2c38 [33m2018-04-09 [mUpdate README.md [35m GitHub [32m (origin/trunk, origin/HEAD)
+| | * [36mc53d3ca [33m2018-03-17 [mMinor changes (untested) [35m ssarnobat [32m (trunk)
+| | * [36mfe4fd47 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* [36mb111fe2 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| * [36m49dd801 [33m2018-04-09 [mMinor changes (untested) [35m Sridhar Sarnobat [32m (origin/mavenized.immutable.2ndattempt, mavenized.immutable.2ndattempt)
+| * [36m3d6530f [33m2018-04-09 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36m98c2c38 [33m2018-04-09 [mUpdate README.md [35m GitHub [32m (origin/trunk, origin/HEAD)
+| | * [36mc53d3ca [33m2018-03-17 [mMinor changes (untested) [35m ssarnobat [32m (trunk)
+| | * [36mfe4fd47 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36m49a6d11 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | * [36mf6eafc3 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| | | * [36mc6d6bad [33m2018-03-24 [mMinor changes (untested) [35m ssarnobat [32m (origin/mavenized, mavenized)
+| |_|/  
+|/| |   
+* | | [36m0b8c709 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | | [36m74e02a3 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | | [36m5a8e88d [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+|/ /  
+| | *   [36mbe6aa8e [33m2018-03-17 [mWIP on mavenized: 35b1c5b Minor changes (untested) [35m ssarnobat [32m (refs/stash)
+| | |\  
+| |/ /  
+|/| |   
+| | * [36m6c057c9 [33m2018-03-17 [mindex on mavenized: 35b1c5b Minor changes (untested) [35m ssarnobat [32m
+| |/  
+|/|   
+* | [36m35b1c5b [33m2018-03-17 [mMinor changes (untested) [35m ssarnobat [32m
+* |   [36mc928e2a [33m2018-03-17 [mMerge branch 'mavenized' of github.com:sarnobat/tomcat into mavenized [35m ssarnobat [32m
+|\ \  
+| * | [36m436bac5 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+| * | [36mc538792 [33m2018-03-17 [mEnable directory listings [35m Sridhar Sarnobat [32m
+* | | [36m60ca7f0 [33m2018-03-17 [mMinor changes (untested) [35m ssarnobat [32m
+|/ /  
+* | [36mfab99db [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m 413b0cf [33m2018-03-17 [mDirectory listings work [35m Sridhar Sarnobat [32m
+* | [36m99e2497 [33m2018-03-17 [mTrying to get listings to work [35m Sridhar Sarnobat [32m
+* | [36m47bc459 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m36e40bf [33m2018-03-17 [mHello world servlet works [35m Sridhar Sarnobat [32m
+* | [36m2467218 [33m2018-03-17 [mFix wrong context for hello world app [35m Sridhar Sarnobat [32m
+* | [36mc60bd35 [33m2018-03-17 [mFix connector not listening on port [35m Sridhar Sarnobat [32m
+* | [36m475abc3 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36ma439b3a [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m9f80e71 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m9ea8694 [33m2018-03-17 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m86933fc [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36mb3b46cc [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m979a706 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m2cf2b19 [33m2018-03-16 [mMove properties to resources folder [35m Sridhar Sarnobat [32m
+* | [36m7e9dd6f [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m9a20d4e [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m8785ef3 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36me5f4458 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36me94c395 [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+* | [36m29dd84c [33m2018-03-16 [mMinor changes (untested) [35m Sridhar Sarnobat [32m
+|/  
+* [36med8f94b [33m2018-03-14 [mClean-up prior to looking at BZ 50019 [35m Mark Thomas [32m
+* [36m06a94ae [33m2018-03-13 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=51195 Avoid a false positive report of a web application memory leak by clearing ObjectStreamClass$Caches of classes loaded by the web application when the web application is stopped. [35m Mark Thomas [32m
+* [36mb0cef9e [33m2018-03-12 [mEnsure that parameters have been cleared when PreparedStatement and/or CallableStatement are cached. [35m Keiichi Fujino [32m
+* [36m41766f6 [33m2018-03-12 [mEnsure that SQLWarning has been cleared when connection returns to the pool. Enable clearing of SQLWarning via JMX. [35m Keiichi Fujino [32m
+* [36m10f1537 [33m2018-03-09 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62164 Switch the build script to use TLS for downloads from SourceForge and Maven Central to avoid failures due to HTTP to HTTPS redirects. [35m Mark Thomas [32m
+* [36mf652a57 [33m2018-03-09 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62168 When using the PersistentManager honor a value of -1 for minIdleSwap and do not swap out sessions to keep the number of active sessions under maxActive<. Patch provided by Holger Sunke. [35m Mark Thomas [32m
+* [36m6308e38 [33m2018-03-09 [mFix some more SpotBugs warnings [35m Mark Thomas [32m
+* [36m4b7d521 [33m2018-03-08 [mA few more false positives [35m Mark Thomas [32m
+* [36ma663fdc [33m2018-03-08 [mAdd 9.0.6 release date [35m Mark Thomas [32m
+* [36m910d8db [33m2018-03-08 [mAlign the two handleAsyncException methods, but don't merge them as Http2Exception would cause problems in one of them. [35m Remy Maucherat [32m
+* [36m94ffe60 [33m2018-03-08 [mRefactor the check for a paused connector to consistently prevent new streams from being created after the connector has been paused. This appears to fix the HTTP/2 NIO2 unit test failure. At least it does on the machine on which I could reproduce it. [35m Mark Thomas [32m
+* [36mfea0f5d [33m2018-03-07 [mRevert unintended change [35m Mark Thomas [32m
+* [36mb05ce55 [33m2018-03-07 [mAddress intermittent test failure (hopefully) in TestHttp2Section_6_8. [35m Mark Thomas [32m
+* [36m32b5298 [33m2018-03-06 [mRevert 62160 following veto. [35m Remy Maucherat [32m
+* [36m35bc988 [33m2018-03-06 [m62160: Allow more flexible linked property replacement using the configured property source and system properties. [35m Remy Maucherat [32m
+* [36m2bcc678 [33m2018-03-06 [mFix typo [35m Mark Thomas [32m
+* [36mac3b429 [33m2018-03-06 [mSpotBugs Correctly construct singleton in a thread-safe manner [35m Mark Thomas [32m
+* [36md037746 [33m2018-03-05 [mFalse positives in Realm package [35m Mark Thomas [32m
+* [36m4dd647b [33m2018-03-05 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1825943 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m84e2a18 [33m2018-03-05 [mEnsure the MBean names for the SSLHostConfig and SSLHostConfigCertificate are correctly formed when the Connector is bound to a specific IP address. [35m Mark Thomas [32m
+* [36m4abf0f6 [33m2018-03-05 [mUpdate the build script so MD5 hashes are no longer generated for releases as per the change in the ASF distribution policy. [35m Mark Thomas [32m
+* [36mc6bd83f [33m2018-03-05 [mIncrement version for next development cycle. [35m Mark Thomas [32m
+| * [36mfd2639a [33m2018-03-05 [mTag 9.0.6 [35m Mark Thomas [32m (tag: TOMCAT_9_0_6)
+|/  
+* [36m3d04576 [33m2018-03-02 [mExtend work-around to all text/plain responses from Manager and Host Manager. [35m Mark Thomas [32m
+* [36mf889c51 [33m2018-03-02 [mAdd a characterset to the JMX text output [35m Mark Thomas [32m
+* [36m14f4e00 [33m2018-03-02 [mWork-around a known, non-specification compliant behaviour in some versions of IE that can allow XSS when using the JMX proxy feature of the Manager application. Based on a suggestion from Muthukumar Marikani. [35m Mark Thomas [32m
+* [36m4f8bf03 [33m2018-02-28 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=47467 When deploying a web application via the manager application and a path is not explicitly specified, derive it from the provided deployment descriptor or, if that is not present, the WAR or DIR. [35m Mark Thomas [32m
+* [36md130c40 [33m2018-02-28 [mAdd support for specifying the application version when deploying an application via the Manager application HTML interface. [35m Mark Thomas [32m
+* [36m53a14dd [33m2018-02-27 [mFix changelog [35m Mark Thomas [32m
+* [36m3a2f970 [33m2018-02-27 [mCorrect a regression in the fix for 60276 that meant that compression was applied to all MIME types. Patch provided by Stefan Knoblich. [35m Mark Thomas [32m
+* [36md9c6376 [33m2018-02-27 [mSpotBugs Suppress false positive. [35m Mark Thomas [32m
+* [36m5145867 [33m2018-02-27 [mClean-up A running Context always has a non-null Authenticator Clean-up the few remaining places that the unnecessary null checks remained. [35m Mark Thomas [32m
+* [36maa0a4c8 [33m2018-02-27 [mWhen a deployment descriptor is deployed that references an external docBase and, as a result, a docBase under the appBase will be ignored, log a warning. [35m Mark Thomas [32m
+* [36mc59ced1 [33m2018-02-27 [mSimplify code [35m Mark Thomas [32m
+* [36ma34263a [33m2018-02-27 [mConsistent naming and alphabetical order for deployment descriptor strings [35m Mark Thomas [32m
+* [36m5f02454 [33m2018-02-27 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1825454 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m0fc8775 [33m2018-02-27 [mfix typo [35m Keiichi Fujino [32m
+* [36m518c27c [33m2018-02-26 [mSpotBugs Fix some concurrency related concerns. [35m Mark Thomas [32m
+* [36mfefe6aa [33m2018-02-26 [mClean-up [35m Mark Thomas [32m
+* [36m18d72d9 [33m2018-02-26 [mSpotbugs warning Super class has defined hashCode() and equals() so override them here. Probably unnecessary but play it safe. Use Eclipse generated code. [35m Mark Thomas [32m
+* [36m864ba7f [33m2018-02-26 [mTwo more false positives [35m Mark Thomas [32m
+* [36m2edd95f [33m2018-02-26 [mBe a little more specific about exclusion patterns. [35m Mark Thomas [32m
+* [36m1cfab84 [33m2018-02-26 [mRemove unnecessary code [35m Mark Thomas [32m
+* [36m1bf4d7d [33m2018-02-26 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=43866 Add additional attributes to the Manager to provide control over which listeners are called when an attribute is added to the session when it has already been added under the same name. This is to aid clustering scenarios where setAttribute() is often called to signal that the attribute value has been mutated and needs to be replicated but it may not be required, or even desired, for the the associated listeners to be triggered. The default behaviour has not been changed. [35m Mark Thomas [32m
+* [36m1cb5b2b [33m2018-02-26 [mCode clean-up. No functional change. [35m Mark Thomas [32m
+* [36m9fcaf3c [33m2018-02-23 [mFix some false positives [35m Mark Thomas [32m
+* [36m227b609 [33m2018-02-23 [mFix a SpotBugs report Switch to volatile for stats to avoid corruption from concurrent updates Refactor to remove need for existing sync Document that some updates maybe lost (this was the case before the change) [35m Mark Thomas [32m
+* [36m7a78730 [33m2018-02-22 [mMinor cleanup. [35m Remy Maucherat [32m
+* [36m71f74a2 [33m2018-02-22 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62123 Avoid ConcurrentModificationException when attempting to clean up application triggered RMI memory leaks on web application stop. [35m Mark Thomas [32m
+* [36ma041183 [33m2018-02-22 [mFix SpotBugs warning. Probably a false positive but err on the safe side. [35m Mark Thomas [32m
+* [36md7af1f7 [33m2018-02-21 [mFix for RequestDumperFilter log attribute. Patch provided by Kirill Romanov via Github. This closes #100 [35m Violeta Georgieva Georgieva [32m
+* [36m17fa9ff [33m2018-02-20 [mFix typo [35m Mark Thomas [32m
+* [36m1835b88 [33m2018-02-20 [m62090: Throw an IAE when trying to set a null Catalina container name. [35m Remy Maucherat [32m
+* [36m5e17e87 [33m2018-02-20 [mRemove now useless null check. [35m Remy Maucherat [32m
+* [36mdb65572 [33m2018-02-19 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62218 Correctly create a JNDI ServiceRef using the specified interface rather than the concrete type. Based on a suggestion by Ángel Álvarez Páscua. [35m Mark Thomas [32m
+* [36m0f4f0a5 [33m2018-02-19 [mSuppress a false positive [35m Mark Thomas [32m
+* [36m80d0fdd [33m2018-02-19 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62117 Improve error message in catalina.sh when calling 'kill -0 <pid>' fails. Based on a suggestion from Mark Morschhaeuser. [35m Mark Thomas [32m
+* [36m36527da [33m2018-02-15 [mSilence a couple of SpotBugs false positives [35m Mark Thomas [32m
+* [36m6b787e6 [33m2018-02-15 [mSimplify. No functional change. [35m Mark Thomas [32m
+* [36mc53b1f4 [33m2018-02-15 [mUpdate comment [35m Mark Thomas [32m
+* [36m4d637bc [33m2018-02-15 [m62104: Fix programmatic login regression as the NonLoginAuthenticator has to be set for it to work (if no login method is specified). [35m Remy Maucherat [32m
+* [36m68f6c47 [33m2018-02-15 [mCorrect regression in r1824297 [35m Mark Thomas [32m
+* [36meaccc5b [33m2018-02-15 [mOverflow during handshake is an invalid situation, so fix the NIO handshake. Also improve the error message with the actual status. [35m Remy Maucherat [32m
+* [36m2d9c0fc [33m2018-02-15 [mPrevent Tomcat from applying gzip compression to content that is already compressed with brotli compression. Patch provided by burka. This closes #99 [35m Mark Thomas [32m
+* [36m442341e [33m2018-02-14 [mMinor OpenSSL engine cleanups. [35m Remy Maucherat [32m
+* [36m91a8b06 [33m2018-02-14 [mReplace accepted int hack by an enum. [35m Remy Maucherat [32m
+* [36m54e4e43 [33m2018-02-14 [mRemove todo. [35m Remy Maucherat [32m
+* [36m40cb400 [33m2018-02-14 [mRevert r1823262, the workaround for https://bz.apache.org/bugzilla/show_bug.cgi?id=61751 that is now unnecessary. [35m Mark Thomas [32m
+* [36m6db4d34 [33m2018-02-14 [mFix IDE nag [35m Mark Thomas [32m
+* [36m0d4bc05 [33m2018-02-14 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=41007 Add the ability to specify static HTML responses for specific error codes and/or exception types with the ErrorReportValve. [35m Mark Thomas [32m
+* [36m9ed785f [33m2018-02-14 [mFollow up for 61751 as underflow should be returned when no app bytes are produced but all encrypted input bytes have been consumed. Handshake remains specific as app bytes are never produced. [35m Remy Maucherat [32m
+* [36m534eb0e [33m2018-02-13 [mAdd apparently missing code for NIO2. Not sure if it's really used though. [35m Remy Maucherat [32m
+* [36md59afaf [33m2018-02-13 [mAdd a readFrame comment. [35m Remy Maucherat [32m
+* [36m7101426 [33m2018-02-13 [mRefactoring of swallow to reduce duplication. [35m Remy Maucherat [32m
+* [36m83587ed [33m2018-02-12 [mFinish the todo: reuse the two buffers using a clear. [35m Remy Maucherat [32m
+* [36m6e6d0f3 [33m2018-02-12 [mLoop over already read data rather than using unRead and reading the same data again. [35m Remy Maucherat [32m
+* [36m0ed62ed [33m2018-02-11 [mSet back constant as package. [35m Remy Maucherat [32m
+* [36m9524016 [33m2018-02-11 [mAdd a flag for header parsing, and other cosmetic changes to trigger a build (TestHttp2Section_6_8 may be an intermittent failure on CI, although it works for me locally). [35m Remy Maucherat [32m
+* [36mb714816 [33m2018-02-11 [mAdd release date for 9.0.5 [35m Mark Thomas [32m
+* [36m56dc12c [33m2018-02-09 [mRevert the "fixes" not related to the window size deadlock fix. [35m Remy Maucherat [32m
+* [36mccaab3e [33m2018-02-09 [mFix window size reservation deadlock. [35m Remy Maucherat [32m
+* [36mf5b56b3 [33m2018-02-09 [mRefactor the code that searches for a matching error page by working up the class hierarchy of an exception type to ErrorPageSupport to enable re-use. [35m Mark Thomas [32m
+* [36m2e0bf6d [33m2018-02-09 [mSome more cleanups. [35m Remy Maucherat [32m
+* [36m0ee4a7a [33m2018-02-09 [mRefactor error page related code into a separate class so it can be re-used in the ErrorReportValve. Deprecate a couple of unused methods. [35m Mark Thomas [32m
+* [36mbb868d2 [33m2018-02-09 [mAdd some Javadoc to document unused code in the non-async parser and keep the IDE happy. [35m Mark Thomas [32m
+* [36m9956909 [33m2018-02-09 [mCosmetic fixes - @Override - ws police [35m Mark Thomas [32m
+* [36me656610 [33m2018-02-09 [mAdd minor HPACK fixes, based on fixes by Stuart Douglas. [35m Remy Maucherat [32m
+* [36m3667eb0 [33m2018-02-08 [mRefactoring to reduce duplication. [35m Remy Maucherat [32m
+* [36m3f7fad6 [33m2018-02-08 [mAdd an async parser for HTTP/2. Will continue improving it. Although it looks rather scary for GC, it actually seems to perform "ok" with h2load. [35m Remy Maucherat [32m
+* [36mfd97b37 [33m2018-02-08 [mThis test is a problem if a parser reads a frame before processing it. [35m Remy Maucherat [32m
+* [36m8f85c08 [33m2018-02-08 [mProviding the error does not require the immediate closure of the connection, pass all errors (invalid requests etc.) that occur before the request processing pipeline is reached to the standard error handling mechanism so that the application error handling or the ErrorReportVlave can handle it. [35m Mark Thomas [32m
+* [36me2b89a7 [33m2018-02-08 [mFix typos [35m Violeta Georgieva Georgieva [32m
+* [36mc126b1f [33m2018-02-07 [mMove updating of the wrapper error count to the end of the request processing so errors that occur early in the processing chain can be counted - assuming a wrapper can be mapped after the error. [35m Mark Thomas [32m
+* [36ma5c3a4a [33m2018-02-07 [mStrengthen comment [35m Mark Thomas [32m
+* [36m9f69f6c [33m2018-02-07 [mMove new changelog item to correct subsection. [35m Rainer Jung [32m
+* [36m28b2059 [33m2018-02-07 [mMinor optimization when calling class tranformers. The code was previously moved from another place but can now be optimized. [35m Rainer Jung [32m
+* [36m90b14fd [33m2018-02-07 [mMake the Host Manager text Tomcat 9 specific. [35m Mark Thomas [32m
+* [36m9d0b4c8 [33m2018-02-07 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=48672 Add documentation for the Host Manager web application. Patch provided by Marek Czernek. [35m Mark Thomas [32m
+* [36mcf949b5 [33m2018-02-06 [mIncrement version for next development cycle. [35m Mark Thomas [32m
+* [36m3592c27 [33m2018-02-06 [mCorrect comment [35m Mark Thomas [32m
+| * [36me0fdefe [33m2018-02-06 [mTag 9.0.5 [35m Mark Thomas [32m (tag: TOMCAT_9_0_5)
+|/  
+* [36mb98c28b [33m2018-02-06 [mMake test more robust [35m Mark Thomas [32m
+* [36m7df2239 [33m2018-02-06 [mRemove deprecated code [35m Mark Thomas [32m
+* [36maf0c19f [33m2018-02-06 [mTest cases for processing ServletSecurity annotations at web application start [35m Mark Thomas [32m
+* [36m3e54b2a [33m2018-02-06 [mProcess all ServletSecurity annotations at web application start rather than at servlet load time to ensure constraints are applied consistently. [35m Mark Thomas [32m
+* [36m723ea6a [33m2018-02-06 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62067 Correctly apply security constraints mapped to the context root using a URL pattern of "" [35m Mark Thomas [32m
+* [36ma8b0e84 [33m2018-02-06 [mint -> long. Not going to happen of course. [35m Remy Maucherat [32m
+* [36m8efd927 [33m2018-02-06 [mAdd FIXME to remind about revisiting. [35m Remy Maucherat [32m
+* [36m34229dc [33m2018-02-05 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61751 Fix truncated request input streams when using NIO2 with TLS. [35m Mark Thomas [32m
+* [36m381b884 [33m2018-02-05 [mUpdate the NSIS Installer used to build the Windows installer to version 3.03. [35m Konstantin Kolinko [32m
+* [36ma75d1b1 [33m2018-02-05 [mRemove svn:keywords property. It is unused here, and not compatible with Git. [35m Konstantin Kolinko [32m
+* [36mbbf10c5 [33m2018-02-05 [mMake test more robust after feedback on users list https://lists.apache.org/thread.html/988da7f61784405143bb2a3c4c73c148e7002fafaa4385b97c831acc@%3Cusers.tomcat.apache.org%3E [35m Mark Thomas [32m
+* [36m4d2a9ff [33m2018-02-04 [mCorrect Javadoc [35m Mark Thomas [32m
+* [36mdea4bcb [33m2018-02-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62024 When closing a connection with an abnormal close, close the socket immediately rather than waiting for a close message from the client that may never arrive. [35m Mark Thomas [32m
+* [36m62da032 [33m2018-02-02 [mSwitch tests to using per connection control of redirects rather than changing the default which may fail when testing with concurrent threads. [35m Mark Thomas [32m
+* [36m32b81e9 [33m2018-02-02 [mAdd option for test to control if redirects are followed or not [35m Mark Thomas [32m
+* [36m24e486e [33m2018-02-02 [mUpdate the list with the public interfaces in the RELEASE-NOTES. [35m Violeta Georgieva Georgieva [32m
+* [36md24ff77 [33m2018-02-02 [mCode clean-up. No functional change. [35m Mark Thomas [32m
+* [36mf984ba8 [33m2018-02-02 [mWhen using Tomcat embedded, only perform Authenticator configuration once during web application start. [35m Mark Thomas [32m
+* [36mf905eca [33m2018-02-02 [mSpotBugs Exclude a couple of false positives [35m Mark Thomas [32m
+* [36mdff44b9 [33m2018-02-01 [m62053: Fix NPE when writing push headers with HTTP/2 NIO2. Patch submitted by Holger Sunke. [35m Remy Maucherat [32m
+* [36mb89ca2b [33m2018-02-01 [mAdd MBean for ResetAbandonedTimer. [35m Keiichi Fujino [32m
+* [36mc4859e8 [33m2018-02-01 [mSimplify the code. Not need to search the JdbcInterceptor chain to get PooledConnection. [35m Keiichi Fujino [32m
+* [36m498810d [33m2018-02-01 [mformat [35m Keiichi Fujino [32m
+* [36m8c98918 [33m2018-01-31 [mSpotBugs Fix sync warning [35m Mark Thomas [32m
+* [36m4f9f035 [33m2018-01-31 [mPush the error state tracking down to the Coyote Response so it becomes accessible to the early stages of request processing. The intention is to use this to enable those early stage errors to be handled by the standard error reporting mechanisms rather than just a status code and a blank page. [35m Mark Thomas [32m
+* [36mc5162d6 [33m2018-01-31 [mws police [35m Mark Thomas [32m
+* [36m423ff23 [33m2018-01-31 [mAdd missing ALv2 header [35m Mark Thomas [32m
+* [36mf7a8b00 [33m2018-01-31 [mAdd missing ALv2 header [35m Mark Thomas [32m
+* [36m3ff6ba3 [33m2018-01-31 [mUpdate the host validation to permit host names and components of domain names (excluding top-level domains) to start with a number and to ensure that top-level domains are fully alphabetic. [35m Mark Thomas [32m
+* [36mcfcca50 [33m2018-01-31 [mExpose the cache size for each connection via JMX in StatementCache. [35m Keiichi Fujino [32m
+* [36m2008b39 [33m2018-01-31 [muse utility [35m Keiichi Fujino [32m
+* [36m71389fd [33m2018-01-31 [madd BZ [35m Keiichi Fujino [32m
+* [36mf05f5a9 [33m2018-01-31 [mAdd MBean for StatementCache. [35m Keiichi Fujino [32m
+* [36mdd7c339 [33m2018-01-31 [muse utility [35m Keiichi Fujino [32m
+* [36m49ab0ca [33m2018-01-31 [mAdd MBean for PooledConnection. [35m Keiichi Fujino [32m
+* [36m49b49a5 [33m2018-01-31 [mEnhance the JMX support for jdbc-pool in order to expose PooledConnection and JdbcInterceptors. [35m Keiichi Fujino [32m
+* [36m3daee59 [33m2018-01-30 [mEnable strict host/port validation for all connectors. [35m Mark Thomas [32m
+* [36m8f43f9e [33m2018-01-29 [mAlign AJP and HTTP behaviour when no host information is present - no functional change for AJP - for HTTP use the actual server port rather than the configured value which may be zero [35m Mark Thomas [32m
+* [36me17bd95 [33m2018-01-29 [m62049: Fix missing escape util class from custom 404 error page. [35m Remy Maucherat [32m
+* [36m3178e23 [33m2018-01-29 [mRefactor the handling of invalid URIs so the ErrorReportValve can be used. [35m Mark Thomas [32m
+* [36m99ef720 [33m2018-01-29 [mEnsure that the toString(), toBytes() and toChars() methods of MessageBytes behave consistently and do not throw a NullPointerException both on newly created objects and immediately after a call to recycle(). This should not impact typical Tomcat users. It may impact users who use these classes directly in their own code. [35m Mark Thomas [32m
+* [36mc95560a [33m2018-01-28 [mEnsure that the toString() method behaves consistently for ByteChunk and CharChunk and that null is returned when toString() is called both on newly created objects and immediately after a call to recycle(). This should not impact typical Tomcat users. It may impact users who use these classes directly in their own code. [35m Mark Thomas [32m
+* [36med2594f [33m2018-01-28 [mCode clean-up. No functional change. [35m Mark Thomas [32m
+* [36mc0838f1 [33m2018-01-26 [mSimplify [35m Mark Thomas [32m
+* [36m124f4ec [33m2018-01-26 [mGenerate the correct allow header for a 405 response to a TRACE request to a JSP page. [35m Mark Thomas [32m
+* [36mf55ef31 [33m2018-01-26 [mImprove OPTION and Allow behavior for JSPs. [35m Mark Thomas [32m
+* [36m9fb9110 [33m2018-01-26 [mPass 404 errors triggered by a missing ROOT web application to the container error handling to generate the response body. [35m Mark Thomas [32m
+* [36m01512e5 [33m2018-01-26 [mRefactor error handling to enable errors that occur before processing is passed to the application to be handled by the application provided error handling and/or the container provided error handling (ErrorReportValve) as appropriate. [35m Mark Thomas [32m
+* [36ma49567a [33m2018-01-25 [mSpotbugs Filter out a false positive [35m Mark Thomas [32m
+* [36m74a92e8 [33m2018-01-25 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62000  When a JNDI reference cannot be resolved, ensure that the root cause exception is reported rather than swallowed. [35m Mark Thomas [32m
+* [36m01960e2 [33m2018-01-24 [mFixed https://bz.apache.org/bugzilla/show_bug.cgi?id=62032 Fix NullPointerException when certificateFile is not defined on an SSLHostConfig and unify the behavior when a certificateFile is defined but the file does not exist for both JKS and PEM file types. [35m Coty Sutherland [32m
+* [36md6945a8 [33m2018-01-24 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62036 When caching an authenticated user Principal in the session when the web application is configured with the NonLoginAuthenticator, cache the internal Principal object rather than the user facing Principal object as Tomcat requires the internal object to correctly process later authorization checks. [35m Mark Thomas [32m
+* [36m0e7f89c [33m2018-01-24 [mAvoid NPE if there is no Engine. [35m Remy Maucherat [32m
+* [36m41c19cb [33m2018-01-24 [mAvoid duplicate load calls (which can happen in some cases like a malformed server.xml). [35m Remy Maucherat [32m
+* [36m0301f29 [33m2018-01-24 [mSpotBugs Add a check to silence a warning Trivial(ish) commit to test CI [35m Mark Thomas [32m
+* [36m032cf26 [33m2018-01-23 [mFor BZ 62023, followup to r1822004 - Use explicit unboxing. [35m Konstantin Kolinko [32m
+* [36m6dfb937 [33m2018-01-23 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62023 Log error reporting multiple SSLHostConfig elements when using the APR Connector instead of crashing Tomcat. [35m Coty Sutherland [32m
+* [36me6ef376 [33m2018-01-22 [mAdd storeconfig class "org.apache.catalina.storeconfig.OpenSSLConfSF" forgotten in r1805550. [35m Rainer Jung [32m
+* [36m13c8749 [33m2018-01-22 [mAdd release date for 9.0.4 [35m Mark Thomas [32m
+* [36mcd2dff5 [33m2018-01-22 [mImprove failure message to aid debugging [35m Mark Thomas [32m
+* [36m559b17a [33m2018-01-19 [mPrevent a stack trace being written to standard out when running on Java 10 due to changes in the LogManager implementation. [35m Mark Thomas [32m
+* [36mf0b8b14 [33m2018-01-18 [mIncrement version for next development cycle [35m Mark Thomas [32m
+| * [36mf496ba0 [33m2018-01-18 [mTag 9.0.4 [35m Mark Thomas [32m (tag: TOMCAT_9_0_4)
+|/  
+* [36m73af886 [33m2018-01-18 [m9.0.3 release vote was cancelled [35m Mark Thomas [32m
+* [36m3c0d362 [33m2018-01-18 [m62002: Skip test for Java 9 (the CL is not a URL CL, did not investigate further). [35m Remy Maucherat [32m
+* [36mf6a1cbe [33m2018-01-17 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=62006 Document the new JvmOptions9 command line parameter for tomcat9.exe [35m Mark Thomas [32m
+* [36m377526b [33m2018-01-16 [mCorrect a regression in the previous fix for BZ 61916 that meant that any call to addHeader() would have been replaced with a call to setHeader() for all requests mapped to the AddDefaultCharsetFilter. [35m Mark Thomas [32m
+* [36m0129025 [33m2018-01-16 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61993 Improve handling for ByteChunk and CharChunk instances that grow close to the maximum size allowed by the JRE. [35m Mark Thomas [32m
+* [36m74ae91d [33m2018-01-16 [mSet svn:eol-style=native [35m Konstantin Kolinko [32m
+* [36m5930cbf [33m2018-01-16 [mDeprecated unused code [35m Mark Thomas [32m
+* [36mf751bd2 [33m2018-01-16 [mAlign indexOf(String, int, int, int) implementations and pull up. Use ByteChunnks implementation as it is shorter. [35m Mark Thomas [32m
+* [36m3b1b3c1 [33m2018-01-16 [mFix bug searching for single character Strings (search would always fail) Bug found during comparison of indexOf() implementations between ByteChunk and CharChunk [35m Mark Thomas [32m
+* [36m9c05c36 [33m2018-01-16 [mClean up - No functional change Align comments and variable names, re-order methods, etc. to minimise diff between ByteChunk and CharChunk [35m Mark Thomas [32m
+* [36mcdcae1c [33m2018-01-16 [mRevert 1821202 and add comment regarding compaction [35m Mark Thomas [32m
+* [36mf4ae47c [33m2018-01-15 [mAlign ByteChunk and CharChunk [35m Mark Thomas [32m
+* [36m91788c4 [33m2018-01-15 [mHandle case where start != 0 and buffer is not empty when makeSpace() is called. Aligns CharChunk with ByteChunk [35m Mark Thomas [32m
+* [36m6bd920e [33m2018-01-15 [mFormatting / comment alignment [35m Mark Thomas [32m
+* [36m4a1e8f1 [33m2018-01-15 [mReduce diff between ByteChunk and CharChunk No functional change [35m Mark Thomas [32m
+* [36md88c8f0 [33m2018-01-15 [mPull up and align isNull and recycle [35m Mark Thomas [32m
+* [36maeb572b [33m2018-01-15 [mPull up and align start (a.k.a. offset), end and hashcode [35m Mark Thomas [32m
+* [36mb38ae88 [33m2018-01-15 [mAdd a base class with a view to aligning and pulling up the common code where possible. [35m Mark Thomas [32m
+* [36mf5d6236 [33m2018-01-15 [mUse local copy now it is available [35m Mark Thomas [32m
+* [36m06811b2 [33m2018-01-15 [mTypo. [35m Remy Maucherat [32m
+* [36m7aa6c8f [33m2018-01-15 [m61999: Disable saving POST data when maxSavePostSize is set to 0. [35m Remy Maucherat [32m
+* [36mf4058be [33m2018-01-12 [mFormat classes. No functional change. [35m Mark Thomas [32m
+* [36m479fba9 [33m2018-01-12 [mFix formatting. No functional change. [35m Mark Thomas [32m
+* [36m7f0756d [33m2018-01-12 [mFix order issue in the sendfile setup code. [35m Remy Maucherat [32m
+* [36m16d4b92 [33m2018-01-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=43925 Add a new system property (org.apache.jasper.runtime.BodyContentImpl.BUFFER_SIZE) to control the size of the buffer used by Jasper when buffering tag bodies. [35m Mark Thomas [32m
+* [36m6f4a955 [33m2018-01-11 [mSpotBugs Reduce visibility [35m Mark Thomas [32m
+* [36mc843ef4 [33m2018-01-11 [mClean up javax entries [35m Mark Thomas [32m
+* [36mbace648 [33m2018-01-11 [mIncrement version for next dev cycle [35m Mark Thomas [32m
+| * [36m2bd7530 [33m2018-01-11 [mTag 9.0.3 [35m Mark Thomas [32m (tag: TOMCAT_9_0_3)
+|/  
+* [36mcf73eb2 [33m2018-01-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61312 Prevent NullPointerException when using the statement cache of connection that has been closed. [35m Keiichi Fujino [32m
+* [36mc3d79e2 [33m2018-01-10 [mMore false positives [35m Mark Thomas [32m
+* [36mfbd32fe [33m2018-01-10 [mSpotBugs False positive [35m Mark Thomas [32m
+* [36m1bfe95a [33m2018-01-10 [mUpdate for past refactoring [35m Mark Thomas [32m
+* [36m17ffcd7 [33m2018-01-10 [mSpotBugs Potential overflow in averaging (v. unlikely but an easy fix...) [35m Mark Thomas [32m
+* [36m22beea7 [33m2018-01-09 [mPrevent NullPointerException and other errors if the stock ticker example is running when the examples web application is stopped. [35m Mark Thomas [32m
+* [36m1d105f8 [33m2018-01-09 [mFix ConcurrentModificationException [35m Mark Thomas [32m
+* [36m18ad6f3 [33m2018-01-09 [mModify the Default and WebDAV Servlets so that a 405 status code is returned for PUT and DELETE requests when disabled via the readonly initialisation parameter. [35m Mark Thomas [32m
+* [36mfca4ac9 [33m2018-01-09 [mFix typo. Fixes having an issue number are sorted by their number, ascending. [35m Violeta Georgieva Georgieva [32m
+* [36m04a44be [33m2018-01-08 [mWhen using WebDAV to copy a file resource to a destination that requires a collection to be overwritten, ensure that the operation succeeds rather than fails (with a 500 response). This enables Tomcat to pass two additional tests from the Litmus WebDAV test suite. [35m Mark Thomas [32m
+* [36m7b0fa4c [33m2018-01-05 [mImplement a small optimisation to how JAR URLs are processed to reduce the storage of duplicate String objects in memory. Patch provided by Dmitri Blinov. [35m Mark Thomas [32m
+* [36m47b8201 [33m2018-01-05 [mUpdate configuration to new style [35m Mark Thomas [32m
+* [36mf162bb1 [33m2018-01-05 [mAdd OCSP configuration information to the SSL How-To. Patch provided by Marek Czernek. [35m Mark Thomas [32m
+* [36m3dac157 [33m2018-01-05 [mReturn a simple, plain text error message if a client attempts to make a plain text HTTP connection to a TLS enabled NIO or NIO2 Connector. [35m Mark Thomas [32m
+* [36mc4b4ded [33m2018-01-05 [mFollowing a report on the user list, the "buffer full" check and clear seems misplaced for NIO2, and should happen before a read. [35m Remy Maucherat [32m
+* [36m6345fd0 [33m2018-01-05 [mSpotBugs Improve catch-all exception handling [35m Mark Thomas [32m
+* [36m1b22207 [33m2018-01-04 [mSpotBugs Simplify code [35m Mark Thomas [32m
+* [36macae26d [33m2018-01-04 [mResolve false positive [35m Mark Thomas [32m
+* [36m3f8317a [33m2018-01-04 [mHappy New Year 2018 [35m Rainer Jung [32m
+* [36m004c6fe [33m2018-01-04 [mFix typo [35m Mark Thomas [32m
+* [36mecb98a8 [33m2018-01-04 [mFix order [35m Mark Thomas [32m
+* [36mf5db05c [33m2018-01-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61886 Log errors on non-container threads at DEBUG rather than INFO. The exception will be made available to the application via the asynchronous error handling mechanism. [35m Mark Thomas [32m
+* [36m27800aa [33m2018-01-04 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61886 Ensure that multiple threads do not attempt to complete the AsyncContext if an I/O error occurs in the stock ticker example Servlet. [35m Mark Thomas [32m
+* [36mb9bd166 [33m2018-01-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61910 Clarify the meaning of the allowLinking option in the documentation web application. [35m Mark Thomas [32m
+* [36ma064991 [33m2018-01-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61916 Extend the AddDefaultCharsetFilter to add a character set when the content type is set via setHeader() or addHeader() as well as when it is set via setContentType(). [35m Mark Thomas [32m
+* [36m0cabdc2 [33m2018-01-03 [mFix typo [35m Mark Thomas [32m
+* [36m1b6b496 [33m2018-01-03 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61932 Allow a call to AsyncContext.dispatch() to terminate non-blocking I/O. [35m Mark Thomas [32m
+* [36m6952814 [33m2018-01-02 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61948 Improve the handling of malformed ClientHello messages in the code that extracts the SNI information from a TLS handshake for the JSSE based NIO and NIO2 connectors. [35m Mark Thomas [32m
+* [36mc05ef22 [33m2018-01-02 [m61945: Remove recursion when using prototype mode. [35m Remy Maucherat [32m
+* [36md339902 [33m2017-12-23 [mSimplify. No functional change. [35m Mark Thomas [32m
+* [36mce95f30 [33m2017-12-22 [mARIA ciphers were added in 1.1.0 [35m Mark Thomas [32m
+* [36md6849ad [33m2017-12-22 [mCorrect message digest for newly added ARIA ciphers [35m Mark Thomas [32m
+* [36mf55ce66 [33m2017-12-22 [mFix typo (missing ':') [35m Mark Thomas [32m
+* [36mca5387d [33m2017-12-22 [mFix copy/paste error [35m Mark Thomas [32m
+* [36m895274e [33m2017-12-22 [mRemove ARIA ciphers from DEFAULT Set up aliases for ARIA ciphers [35m Mark Thomas [32m
+* [36m6ce6527 [33m2017-12-22 [mCorrect key exchange for some of the newly added ARIA ciphers [35m Mark Thomas [32m
+* [36m78831f2 [33m2017-12-22 [mCorrect OpenSSL cipher names [35m Mark Thomas [32m
+* [36m2155f3d [33m2017-12-22 [mCorrect OpenSSL cipher names [35m Mark Thomas [32m
+* [36m096d8c7 [33m2017-12-22 [mUse correct format for names of unsupported ciphers [35m Mark Thomas [32m
+* [36m794b2f1 [33m2017-12-21 [mAdd support for the OpenSSL ARIA ciphers to the OpenSSL to JSSE cipher mapping. [35m Mark Thomas [32m
+* [36m81bca3a [33m2017-12-21 [m61914: Avoid possible NPE on Java 9 when creating a SSL engine. Patch submitted by Evgenij Ryazanov. [35m Remy Maucherat [32m
+* [36md6088b0 [33m2017-12-19 [m61918: Fix connectionLimitLatch counting when closing an already closed socket. Based on a patch by Ryan Fong. [35m Remy Maucherat [32m
+* [36m7a9d41e [33m2017-12-19 [mFix typo [35m Violeta Georgieva Georgieva [32m
+* [36mfd4672e [33m2017-12-18 [mAdd code to read from the internal buffer first, the upgrade transition has leftover bytes and is not manageable otherwise. [35m Remy Maucherat [32m
+* [36m4e343d1 [33m2017-12-16 [mCorrect handle EOF for ServletInputStream.isReady() [35m Mark Thomas [32m
+* [36meed94fe [33m2017-12-16 [mfix order [35m Mark Thomas [32m
+* [36m47124cd [33m2017-12-14 [mFollow-up to r1818179 Only download native source bundles when we need them. [35m Mark Thomas [32m
+* [36m5381ef3 [33m2017-12-14 [mThe native source bundles (for Commons Daemon and Tomcat Native) are no longer copied to the bin directory for the deploy target. They are now only copied to the bin directory for the release target. (markt) [35m Mark Thomas [32m
+* [36m0f8e4dd [33m2017-12-14 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61565 Add TLS config reload to Manager app [35m Mark Thomas [32m
+* [36md307ef7 [33m2017-12-13 [mFix SpotBugs warning Simplify test. [35m Mark Thomas [32m
+* [36m6368b62 [33m2017-12-13 [mFix SpotBugs casting warning. Simplify by casting directing to ServiceRef given that an 'instance of' test immediately precedes the first cast. [35m Mark Thomas [32m
+* [36m59fbdca [33m2017-12-13 [mExpand fix for BZ 61566 to the script interface as well as the HTML interface. [35m Mark Thomas [32m
+* [36m94f53b0 [33m2017-12-13 [mRe-word since this is the final fix [35m Mark Thomas [32m
+* [36m77860e1 [33m2017-12-13 [mLayout improvements [35m Mark Thomas [32m
+* [36m345b916 [33m2017-12-13 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61566 Trusted certs are now exposed for virtual hosts configured using a Java key store. [35m Mark Thomas [32m
+* [36mf6baef9 [33m2017-12-13 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61566 Certificate chains are now exposed for virtual hosts configured using a Java key store. [35m Mark Thomas [32m
+* [36md01d457 [33m2017-12-12 [mCorrect import [35m Mark Thomas [32m
+* [36m588bdbf [33m2017-12-11 [mFollow-up to r1816546 The Listener was removed, removing documentation reference. [35m Coty Sutherland [32m
+* [36m66ac989 [33m2017-12-11 [mRevert 1816418 Can't change WebSocket API [35m Mark Thomas [32m
+* [36mdbf6b39 [33m2017-12-11 [mRevert 1816420 Can't change WebSocket API [35m Mark Thomas [32m
+* [36m74e65de [33m2017-12-08 [mCopy changes in ReflectionUtil in r1817517 to Util. Update unit tests for change in exception type [35m Mark Thomas [32m
+* [36m479b26a [33m2017-12-08 [mFollow-up to r1817495 [35m Mark Thomas [32m
+* [36mb7ce567 [33m2017-12-08 [mImprove the handling of methods with varargs in EL expressions. In particular, the calling of a varargs method with no parameters now works correctly. Based on a patch by Nitkalya (Ing) Wiriyanuparb. [35m Mark Thomas [32m
+* [36mff00d70 [33m2017-12-06 [mFollow-up to r1817302 [35m Mark Thomas [32m
+* [36me43dd70 [33m2017-12-06 [mSpotBugs Simplify. Remove unnecessary null checks. Make another null check unnecessary. [35m Mark Thomas [32m
+* [36m0894128 [33m2017-12-06 [mSpotBugs Avoid implicit use of platform default encoding [35m Mark Thomas [32m
+* [36mb6b07c5 [33m2017-12-06 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61854 When using sets and/or maps in EL expressions, ensure that Jasper correctly parses the expression. Patch provided by Ricardo Martin Camarero. [35m Mark Thomas [32m
+* [36m4bfd6bb [33m2017-12-06 [mTake advantage of the cached session principal if possible. [35m Remy Maucherat [32m
+* [36m989a744 [33m2017-12-05 [mFix SpotBugs warning (rank <=16) serialization for ByteChunk [35m Mark Thomas [32m
+* [36m6582c69 [33m2017-12-05 [mFix some SpotBugs (rank <=16) issues Mark in/out as transient since serialization is primarily used to expose values - e.g. via JMX. I did look at removing serialization but that ultimately impacted the ServerCookie representation that is helpful to have exposed via JMX. [35m Mark Thomas [32m
+* [36m2caba79 [33m2017-12-05 [mAnother follow-up to r1817240 [35m Mark Thomas [32m
+* [36m36f722f [33m2017-12-05 [mFollow-up to r1817240 [35m Mark Thomas [32m
+* [36m16b5048 [33m2017-12-05 [mFix remaining SpotBugs issues (rank <=16) in tribes [35m Mark Thomas [32m
+* [36m2e252b4 [33m2017-12-05 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61223 Add the mbeans-descriptors.dtd file to the custom MBean documentation so users have a reference to use when constructing mbeans-descriptiors.xml files for custom components. [35m Mark Thomas [32m
+* [36mb7c599c [33m2017-12-05 [mUpdate false positive list after DBCP update [35m Mark Thomas [32m
+* [36m4818183 [33m2017-12-05 [m- Don't use setHeader for the cookie header, the header copy is done before. - Use AJP auth mechanism to pass a userName that will be used again for auth. [35m Remy Maucherat [32m
+* [36mdd338a5 [33m2017-12-04 [mUpdate the internal fork of Commons Codec to r1817136 to pick up some code clean-up. [35m Mark Thomas [32m
+* [36m2bee978 [33m2017-12-04 [mAlign packaged renamed FileUpload with original. Update the internal fork of Commons FileUpload to 6c00d57 (2017-11-23) [35m Mark Thomas [32m
+* [36m65256e8 [33m2017-12-04 [mAlign packaged renamed DBCP2 with original. Update the internal fork of Commons DBCP 2 to 8a71764 (2017-10-18) [35m Mark Thomas [32m
+* [36me5a1d4a [33m2017-12-04 [mRevert [35m Remy Maucherat [32m
+* [36m1141b3d [33m2017-12-04 [mMinor push builder fixes: don't remove the auth header, and exception on an empty method. [35m Remy Maucherat [32m
+* [36m3e8c569 [33m2017-12-04 [mFix Javadoc errors reported by CI [35m Mark Thomas [32m
+* [36mfd5c0a0 [33m2017-12-04 [mAlign packaged renamed Pool2 with original. I ended up adding the useless (in the context of DBCP) SecurityManager based CallStack implementation because excluding was complicating the merge. This aligns the Commons Pool fork to the 2.4.3 release. [35m Mark Thomas [32m
+* [36m2582215 [33m2017-12-04 [mAlign packaged renamed Pool2 with original. Useless (in the context of DBCP) SecurityManager based CallStack implementation excluded. This updates Pool2 to the point where development switched to git. Another commit will follow shortly with the git updates. [35m Mark Thomas [32m
+* [36m51eb38a [33m2017-12-04 [mAlign packaged renamed BCEL with original. No functional changed. Reformatted Javadoc only. [35m Mark Thomas [32m
+* [36md876b8f [33m2017-12-04 [mRefactor so clone() works correctly for sub-classes (it seemed reasonable that this might get sub-classed) [35m Mark Thomas [32m
+* [36m0eb30bf [33m2017-12-04 [mAdd a test case for the clone() method before I start making changes to fix a SpotBugs issue. [35m Mark Thomas [32m
+* [36m9a56469 [33m2017-12-04 [mSilence SpotBugs warning. It is pretty unlikely an instance of this class will be serialized. [35m Mark Thomas [32m
+* [36m09dd855 [33m2017-12-04 [moffer() checks for parent==null so force should too [35m Mark Thomas [32m
+* [36mcc1f710 [33m2017-12-04 [mSpotbugs fixes (rank >=16) in tribes.transport Reformat so Spotbugs can determine the exceptions are ignored deliberately. [35m Mark Thomas [32m
+* [36m67a6d0e [33m2017-12-02 [mSpotbugs fixes (rank >=16) in tribes.io [35m Mark Thomas [32m
+* [36mb24e8bc [33m2017-12-02 [mSpotbugs fixes (rank >=16) in store config [35m Mark Thomas [32m
+* [36m71e0cf2 [33m2017-12-01 [mAddress a few more SpotBugs warnings [35m Mark Thomas [32m
+* [36mb299dba [33m2017-12-01 [mAddress a handful of SpotBugs warnings [35m Mark Thomas [32m
+* [36mcd0248c [33m2017-12-01 [mDo not call onDataAvailable without data to read. I tried method with less side effects, but they all caused problems elsewhere, while this one passes the testsuite and everything else I could test it with. [35m Remy Maucherat [32m
+* [36m5fb6635 [33m2017-12-01 [mRevert visibility change in r1816624 [35m Mark Thomas [32m
+* [36mf16101e [33m2017-12-01 [mFollow on to r1816698. Correctly chain flush() and end() so the necessary calls reach the underlying buffer. [35m Mark Thomas [32m
+* [36m11dead2 [33m2017-11-30 [mFew more false positives [35m Mark Thomas [32m
+* [36m680c925 [33m2017-11-30 [mFix chaining to next filter [35m Mark Thomas [32m
+* [36m0efb8ee [33m2017-11-30 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=60276 Document HTTP/2 compression support [35m Mark Thomas [32m
+* [36m45f6c32 [33m2017-11-30 [mSkip build.properties file in jdbc-pool module when performing Checkstyle checks [35m Mark Thomas [32m
+* [36mcb1e9a7 [33m2017-11-30 [mMissed renaming a couple of imports [35m Mark Thomas [32m
+* [36m58bfe00 [33m2017-11-30 [mTrigger sending the headers from the Http2OutputBuffer as the StreamOutputBuffer is too late if a filter (e.g. GZip) needs to be added. [35m Mark Thomas [32m
+* [36m29c3194 [33m2017-11-30 [mFirst pass at implementing compression for responses [35m Mark Thomas [32m
+* [36mbd0e73b [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m011fe41 [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m7fe14fe [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36me5e1c78 [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m96f04b7 [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m9bcaaed [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36mbfa7f4c [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m2493129 [33m2017-11-30 [mRefactoring: HTTP/1.1 - HTTP/2 alignment [35m Mark Thomas [32m
+* [36m8b450c1 [33m2017-11-30 [mRelease vote passed [35m Mark Thomas [32m
+* [36med708ce [33m2017-11-30 [mws police [35m Mark Thomas [32m
+* [36mee61210 [33m2017-11-29 [mFix some SpotBugs issues in the tests [35m Mark Thomas [32m
+* [36m99b275a [33m2017-11-29 [mUpdate the Java EE 8 XML schema to the released versions. - Picks up a couple of element name changes for web .xml - Lots of whitespace changes (as with the previous versions I converted tabs to spaces and removed trailing spaces before committing) - Adds (yes adds!) a handful of typos - Some additional commentary [35m Mark Thomas [32m
+* [36m41eab91 [33m2017-11-29 [mAdd back the removal of HTTP mapping override as it matches the javadoc behavior (it is the same as for include). As this is highly questionable (it is obvious AsyncContext.dispatch should be equivalent to a forward instead), this is in the strict compliance flag. [35m Remy Maucherat [32m
+* [36m043c3a1 [33m2017-11-29 [mRevert unwanted changes. [35m Remy Maucherat [32m
+* [36m61b9577 [33m2017-11-29 [mRevert r1816617 [35m Remy Maucherat [32m
+* [36m161fa4a [33m2017-11-29 [mUpdate the Java EE 8 XML schema to the released versions. - Picks up a couple of element name changes for web .xml - Lots of whitespace changes (as with the previous versions I converted tabs to spaces and removed trailing spaces before committing) - Adds (yes adds!) a handful of typos - Some additional commentary [35m Mark Thomas [32m
+* [36m50e7b76 [33m2017-11-29 [mAdd a bare bones default-context-path impl (best effort really, it's a bad feature). Also fix for some mapping paths, excluded pending some clarifications. [35m Remy Maucherat [32m
+* [36m0cd48fc [33m2017-11-29 [mUse \u00A3 to avoid ide encoding preference [35m Huxing Zhang [32m
+* [36m6ca79c8 [33m2017-11-28 [mRefactor sendfile with compression support in mind. Use an approach similar to HTTP/1.1 so the StreamProcessor will have visibility of whether sendfile is in use when deciding whether or not to compress. [35m Mark Thomas [32m
+* [36m0cd22d3 [33m2017-11-28 [mRefactor header preparation with adding compression support in mind. [35m Mark Thomas [32m
+* [36md014b3a [33m2017-11-28 [mFix typo [35m Violeta Georgieva Georgieva [32m
+* [36mbc36a76 [33m2017-11-28 [mAdd compression config to HTTP/2 protocol [35m Mark Thomas [32m
+* [36m913cb6d [33m2017-11-28 [mRefactor: Move compression code to new class to allow re-use with HTTP/2 [35m Mark Thomas [32m
+* [36m6593d2e [33m2017-11-28 [mRemove useless listener. [35m Remy Maucherat [32m
+* [36m17bb0f3 [33m2017-11-28 [mThe system property replacement from the property source is best done using a system property of its own rather than a listener. Embedded can call the static method directly. Deprecate the (useless) listener. [35m Remy Maucherat [32m
+* [36maae3934 [33m2017-11-28 [mChange file encoding to UTF-8 [35m Huxing Zhang [32m
+* [36m72627da [33m2017-11-28 [mAdd NPEs to ServletContext to match the javadoc. [35m Remy Maucherat [32m
+* [36ma34bf2d [33m2017-11-28 [mRefactoring (with a longer term aim of aligning HTTP/1.1 and HTTP/2 to enable reuse) - Remove unused return value from end() - Remove duplicated Javadoc - Clean-up extra blank lines [35m Mark Thomas [32m
+* [36mdb5e78c [33m2017-11-27 [mFix SpotBugs issues (up to rank 16) in JDBC pool [35m Mark Thomas [32m
+* [36mf6445bf [33m2017-11-27 [mFix failing unit tests [35m Mark Thomas [32m
+* [36mbe70289 [33m2017-11-27 [mFix a SpotBugs warning [35m Mark Thomas [32m
+* [36m091969a [33m2017-11-27 [mFix download location. Get h2 JAR from Maven Central rather than the now closed Google code [35m Mark Thomas [32m
+* [36mabb6d50 [33m2017-11-27 [mRemove deprecated code. [35m Mark Thomas [32m
+* [36mcc08f81 [33m2017-11-27 [mGetter and setter should use symmetric names [35m Mark Thomas [32m
+* [36m2a14b22 [33m2017-11-25 [mBump version for next dev cycle [35m Mark Thomas [32m
+| * [36m9dc486b [33m2017-11-25 [mTag 9.0.2 [35m Mark Thomas [32m (tag: TOMCAT_9_0_2)
+|/  
+* [36m67f531e [33m2017-11-25 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61816 Invalid expressions in attribute values or template text should trigger a translation (compile time) error, not a run time error. [35m Mark Thomas [32m
+* [36m5b3c1eb [33m2017-11-24 [mFix a handful of low severity SpotBugs reports - false positives [35m Mark Thomas [32m
+* [36m0874da8 [33m2017-11-24 [mFix a handful of low severity SpotBugs reports - Serialization warnings. Probably ignorable but the fix is simple. [35m Mark Thomas [32m
+* [36mc183a75 [33m2017-11-24 [mFix a handful of low severity SpotBugs reports - Failure to delete/rename a file should result have some visible outcome [35m Mark Thomas [32m
+* [36md090187 [33m2017-11-23 [m61803: Remove outdated security considerations on SSL options. They changed, and the default is now secure, so it should be ok to drop them. [35m Remy Maucherat [32m
+* [36mac7b590 [33m2017-11-23 [mUpdate jsvc docs for Daemon 1.1.x [35m Mark Thomas [32m
+* [36m947beaa [33m2017-11-23 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61600 Use new Commons Daemon option to set Java 9 specific JVM options required to prevent warnings appearing in the logs on Tomcat stop. [35m Mark Thomas [32m
+* [36mdc90fa4 [33m2017-11-23 [mCommons Daemon released are now signed by default so no need to looked for specific signed version. [35m Mark Thomas [32m
+* [36mac313eb [33m2017-11-23 [mUpdate to Commons Daemon 1.1.0 for improved Java 9 support. [35m Mark Thomas [32m
+* [36me2d461a [33m2017-11-22 [mFix test failure [35m Mark Thomas [32m
+* [36m20bfc65 [33m2017-11-22 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=51496 When using the Windows installer, check if the requested service name already exists and, if it does, prompt the user to select an alternative service name. Patch provided by Ralph Plawetzki. [35m Mark Thomas [32m
+* [36m4c1ca35 [33m2017-11-22 [mAdd a property to the Authenticator implementations to enable a custom JASPIC CallbackHandler to be specified. Patch provided by Lazar. This closes #93 [35m Mark Thomas [32m
+* [36m4f6cc8f [33m2017-11-22 [mCorrectly handle the case when AuthConfigFactoryImpl.registerConfigProvider() is called with a provider name of <code>null</code>. Patch provided by Lazar. This closes #94 [35m Mark Thomas [32m
+* [36mb544a40 [33m2017-11-21 [mUpdate the Windows installer to use "The Apache Software Foundation" as the Publisher in the list of installed applications. [35m Konstantin Kolinko [32m
+* [36m0b24161 [33m2017-11-21 [mUpdate the NSIS Installer to version 3.02.1. http://nsis.sourceforge.net/ [35m Konstantin Kolinko [32m
+* [36m9aa5ab9 [33m2017-11-21 [mFollow-up to r1812551 Need to sync on state if calling state.notify() Reported by SpotBugs [35m Mark Thomas [32m
+* [36m67acb06 [33m2017-11-21 [mUpdate Tomcat Native to 1.2.16 [35m Mark Thomas [32m
+* [36m7965dc3 [33m2017-11-20 [mRevert accidental commit [35m Mark Thomas [32m
+* [36mc8168e1 [33m2017-11-20 [m When calling AuthConfigFactory.removeRegistration() and the registration is persistent, it should be removed from the persistent store. Patch provided by Lazar. This closes #91 [35m Mark Thomas [32m
+* [36m0128ae3 [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61782 When calling AuthConfigFactoryImpl.doRegisterConfigProvider() and the requested JASPIC config provider class is found by the web application class loader, do not attempt to load the class with the class loader that loaded the JASPIC API. Patch provided by Lazar. This closes #90 [35m Mark Thomas [32m
+* [36m8a10e82 [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61781 Enable JASPIC provider registrations to be persisted when the layer and/or application context are null. Patch provided by Lazar. This closes #89 [35m Mark Thomas [32m
+* [36m1ee42fa [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61780 Only include the default JASPIC registration ID in the return value for a call to AuthConfigFactory.getRegistrationIDs() if a RegistrationContext has been registered using the default registration ID. Patch provided by Lazar. This closes #88 [35m Mark Thomas [32m
+* [36md28f926 [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61779 Avoid a NullPointerException when a null RegistrationListener is passed to AuthConfigFactory.getConfigProvider() Patch provided by Lazar. [35m Mark Thomas [32m
+* [36m2c5c659 [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61778 Correct the return value when detaching a JASPIC RegistrationListener. Patch provided by Lazar. This closes #86 [35m Mark Thomas [32m
+* [36m277d583 [33m2017-11-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61777 Avoid a NullPointerException when detaching a JASPIC RegistrationListener. Patch provided by Lazar. This closes #85 [35m Mark Thomas [32m
+* [36m12967ea [33m2017-11-20 [mEnable host name validation for HTTP requests. Note: This only logs failures. It does not (yet) trigger a 400 response. [35m Mark Thomas [32m
+* [36m9f223e0 [33m2017-11-20 [mAdd error messages when exceptions are thrown due to host name parsing issues. [35m Mark Thomas [32m
+* [36m68b88aa [33m2017-11-20 [mFix spelling of octet [35m Mark Thomas [32m
+* [36m20f8fd8 [33m2017-11-20 [mFix typo [35m Mark Thomas [32m
+* [36m31f7293 [33m2017-11-17 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61658 Update MIME mappings for fonts to use font/* as per RFC8081 [35m Mark Thomas [32m
+* [36m860a0e6 [33m2017-11-16 [mAvoid a possible NullPointerException when timing out AsyncContext instances during shut down. [35m Mark Thomas [32m
+* [36mbadf636 [33m2017-11-16 [mImprove concurrency by reducing the scope of the synchronisation for javax.security.auth.message.config.AuthConfigFactory in the JASPIC API implementation. Based on a patch by Pavan Kumar. [35m Mark Thomas [32m
+* [36m4b8e806 [33m2017-11-16 [mFollow-up to r1815451 Review from kkolinko [35m Mark Thomas [32m
+* [36m8fe3b6e [33m2017-11-16 [mImprovement on header write sync. [35m Remy Maucherat [32m
+* [36m0736a81 [33m2017-11-16 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61736 Improve performance of NIO connector when clients leave large time gaps between network packets. Patch provided by Zilong Song. This closes #81 [35m Mark Thomas [32m
+* [36m1631eed [33m2017-11-16 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61740 Correct an off-by-one error in the Hpack header index validation that caused intermittent request failures when using HTTP/2. [35m Mark Thomas [32m
+* [36m995fc53 [33m2017-11-16 [malphabetical order [35m Mark Thomas [32m
+* [36m1129b48 [33m2017-11-16 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61682 When re-prioritising HTTP/2 streams, ensure that both parent and children fields are correctly updated to avoid a possible StackOverflowError [35m Mark Thomas [32m
+* [36mfb631d2 [33m2017-11-15 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61673 Avoid a possible ConcurrentModificationException when working with the streams associated with a connection. [35m Mark Thomas [32m
+* [36ma2da400 [33m2017-11-15 [mIncrease window for valid completion [35m Mark Thomas [32m
+* [36m1e43950 [33m2017-11-15 [mAvoid possible NPE if no manifest is present. [35m Mark Thomas [32m
+* [36m4e2e6b6 [33m2017-11-15 [mIf the test logs files aren't closed, they will be locked. On Windows this means they can't be deleted. This causes the tearDown code to fail. Close the FileHandlers so the log files are closed so they can be deleted. [35m Mark Thomas [32m
+* [36m5ccbc59 [33m2017-11-15 [mCorrect failure message [35m Mark Thomas [32m
+* [36m8090a34 [33m2017-11-14 [mSwitch the new SHA-256 hash to SHA-512 Fix typos in the change log [35m Mark Thomas [32m
+* [36m22fb993 [33m2017-11-14 [mAdd a SHA-256 hash [35m Mark Thomas [32m
+* [36m4694231 [33m2017-11-13 [mEnforce not using static Assert.* imports [35m Mark Thomas [32m
+* [36me1b3882 [33m2017-11-13 [mRemove use of all static Assert.* imports - fixes Gump errors with latest Checkstyle - doesn't introduce errors for older Checkstyle - makes unit tests consistent mwith use of Assert [35m Mark Thomas [32m
+* [36m8f4d5ba [33m2017-11-13 [mSwitch to non-static imports - avoids checkstyle error - broadly the same code volume (or less) [35m Mark Thomas [32m
+* [36mfe728d2 [33m2017-11-13 [mSwitch to non-static imports - avoids checkstyle error - broadly the same code volume (or less) [35m Mark Thomas [32m
+* [36me906281 [33m2017-11-11 [mTry and improve the wording. This closes #79 [35m Mark Thomas [32m
+* [36m44aa9d8 [33m2017-11-11 [mProvide the SessionInitializerFilter that can be used to ensure that an HTTP session exists when initiating a WebSocket connection. Patch provided by isapir. This closes #76 [35m Mark Thomas [32m
+* [36m36c2402 [33m2017-11-10 [mCorrect the description of how the CGI servlet maps a request to a script in the CGI How-To. [35m Mark Thomas [32m
+* [36m744be00 [33m2017-11-09 [mAlthough I don't understand why yet, the test for BZ61740 demonstrated the headers write need a sync. This has a performance cost. [35m Remy Maucherat [32m
+* [36mf52a52c [33m2017-11-08 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61668 Refactor StringUtils to better handle null inputs. Add test cases for bug and all StringUtils methods. [35m Mark Thomas [32m
+* [36m10a19fe [33m2017-11-08 [mAdd some Javadoc to silence an Eclipse nag [35m Mark Thomas [32m
+* [36mb1a390a [33m2017-11-05 [mAdd instruction for generic-install target. AKA install tomcat artifacts in your maven repo. [35m Jean-Frederic Clere [32m
+* [36ma9622e7 [33m2017-11-03 [m61719: Add a null check for apparent NPE possibility (all other places ensure the buffer is not null). Not sure if there's a worrying root cause. [35m Remy Maucherat [32m
+* [36mbbbee0d [33m2017-11-03 [m61681: Allow HTTP/2 push when using a request wrapper. The main problem is that newPUshBuilder doesn't allow passing the base request, unlike startAsync, so add an extra proprietary method to do it. The request wrappers will then have to use reflection or cast to the base RequestFacade type. [35m Remy Maucherat [32m
+* [36m1153498 [33m2017-11-03 [mAdd a useSendfile attribute for HTTP/2. [35m Remy Maucherat [32m
+* [36md9ff20d [33m2017-11-03 [mMerge branch 'maven-install' of https://github.com/maxime-beck/tomcat into trunk [35m Jean-Frederic Clere [32m
+* [36m716c3a8 [33m2017-10-31 [mReduce default stream concurrent execution from 200 to 20. [35m Remy Maucherat [32m
+* [36m3081e2b [33m2017-10-31 [mAdd sendfile support for HTTP/2 NIO2 using mapped files. Performance seems to be improved with h2load. [35m Remy Maucherat [32m
+* [36mc8e7334 [33m2017-10-19 [mFix import order [35m Mark Thomas [32m
+* [36mda3d8dd [33m2017-10-19 [mFix String concatenation [35m Mark Thomas [32m
+* [36md7bf3a8 [33m2017-10-18 [mCleanup the async IO syncs a bit. [35m Remy Maucherat [32m
+* [36mb5987c1 [33m2017-10-18 [mImprovements and copy/paste fix after kkolinko review [35m Mark Thomas [32m
+* [36meef5b78 [33m2017-10-18 [mRemove deprecated / unused code. [35m Mark Thomas [32m
+* [36me09a256 [33m2017-10-18 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m17fdaef [33m2017-10-18 [mRefactor XML and HTML escaping to a single location [35m Mark Thomas [32m
+* [36me711a19 [33m2017-10-18 [mEnsure that remaining SelectionKeys that were not handled by throwing a ChannelException during SelectionKey processing are handled. [35m Keiichi Fujino [32m
+* [36m23b3e60 [33m2017-10-18 [mEnsure that the remaining Sender can send channel messages by avoiding unintended ChannelException caused by comparing the number of failed members and the number of remaining Senders. [35m Keiichi Fujino [32m
+* [36mfb7cd2a [33m2017-10-17 [mCorrect refactored reset logic [35m Mark Thomas [32m
+* [36m061be17 [33m2017-10-17 [mFix incorrect behavior that attempts to resend channel messages more than the actual setting value of maxRetryAttempts. [35m Keiichi Fujino [32m
+* [36me810a2f [33m2017-10-16 [mComplete the fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61601 Handle multi-release JARs for packed web applications [35m Mark Thomas [32m
+* [36m2977aec [33m2017-10-15 [mFix modifier order [35m Mark Thomas [32m
+* [36mb450ef3 [33m2017-10-14 [mFix a handful of SpotBugs warnings [35m Mark Thomas [32m
+* [36m7e30da3 [33m2017-10-14 [mRemove deprecated code [35m Mark Thomas [32m
+* [36mc9c6c04 [33m2017-10-14 [mDeprecate unused method with non-standard name (which FindBugs doesn't like) [35m Mark Thomas [32m
+* [36m147ee10 [33m2017-10-13 [mFix remaining SpotBugs failures in the jdbc-pool code when the rank is set to 16 (the maximum rank is 20 so there are still quite a few other issues to look at) [35m Mark Thomas [32m
+* [36mf1ca273 [33m2017-10-13 [mFix remaining SpotBugs failures in the test code when the rank is set to 16 (the maximum rank is 20 so there are still quite a few other issues to look at) [35m Mark Thomas [32m
+* [36m76a2c1b [33m2017-10-13 [mFix the merge mess caused by me cut&pasting the client code back to the container class. Noticed while porting to 8.5. Also fix the i18n property names. [35m Remy Maucherat [32m
+* [36mbe55eff [33m2017-10-13 [mFix some SpotBugs false positives [35m Mark Thomas [32m
+* [36m13a124f [33m2017-10-13 [mFix IDE nags [35m Mark Thomas [32m
+* [36mce78902 [33m2017-10-13 [mFollow up to fix bad interaction with the recursive algorithm. [35m Remy Maucherat [32m
+* [36m8beba8a [33m2017-10-13 [mRemove redirectSet field to avoid thread safety problems. [35m Remy Maucherat [32m
+* [36m240ef91 [33m2017-10-13 [m57767: Add support for authentication to the websocket client. Patch submitted by J Fernandez. [35m Remy Maucherat [32m
+* [36m4ecdc51 [33m2017-10-13 [mFix some FindBugs warnings in the test cases [35m Mark Thomas [32m
+* [36m4388ddb [33m2017-10-13 [mFix Javadoc [35m Mark Thomas [32m
+* [36mcc9d4df [33m2017-10-13 [mmultiRelease needs to be volatile for DCL to work correctly (thanks SpotBugs) [35m Mark Thomas [32m
+* [36mc6607e7 [33m2017-10-13 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61601 Handle multi-release JARs for unpacked web applications [35m Mark Thomas [32m
+* [36mefef222 [33m2017-10-13 [mFix additional false positives exposed by previous fixes for typos [35m Mark Thomas [32m
+* [36me98d36a [33m2017-10-13 [mFix trivial copy and paste error in JMX operation description for Wrapper.findInitParameter(). [35m Rainer Jung [32m
+* [36m79bd3eb [33m2017-10-13 [mFix some FindBugs false positives Patch provided by isapir [35m Mark Thomas [32m
+* [36m0afd671 [33m2017-10-13 [mFix SpotBugs warning Better null handling [35m Mark Thomas [32m
+* [36m33b3a9f [33m2017-10-12 [mRemove deprecated code [35m Mark Thomas [32m
+* [36mb5e2270 [33m2017-10-12 [mDeprecate unused method on internal Jar abstraction [35m Mark Thomas [32m
+* [36m3a947eb [33m2017-10-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61598 Update the Windows installer to search the new (as of Java 9) registry locations when looking for a JRE. [35m Mark Thomas [32m
+* [36m287683a [33m2017-10-11 [mUpdate changelog [35m Mark Thomas [32m
+* [36me29888e [33m2017-10-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61597 [35m Mark Thomas [32m
+* [36m53a7501 [33m2017-10-11 [mUse consistent naming [35m Mark Thomas [32m
+* [36m47f482f [33m2017-10-10 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61604 Fix SMAP generation for JSPs that generate no output. [35m Mark Thomas [32m
+* [36mbf36494 [33m2017-10-10 [m61603: Add XML escaping to the names of some memory pools. The escape/filterXml methods could be factored out maybe (although it would add imports on other JARs). [35m Remy Maucherat [32m
+* [36md9ee17c [33m2017-10-10 [mRemove references file JAR specific license/notice files that were removed some time ago [35m Mark Thomas [32m
+* [36m4a578c7 [33m2017-10-09 [mFix mismatched ciphersuite metadata. [35m Christopher Schultz [32m
+* [36m65f52af [33m2017-10-09 [mAlways print a trailing newline. [35m Christopher Schultz [32m
+* [36m35db3c1 [33m2017-10-09 [mAdd DOS batch file for ciphers command wrapepr. [35m Christopher Schultz [32m
+* [36mf8e8361 [33m2017-10-09 [mAdd main method to OpenSSLCipherConfigurationParser and wrapper script to mimic "openssl ciphers" command. [35m Christopher Schultz [32m
+* [36m6ba6311 [33m2017-10-09 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61590 Enable service.bat to recognise when JAVA_HOME is configured for a Java 9 JDK. [35m Mark Thomas [32m
+* [36mb4d250b [33m2017-10-06 [mws police [35m Mark Thomas [32m
+* [36m69c915c [33m2017-10-06 [mCorrect description [35m Mark Thomas [32m
+* [36ma6e3899 [33m2017-10-06 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61568 Avoid a potential SecurityException when using the NIO2 connector and a new thread is added to the pool. [35m Mark Thomas [32m
+* [36m8c48df0 [33m2017-10-06 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1811327 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m305902c [33m2017-10-06 [mComment out @SuppressWarnings for now. I think it is more important that the Java 8 build is clean. [35m Mark Thomas [32m
+* [36m57162b6 [33m2017-10-06 [mRevert changes included in r1811311 in error [35m Mark Thomas [32m
+* [36m177353e [33m2017-10-06 [mTackle some of the Proxy related Java 9 deprecation warnings [35m Mark Thomas [32m
+* [36mf2254a2 [33m2017-10-06 [mRefactor Use ReflectiveOperationException rather than multiple sub-classes [35m Mark Thomas [32m
+* [36m52ae61e [33m2017-10-05 [mCreate file from correct String [35m Mark Thomas [32m
+* [36m6f57ac3 [33m2017-10-05 [mAvoid duplicate processing [35m Mark Thomas [32m
+* [36m20f059b [33m2017-10-05 [mStart to improved Java 9 JAR scanning Make StandardJarScanner easier to extend [35m Mark Thomas [32m
+* [36ma707e35 [33m2017-10-05 [mgetDeclaredConstructor() -> getConstructor() [35m Mark Thomas [32m
+* [36m1cea7ad [33m2017-10-05 [mUpdate test to fix failure after newInstance() refactoring [35m Mark Thomas [32m
+* [36mb2351da [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in jdbc-pool [35m Mark Thomas [32m
+* [36m100a808 [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in test code [35m Mark Thomas [32m
+* [36mc9a9879 [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in o.a.tomcat [35m Mark Thomas [32m
+* [36m6972093 [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in o.a.naming [35m Mark Thomas [32m
+* [36m31af709 [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in o.a.juli [35m Mark Thomas [32m
+* [36m97d4a3d [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in o.a.jasper [35m Mark Thomas [32m
+* [36md6de67e [33m2017-10-05 [mFix some more deprecation warnings when building with Java 9. Use of Class.newInstance() in o.a.catalina [35m Mark Thomas [32m
+* [36mba06999 [33m2017-10-05 [mLong.valueOf() is better than new Long() [35m Mark Thomas [32m
+* [36m616d7c0 [33m2017-10-05 [mDeprecate some unused code that overrides a method that has been deprecated in Java 9 [35m Mark Thomas [32m
+* [36m6fd8ce7 [33m2017-10-04 [mDocument new parameter [35m Mark Thomas [32m
+* [36m9653aed [33m2017-10-04 [mRefactor the CORS filter to simplify the code Based on a patch by isapir [35m Mark Thomas [32m
+* [36m04352f3 [33m2017-10-04 [mFix Javadoc [35m Mark Thomas [32m
+* [36m79271d4 [33m2017-10-04 [mRemove @author tag - it should have been removed in the original commit [35m Mark Thomas [32m
+* [36mbf7b722 [33m2017-10-04 [mUpdate Javadoc. Patch provided by isapir [35m Mark Thomas [32m
+* [36m9f325f3 [33m2017-10-03 [mCorrect a further regression in the fix to enable the use of Java key stores that contained multiple keys that did not all have the same password. This fixes PKCS11 key store handling with multiple keys selected with an alias. [35m Mark Thomas [32m
+* [36mbf48758 [33m2017-10-02 [mEnable Javadoc to be built with Java 9. (markt) [35m Mark Thomas [32m
+* [36m77f1ca5 [33m2017-10-01 [mUpdate Javadoc links [35m Mark Thomas [32m
+* [36m50a4a73 [33m2017-10-01 [mImproved handling of endorsed directories for Java 9. Patch by rjung. [35m Mark Thomas [32m
+* [36mc8eac61 [33m2017-09-30 [mAdd release date [35m Mark Thomas [32m
+* [36m4499344 [33m2017-09-29 [mCorrect markup [35m Mark Thomas [32m
+* [36mba298d8 [33m2017-09-29 [mImprove the fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=61439 and exclude the JPA, JAX-WS and EJB annotations completely from the Tomcat distributions. [35m Mark Thomas [32m
+* [36m7cec82e [33m2017-09-27 [mReview current RAT failures Exclude Checkstyle caches [35m Mark Thomas [32m
+* [36med48db8 [33m2017-09-27 [mReview current RAT failures Exclude and additional trivial test file, a local build config file and .md files generally [35m Mark Thomas [32m
+* [36mbd822e6 [33m2017-09-27 [mReview current RAT failures svg files are XML so add standard ALv2 license header [35m Mark Thomas [32m
+* [36m99ccdca [33m2017-09-27 [mBump version for next dev cycle [35m Mark Thomas [32m
+| * [36m3c78e95 [33m2017-09-27 [mTag 9.0.1 [35m Mark Thomas [32m (tag: TOMCAT_9_0_1)
+|/  
+* [36m6e73b63 [33m2017-09-27 [mHandle possible cause of false test failure Use utility method to reduce code duplication [35m Mark Thomas [32m
+* [36m48ae468 [33m2017-09-27 [mAdditional debug information in case of test failure [35m Mark Thomas [32m
+* [36m31e9950 [33m2017-09-26 [mCache the value earlier. Followup to r1809684 [35m Konstantin Kolinko [32m
+* [36me650cf1 [33m2017-09-26 [mUpdates after kkolinko review - Correct comment - Use correct regular expression match (that makes regular expressions an even worse option) - Improve (roughly x2) performance of invalid filename check [35m Mark Thomas [32m
+* [36mc177e96 [33m2017-09-25 [mFix array index problem [35m Mark Thomas [32m
+* [36ma716f29 [33m2017-09-25 [mUpdate changelog [35m Mark Thomas [32m
+* [36m6ad4fd4 [33m2017-09-25 [m9.0.0 release cancelled [35m Mark Thomas [32m
+* [36ma9dd960 [33m2017-09-25 [mAdd some additional checks required on Windows to keep all the checks in one place and to avoid exceptions later in the processing. Includes utility class to determine if platform is Windows and performance test case for alternative implementations. [35m Mark Thomas [32m
+* [36ma738d02 [33m2017-09-25 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61563 Correct typo in Spanish translation. Patch provided by Gonzalo Vásquez. [35m Coty Sutherland [32m
+* [36me9fe84b [33m2017-09-23 [mUse the correct path when loading the JVM logging.properties file for Java 9. [35m Rainer Jung [32m
+* [36mbd00c8c [33m2017-09-22 [mIncrement version ready for next development cycle [35m Mark Thomas [32m
+| * [36m16bf392 [33m2017-09-22 [mTag 9.0.0 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0)
+|/  
+* [36mb121907 [33m2017-09-22 [mMake host header / request line consistency check configurable since it is a new requirement in RFC 7230 [35m Mark Thomas [32m
+* [36m81c285d [33m2017-09-22 [mTrivial clean-up to trigger a CI build [35m Mark Thomas [32m
+* [36m52a2f5b [33m2017-09-22 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61545 Correctly handle invocations of methods defined in the PooledConnection interface when using pooled XA connections. Patch provided by Nils Winkler. [35m Mark Thomas [32m
+* [36m700c1f4 [33m2017-09-22 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61557 Correct a further regression in the fix to enable the use of Java key stores that contain multiple keys that do not all have the same password. The regression broke support for some FIPS compliant key stores. [35m Mark Thomas [32m
+* [36me69fbc0 [33m2017-09-22 [mRemove condition that is always false, thanks to "canPath.startsWith(canonicalBase)" check a few lines earlier. [35m Konstantin Kolinko [32m
+* [36m800e284 [33m2017-09-22 [mUpdate links to Servlet 4.0 specification. It seems that Java EE 8 javadoc has not been published yet. [35m Konstantin Kolinko [32m
+* [36m3e0fa7a [33m2017-09-21 [mCorrect javadoc typos (a review of r1809228) [35m Konstantin Kolinko [32m
+* [36m8a78e27 [33m2017-09-21 [mFix https://issues.apache.org/bugzilla/show_bug.cgi?id=61554 Exclude test files in unusual encodings and markdown files intended for display in GitHub from RAT analysis. Patch provided by Chris Thistlethwaite. [35m Mark Thomas [32m
+* [36m42c244f [33m2017-09-21 [mAdd release date even though it was not announced. [35m Mark Thomas [32m
+* [36mcb582c0 [33m2017-09-21 [mThe Servlet 4.0 implementation is complete. The next release will not be a milestone. [35m Mark Thomas [32m
+* [36mb092dea [33m2017-09-21 [mUpdate revision for implemented Servlet spec [35m Mark Thomas [32m
+* [36mb66e1ab [33m2017-09-21 [mAdd getTrailerFields() method to HttpServletResponse to align Tomcat's Servlet API implementation with the 4.0 release [35m Mark Thomas [32m
+* [36mfbd42a0 [33m2017-09-21 [mCorrect regression in r1809146 that caused problems on Windows [35m Mark Thomas [32m
+* [36m3f48670 [33m2017-09-21 [mRefactor and add additional comments to make intended behaviour clearer. [35m Mark Thomas [32m
+* [36ma77527e [33m2017-09-21 [mAdd a simple way to set the property source in embedded mode. [35m Remy Maucherat [32m
+* [36mbe44adc [33m2017-09-21 [mReplacement of '\' with '/' should occur when the system file separator is '\' [35m Mark Thomas [32m
+* [36me002e52 [33m2017-09-21 [mClean-up - no functional change  - fix indentation  - add { } to improve clarity [35m Mark Thomas [32m
+* [36mc70919f [33m2017-09-21 [mNo need to separately add '/' if the name ends in '.' since normalize() does that and does so more accurately. [35m Mark Thomas [32m
+* [36m1ae77cf [33m2017-09-21 [mperformance:  do in-memory checks first and I/O performing ones later kkolinko review [35m Mark Thomas [32m
+* [36mb7e0435 [33m2017-09-20 [mPartial fix for CVE-2017-12617 This ensures that a path specified for creation of a file does not end in '/' since that is dropped by the File API. [35m Mark Thomas [32m
+* [36mb577f9a [33m2017-09-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61542 Partial fix for CVE-2017-12617 This moves a check from the Default servlet where it applied to GET, POST, HEAD and OPTIONS to the resources implementation where it applies to any method that expects the resource to exist (e.g.DELETE) Still need to address the case where the resource does not exist (e.g. PUT) [35m Mark Thomas [32m
+* [36mef7807a [33m2017-09-19 [mCherry-pick r1808880 from 8.5.x/trunk [35m Coty Sutherland [32m
+* [36md37d6a0 [33m2017-09-18 [mImplement various Host header checks required by RFC 7230 - Host header must be present for HTTP/1.1 requests - multiple host headers are invalid - if the request line include the host, it must match the host header [35m Mark Thomas [32m
+* [36m39344d6 [33m2017-09-18 [mFix various tests that break when stricter Host header validation (comming soon) is applied. [35m Mark Thomas [32m
+* [36m4692cfb [33m2017-09-18 [mFix comment [35m Mark Thomas [32m
+* [36mce17ff2 [33m2017-09-18 [mAdd an option to control how to respond to requests with invalid HTTP header names [35m Mark Thomas [32m
+* [36m86e7dbf [33m2017-09-15 [mAllow runtime updates to the current SSLHostConfigs. Move JMX registration to the Endpoint to make it easirt to keep JMX registration in sync with runtime changes. Protect against removing the default while running [35m Mark Thomas [32m
+* [36m9f65dab [33m2017-09-15 [mRefactor the OpenSSLContext implementation so that a reference is retained to the instance while a request that is using it is in progress. This allows destruction to be safely triggered by finalize() [35m Mark Thomas [32m
+* [36m6ff972e [33m2017-09-15 [mClear the sslSupport reference at the end of request processing so a reference is not retained to the SSLContext once the request is complete. [35m Mark Thomas [32m
+* [36m70f1b1f [33m2017-09-15 [mMore low-hanging fruit from FindBugs [35m Mark Thomas [32m
+* [36md7a65fe [33m2017-09-15 [mFix another low-level FindBugs warning [35m Mark Thomas [32m
+* [36m3e5b42a [33m2017-09-15 [mFix some low hanging FindBugs fruit [35m Mark Thomas [32m
+* [36m98cdcbd [33m2017-09-15 [mFix IDE nags [35m Mark Thomas [32m
+* [36mcb7f5fd [33m2017-09-15 [mImprove unit test: test for explicitly enabled and disabled protocols, but allow additional enabled protocols. [35m Rainer Jung [32m
+* [36me76424c [33m2017-09-15 [mModernice array checks in unit test. [35m Rainer Jung [32m
+* [36m9b6dc1d [33m2017-09-15 [mAdd some more info when test is failing like currently on gump. [35m Rainer Jung [32m
+* [36m7b4c8cd [33m2017-09-13 [mIncrement version for next release cycle. [35m Mark Thomas [32m
+* [36ma150256 [33m2017-09-13 [mFix typo [35m Mark Thomas [32m
+| * [36m35071e7 [33m2017-09-13 [mFix case in tag name [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M27)
+| * [36mc94831d [33m2017-09-13 [mTag 9.0.0.M27 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_m27)
+|/  
+* [36m3063c58 [33m2017-09-13 [mMore useful error logging if test fails. [35m Mark Thomas [32m
+* [36m5012138 [33m2017-09-13 [mFix race condition of responseMap in RpcChannel. [35m Keiichi Fujino [32m
+* [36mdfd67c1 [33m2017-09-12 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61189 Add the ability to set environment variables for individual CGI scripts. Based on a patch by jm009. [35m Mark Thomas [32m
+* [36m0a330bc [33m2017-09-12 [mFix https://issues.apache.org/bugzilla/show_bug.cgi?id=61503 This corrects a potential regression in the fix for bug 60940 with an alternative solution that adds the JarEntry objects normally skipped by a JarInputStream only if those entries exist. [35m Mark Thomas [32m
+* [36m3dc8a68 [33m2017-09-08 [mHandle possible NPE in unit test [35m Mark Thomas [32m
+* [36m956893e [33m2017-09-08 [mFix IDE nag [35m Mark Thomas [32m
+* [36m64a0b3c [33m2017-09-08 [mFix a handful of SQL related false positives [35m Mark Thomas [32m
+* [36mc55d8a1 [33m2017-09-08 [mDrop unused code identified by FindBugs [35m Mark Thomas [32m
+* [36m2e51f3a [33m2017-09-08 [mAdd unit test for OpenSSLConfCmd. [35m Rainer Jung [32m
+* [36m421d418 [33m2017-09-08 [mRemove unused code reported by Findbugs [35m Mark Thomas [32m
+* [36m139d036 [33m2017-09-08 [mMake SSLHostConfig Serializable again Spotted by FindBugs but add a test case to ensure the expected behaviour. [35m Mark Thomas [32m
+* [36m3571a7c [33m2017-09-08 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61489 When using the CGI servlet, make the generation of command line arguments from the query string (as per section 4.4 of RFC 3875) optional and disabled by default. Based on a patch by jm009 [35m Mark Thomas [32m
+* [36mab35049 [33m2017-09-08 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61491 When using the permessage-deflate extension, correctly handle the sending of empty messages after non-empty messages to avoid the IllegalArgumentException [35m Mark Thomas [32m
+* [36me28b35c [33m2017-09-06 [mUpdate Tomcat Native to 1.2.14 [35m Mark Thomas [32m
+* [36mf6784e6 [33m2017-09-05 [mFix NPEs in tests after refactoring [35m Mark Thomas [32m
+* [36m1dc8594 [33m2017-09-05 [mRefactor: Obtain ping configuration directly from protocol [35m Mark Thomas [32m
+* [36mbd7cc3a [33m2017-09-05 [mRefactor: Obtain limits directly from protocol [35m Mark Thomas [32m
+* [36mf5dc862 [33m2017-09-05 [mRefactor: Access concurrency control directly from protocol [35m Mark Thomas [32m
+* [36mac9de39 [33m2017-09-05 [mRefactor: Configure local settings directly from protocol [35m Mark Thomas [32m
+* [36m861bee1 [33m2017-09-05 [mRefactor: Obtain timeouts directly from protocol [35m Mark Thomas [32m
+* [36m2f1fcad [33m2017-09-05 [mRefactor: Make Http2Protocol available to Http2UpgradeHandler. This will enable some duplicated properties to be removed. [35m Mark Thomas [32m
+* [36ma8f8d04 [33m2017-09-05 [mRefactor: Make adapter reference final [35m Mark Thomas [32m
+* [36m06cd319 [33m2017-09-04 [mRefactor There is no need to pass this protocol attribute to the endpoint [35m Mark Thomas [32m
+* [36ma1f251b [33m2017-09-04 [mRemove checks for UnsatisfiedLinkError, now that we require tcnative 1.2.14. [35m Rainer Jung [32m
+* [36m276140e [33m2017-09-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=60523 Reduce the number of packets used to send WebSocket messages by not flushing between the header and the payload when the two are written together. [35m Mark Thomas [32m
+* [36m70c7937 [33m2017-09-04 [mRemove obsolete try/catch for UnsatisfiedLinkError now that we require tcnative 1.2.14. [35m Rainer Jung [32m
+* [36mb35a296 [33m2017-09-04 [mIncrease the minimum required Tomcat Native version to 1.2.14. [35m Rainer Jung [32m
+* [36m93811a1 [33m2017-09-04 [mCorrect order [35m Mark Thomas [32m
+* [36m0afe09e [33m2017-09-04 [mGiven poor browser support for RFC 7617, default to current behaviour. [35m Mark Thomas [32m
+* [36mbe6e1bf [33m2017-09-03 [mRemove remark about needed tcantive version. We will requite it after the imminent release. [35m Rainer Jung [32m
+* [36m45f1a2e [33m2017-09-02 [mMove changelog item from Catalina to Coyote. [35m Rainer Jung [32m
+* [36m4a01b17 [33m2017-09-01 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61280 Add RFC 7617 support to the BasicAuthenticator [35m Mark Thomas [32m
+* [36m4a6e1f1 [33m2017-09-01 [mJava 9 allows us to be more selective with the JRE memory leak protection. [35m Mark Thomas [32m
+* [36mf03d686 [33m2017-09-01 [mSimplify. MalformedURLException is a sub-class of IOException [35m Mark Thomas [32m
+* [36m9f542b8 [33m2017-09-01 [mUpdate comment. We now have features that depend on Java 9. [35m Mark Thomas [32m
+* [36m5fca54e [33m2017-08-31 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61451 Correct a regression in the fix to enable the use of Java key stores that contained multiple keys that did not all have the same password. The regression broke support for any key store that did not store keys in PKCS #8 format such as hardware key stores and Windows key stores. [35m Mark Thomas [32m
+* [36ma50b77e [33m2017-08-31 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61441 Improve the detection of JAVA_HOME by the daemon.sh script when running on a platform where Java has been installed from an RPM. [35m Mark Thomas [32m
+* [36m1386eaa [33m2017-08-31 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61439 Remove the Java Annotation API classes from tomcat-embed-core.jar and package them in a separate JAR in the embedded distribution to provide end users with greater flexibility to handle potential conflicts with the JRE and/or other JARs. [35m Mark Thomas [32m
+* [36m6cf9975 [33m2017-08-31 [mCorrect generics use. [35m Rainer Jung [32m
+* [36mcdeba10 [33m2017-08-31 [mShow connector cipher list in the manager web application in the correct cipher order. [35m Rainer Jung [32m
+* [36m48f045a [33m2017-08-31 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61393 Account for resolution of System.nanoTime() to avoid incorrect test failures. [35m Mark Thomas [32m
+* [36m3f695fe [33m2017-08-30 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61391 Ensure that failed queries are logged if the SlowQueryReport interceptor is configured to do so and the connection has been abandoned. Patch provided by Craig Webb [35m Mark Thomas [32m
+* [36mb7253c0 [33m2017-08-30 [mCorrect the backup node selection logic that node 0 is returned twice consecutively. [35m Keiichi Fujino [32m
+* [36m6cd3c15 [33m2017-08-29 [mWhen sending a channel message, make sure that the Sender has connected. [35m Keiichi Fujino [32m
+* [36m79d4f30 [33m2017-08-28 [m61450: Improve again default key alias code. [35m Remy Maucherat [32m
+* [36md50388b [33m2017-08-27 [mRevert part of r1805525: [35m Rainer Jung [32m
+* [36m10d9419 [33m2017-08-26 [mFix case in class name. File name case doesn't match class name case. [35m Rainer Jung [32m
+* [36mbd3fb18 [33m2017-08-23 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61425 Ensure that transaction of idle connection has terminated  when the testWhileIdle is set to true and defaultAutoCommit is set to false. Patch provided by WangZheng. [35m Keiichi Fujino [32m
+* [36m9e79979 [33m2017-08-23 [mAvoid Ping timeout until the added map member by receiving MSG_START message is completely started. [35m Keiichi Fujino [32m
+* [36m80f02e7 [33m2017-08-22 [mDelay checking that the configured attributes for an SSLHostConfig instance are consistent with the configured SSL implementation until Connector start to avoid incorrect warnings when the SSL implementation changes during initialisation. [35m Mark Thomas [32m
+* [36mca661cd [33m2017-08-22 [mAdd a warning regarding the risk of overriding JRE classes [35m Mark Thomas [32m
+* [36mbf5c530 [33m2017-08-22 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61415 Fix TLS renegotiation with OpenSSL based connections and session caching. [35m Mark Thomas [32m
+* [36m7453f2d [33m2017-08-22 [mAdd member info to the log message when the failure detection check fails in TcpFailureDetector. [35m Keiichi Fujino [32m
+* [36m816b4c8 [33m2017-08-22 [mTo avoid unexpected session timeout notification from backup session, update the access time when receiving the map member notification message. [35m Keiichi Fujino [32m
+* [36ma9ec4f9 [33m2017-08-22 [mImprove the warning message when JSSE and OpenSSL configuration styles are mixed on the same SSLHostConfig. [35m Mark Thomas [32m
+* [36ma49df6e [33m2017-08-21 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=48655 Enable Tomcat to shutdown cleanly when using sendfile, the APR/native connector and a multi-part download is in progress. [35m Mark Thomas [32m
+* [36m7324608 [33m2017-08-21 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61424 The trick to avoid the relatively slow ClassNotFoundException has another edge case that can trigger a StackOverflowError. Switch to a general fix that handles the known edge cases and should handle as yet unknown edge cases. [35m Mark Thomas [32m
+* [36m9863a0c [33m2017-08-21 [mHandle the case when OpenSSL resumes a TLS session using a ticket and the full client certificate chain is not available. In this case the client certificate without the chain will be presented to the application. [35m Mark Thomas [32m
+* [36me73c1cc [33m2017-08-21 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61210 When running under a SecurityManager, do not print a warning about not being able to read a logging configuration file when that file does not exist. [35m Mark Thomas [32m
+* [36m64060bc [33m2017-08-21 [mFix IDE nags [35m Mark Thomas [32m
+* [36ma21fee5 [33m2017-08-21 [mEnsure that the APR/native connector uses blocking I/O for TLS renegotiation. [35m Mark Thomas [32m
+* [36m8e1f4d4 [33m2017-08-20 [mAdd support for OpenSSLConf to storeconfig. [35m Rainer Jung [32m
+* [36mcdd4018 [33m2017-08-19 [mTone down log message for new OpenSSLConf from info to debug. [35m Rainer Jung [32m
+* [36m5777168 [33m2017-08-19 [mUpdate enabledProtocols and enabledCiphers in SSLHostConfig after OpenSSLConf has been applied. [35m Rainer Jung [32m
+* [36m5b1f5e3 [33m2017-08-19 [mAdd support for the OpenSSL SSL_CONF API when using TLS with OpenSSL implementation. [35m Rainer Jung [32m
+* [36md08ca8b [33m2017-08-19 [mAdd access to tcnative SSL_CONF API and some constants used by it. [35m Rainer Jung [32m
+* [36m7d6c738 [33m2017-08-19 [mAdd access to new native API SSLContext.getCiphers(). [35m Rainer Jung [32m
+* [36m6f86638 [33m2017-08-19 [mWhen using a Java connector in combination with the OpenSSL TLS implementation, do not configure each SSL connection object via the OpenSSLEngine. For OpenSSL the SSL object inherits its settings from the SSL_CTX which we have already configured. [35m Rainer Jung [32m
+* [36md31ea44 [33m2017-08-19 [mAVAILABLE_CIPHER_SUITES contains the ciphers with JSSE names, so the check needs to be done before replacing with the OpenSSL name. [35m Rainer Jung [32m
+* [36m837ae63 [33m2017-08-19 [mFix a comment typo. [35m Rainer Jung [32m
+* [36m3fed0a2 [33m2017-08-15 [mBZ 61419: Replace a Unix style comment in the DOS bat file catalina.bat with the correct "rem" markup. [35m Rainer Jung [32m
+* [36m7fb6aa1 [33m2017-08-13 [mImprove some existing test cases with a check, whether client certificates from the right CA was demanded during the TLS handshake. [35m Rainer Jung [32m
+* [36m4f7b7d5 [33m2017-08-13 [mWrap the KeyManagers used by the client to allow tracking for which CA subjects a client certificate was requested. [35m Rainer Jung [32m
+* [36m96db839 [33m2017-08-13 [mAdd another custom trust manager test case based on a trust manager, that sequentially checks all CA certificates in a truststore using the new TesterSupport.SequentialTrustManager. [35m Rainer Jung [32m
+* [36ma0e7d88 [33m2017-08-13 [mFix new javadoc. [35m Rainer Jung [32m
+* [36m53cc295 [33m2017-08-13 [mReplace hard-coded client certificate subject by retrieving it from the certificate. [35m Rainer Jung [32m
+* [36mccbfe10 [33m2017-08-13 [mAdd custom class that allows to test client certificate handshake with a trustmanager (named SequentialTrustManager), that should be equivalent to our default trust store. [35m Rainer Jung [32m
+* [36m976ec06 [33m2017-08-13 [mImprove observability of new fix/feature. [35m Rainer Jung [32m
+* [36m3411e85 [33m2017-08-13 [mImprove TLS handshake. [35m Rainer Jung [32m
+* [36m5182fd8 [33m2017-08-13 [m- Use constants for test certificate file paths,   aliases and passwords. - Change TesterSupport.initSsl() to use full   path names. [35m Rainer Jung [32m
+* [36m2aa1bc2 [33m2017-08-13 [mNo SSL communication done in this test, so we do not need to set up an ssl client. [35m Rainer Jung [32m
+* [36mb4431d8 [33m2017-08-11 [mChange alias name from "mykey" to "ca". [35m Rainer Jung [32m
+* [36m09129f9 [33m2017-08-11 [mFix possible race condition when using an upgraded connection and setting the IO listeners, it now uses the same processing as non upgraded connections. [35m Remy Maucherat [32m
+* [36m17449ac [33m2017-08-11 [mNow CVE-2017-7675 is public, make the comment more specific [35m Mark Thomas [32m
+* [36mfcc5183 [33m2017-08-09 [mOff-by-one It was released yesterday [35m Mark Thomas [32m
+* [36mb384243 [33m2017-08-09 [mAdd release date for 9.0.0.M26 [35m Mark Thomas [32m
+* [36m04c293b [33m2017-08-09 [mTry and avoid shutdown exceptions [35m Mark Thomas [32m
+* [36m29d2f3d [33m2017-08-09 [mPrevent exceptions being thrown during normal shutdown of NIO connections. This enables TLS connections to close cleanly. [35m Mark Thomas [32m
+* [36mc5bdcc2 [33m2017-08-09 [mRemove unnecessary code. Method implementation is identical to over-ridden super class method. [35m Mark Thomas [32m
+* [36maba1417 [33m2017-08-08 [mImprove the handling of client disconnections during the TLS renegotiation handshake. [35m Mark Thomas [32m
+* [36m3e0663f [33m2017-08-08 [mEclipse Oxygen doesn't need this. [35m Mark Thomas [32m
+* [36md15b1ad [33m2017-08-08 [mReviewed for Oxygen - no changes [35m Mark Thomas [32m
+* [36meb2f07d [33m2017-08-08 [mUpdate test keys and certs to use new CA hierarchy that has a longer key (4096 bits) for the CA and more complete DNs. [35m Mark Thomas [32m
+* [36m74fb017 [33m2017-08-07 [mFix a couple of minor FindBugs warnings [35m Mark Thomas [32m
+* [36mc95a801 [33m2017-08-04 [mBefore generating an error page in the ErrorReportValve, check to see if I/O is still permitted for the associated connection before generating the error page so that the page generation can be skipped if the page is never going to be sent. [35m Mark Thomas [32m
+* [36m6e1887e [33m2017-08-03 [mIf an invalid option is specified for the certificateVerification attribute of an SSLHostConfig element, treat it as required which is the most secure / restrictive option in addition to reporting the configuration error. [35m Mark Thomas [32m
+* [36m96e4a9a [33m2017-08-03 [mAdd some basic checks for the baseDir Clearer Javadoc [35m Mark Thomas [32m
+* [36m98ba7c3 [33m2017-08-03 [mCorrect Javadoc [35m Mark Thomas [32m
+* [36mf2ac9c6 [33m2017-08-02 [mIncrement version for next dev cycle [35m Mark Thomas [32m
+| * [36mab04166 [33m2017-08-02 [mTag 9.0.0.M26 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M26)
+|/  
+* [36mb0ce432 [33m2017-08-02 [mFix odd UTF-8 character. jmx -> JMX [35m Mark Thomas [32m
+* [36m9486242 [33m2017-08-02 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=57767 Add support to the WebSocket client for following redirects when attempting to establish a WebSocket connection. Patch provided by J Fernandez. [35m Mark Thomas [32m
+* [36md6a227a [33m2017-08-02 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61366 Add a new attribute, localDataSource, to the JDBCStore that allows the Store to be configured to use a DataSource defined by the web application rather than the default of using a globally defined DataSource. Patch provided by Jonathan Horowitz. This closes #71 [35m Mark Thomas [32m
+* [36m8aeab80 [33m2017-08-01 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61364 Close InputStream to prevent locked files. [35m Mark Thomas [32m
+* [36mddb4248 [33m2017-08-01 [mAvoid NPE [35m Mark Thomas [32m
+* [36m97d86d4 [33m2017-08-01 [mExclude bug 49464 test files from Checkstyle because they have no header [35m Mark Thomas [32m
+* [36m266cdbd [33m2017-08-01 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61086 Ensure to explicitly signal an empty request body for HTTP 205 responses. Additional fix to r1795278. Based on a patch provided by Alexandr Saperov. [35m Violeta Georgieva Georgieva [32m
+* [36m25462b8 [33m2017-07-31 [mRe-write the unit tests for the automatic encoding conversion in the Default Servlet. The new unit tests use a parameterized approach that significantly increases the number of tests. These tests also highlighted some addition bugs that are fixed by this patch: - Reporting the context default character encoding is now correctly treated as if no encoding has been explicitly defined - Included resources are not converted unless an explicit encoding has been specified [35m Mark Thomas [32m
+* [36m5c114c4 [33m2017-07-30 [mRemove unused code identified by FindBugs [35m Mark Thomas [32m
+* [36mce037ca [33m2017-07-30 [mDeprecated unused field [35m Mark Thomas [32m
+* [36m491bd80 [33m2017-07-30 [mMark the use of != with String as a false positive for FindBugs [35m Mark Thomas [32m
+* [36m8693015 [33m2017-07-30 [mMark a scary but low confidence FindBugs issue as a false positive [35m Mark Thomas [32m
+* [36m279ce28 [33m2017-07-30 [mFix some scary but low confidence Findbug warnings (and other warnings in those files) [35m Mark Thomas [32m
+* [36ma645393 [33m2017-07-30 [mRefactor to simplify code and to remove a FindBugs warning [35m Mark Thomas [32m
+* [36m3ec0d8f [33m2017-07-30 [mFix another BZ 49464 regression. [35m Mark Thomas [32m
+* [36m6f70fd2 [33m2017-07-28 [mBetter comment Review by kkolinko [35m Mark Thomas [32m
+* [36m6048f44 [33m2017-07-28 [mHTTP header value may use different case if set by the application Review by kkolinko [35m Mark Thomas [32m
+* [36mfec9e29 [33m2017-07-28 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m355a02c [33m2017-07-28 [mDeprecate RuleSetBase as it has no meaningful content [35m Mark Thomas [32m
+* [36md317f3a [33m2017-07-28 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m57169a7 [33m2017-07-28 [mDeprecate unused code identified by FindBugs [35m Mark Thomas [32m
+* [36mbbc04d6 [33m2017-07-28 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61164 Add support for the %X pattern in the AccessLogValve that reports the connection status at the end of the request. Patch provided by Zemian Deng. [35m Mark Thomas [32m
+* [36ma9625e3 [33m2017-07-28 [mUpdate release date [35m Mark Thomas [32m
+* [36m2db28d5 [33m2017-07-27 [mMinor optimisation [35m Mark Thomas [32m
+* [36md5176b0 [33m2017-07-27 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61351 Correctly handle %nn decoding of URL patterns in web.xml and similar locations that may legitimately contain characters that are not permitted by RFC 3986. [35m Mark Thomas [32m
+* [36med86577 [33m2017-07-27 [mFix findbugs warnings. [35m Remy Maucherat [32m
+* [36mded4489 [33m2017-07-27 [mFix some clone usage issues. [35m Remy Maucherat [32m
+* [36meb1d40d [33m2017-07-27 [mRename method. [35m Remy Maucherat [32m
+* [36md3c9cc6 [33m2017-07-27 [mAdd additional logging to record problems that occur while waiting for the NIO pollers to stop during the Connector stop process. [35m Mark Thomas [32m
+* [36m761f0c1 [33m2017-07-27 [mAvoid circular dependency. [35m Remy Maucherat [32m
+* [36mda2db4d [33m2017-07-26 [mFix bit sign checks warnings, no functional change. [35m Remy Maucherat [32m
+* [36me4a1364 [33m2017-07-26 [m61345: Add a server listener that can be used to do system property replacement from the property source configured in the digester. [35m Remy Maucherat [32m
+* [36m8993fe6 [33m2017-07-26 [mCorrect a bug in the PushBuilder implementation that meant push URLs containing %nn sequences were not correctly decoded. Identified by FindBugs. [35m Mark Thomas [32m
+* [36m8534d10 [33m2017-07-24 [mIncrement version number for next development cycle [35m Mark Thomas [32m
+| * [36mc5efed3 [33m2017-07-24 [mTag 9.0.0.M25 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M25)
+|/  
+* [36meb1f266 [33m2017-07-24 [m9.0.0.M24 release was cancelled [35m Mark Thomas [32m
+* [36m10e2ead [33m2017-07-24 [mBetter temporary docBase name (easier to delete) [35m Mark Thomas [32m
+* [36me18c00e [33m2017-07-24 [mFollow-up to r1802828 Ensure the docBase is absolute [35m Mark Thomas [32m
+* [36mf57713e [33m2017-07-24 [mFix a possible conflict when running multiple instances of the Tomcat unit tests on the same server. [35m Mark Thomas [32m
+* [36m26a5eab [33m2017-07-24 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61313 Make the read timeout configurable in the JNDIRealm and ensure that a read timeout will result in an attempt to fail over to the alternateURL. Based on patches by Peter Maloney and Felix Schumacher. [35m Mark Thomas [32m
+* [36m5ac8183 [33m2017-07-24 [mFollowup to BZ 61316 fix. Change comment to correct a typo. [35m Konstantin Kolinko [32m
+* [36m4364307 [33m2017-07-24 [mFollowup to r1802639, Use StringManager in log message [35m Coty Sutherland [32m
+* [36m4323e68 [33m2017-07-24 [mMarkdown markup files are text. Set svn:eol-style=native on and add them to "text.files" in build.xml. [35m Konstantin Kolinko [32m
+* [36m5ece28f [33m2017-07-24 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61316 Fix corruption of UTF-16 encoded source files in released source distributions. [35m Mark Thomas [32m
+* [36m1f0e370 [33m2017-07-24 [mUTF-8 file. Set properties accordingly. Should be OK, even with a BOM present [35m Mark Thomas [32m
+* [36m0d83f24 [33m2017-07-24 [mExclude newly added test file from CheckStyle header check [35m Mark Thomas [32m
+* [36ma56b69b [33m2017-07-24 [mCorrect a further regression in the fix for bug 49464 that could cause an byte order mark character to appear at the start of content included by the DefaultServlet. [35m Mark Thomas [32m
+* [36md5d1753 [33m2017-07-21 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61253 [35m Coty Sutherland [32m
+* [36mc162d8a [33m2017-07-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=60963 Add a new WebResourceRoot implementation that extracts JARs to the work directory for improved performance when deploying packed WAR files. [35m Mark Thomas [32m
+* [36me237096 [33m2017-07-20 [mCorrect the documentation for how StandardRoot is configured. [35m Mark Thomas [32m
+* [36mdd86b5a [33m2017-07-19 [mPerformance improvements for service loader look-ups (and look-ups of other class loader resources) when the web application is deployed in a packed WAR file. [35m Mark Thomas [32m
+* [36md430f1f [33m2017-07-18 [mIncrement version number of next development cycle [35m Mark Thomas [32m
+| * [36mcac0e02 [33m2017-07-18 [mTag 9.0.0.M24 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M24)
+|/  
+* [36mc7668b7 [33m2017-07-17 [mAnother NIO2 robustness change [35m Mark Thomas [32m
+* [36mc015368 [33m2017-07-17 [mAdd clarifying comment [35m Mark Thomas [32m
+* [36m5a12885 [33m2017-07-17 [mConnection reset exceptions are not consistent. Roll out special handling for Windows + NIO2 more widely. [35m Mark Thomas [32m
+* [36me50e380 [33m2017-07-17 [mAdd handling for are now, hopefully, consistent connection reset results for NIO2 on Windows. [35m Mark Thomas [32m
+* [36m91eaeb0 [33m2017-07-17 [mBetter comment [35m Mark Thomas [32m
+* [36mfca9592 [33m2017-07-17 [mHandle earlier visibility of closed connection on some platforms. [35m Mark Thomas [32m
+* [36m6b479b1 [33m2017-07-17 [mImprove the handling of HTTP/2 stream resets due to excessive headers when a continuation frame is used. [35m Mark Thomas [32m
+* [36m57e1eb0 [33m2017-07-16 [mExclude developer local files from license header checks [35m Mark Thomas [32m
+* [36mafddd73 [33m2017-07-12 [mFix IDE nag [35m Mark Thomas [32m
+* [36m563f836 [33m2017-07-12 [mBetter wording that doesn't run the risk of suggesting nested [35m Mark Thomas [32m
+* [36m035c1cf [33m2017-07-12 [mCorrect the contributor name [35m Violeta Georgieva Georgieva [32m
+* [36m8044ab8 [33m2017-07-12 [mEnable checkstyle's license header check for properties files. [35m Violeta Georgieva Georgieva [32m
+* [36m9be116a [33m2017-07-12 [mCheckstyle: - correct the imports order - remove  a trailing space [35m Violeta Georgieva Georgieva [32m
+* [36m9e36f2a [33m2017-07-12 [mWhen log rotation is disabled only one separator will be used when generating the log file name. Patch provided by Katya Todorova via GitHub. [35m Violeta Georgieva Georgieva [32m
+* [36m8133d65 [33m2017-07-10 [mFurther 49464 fixes - precompression Update unit tests to avoid conversion [35m markt [32m
+* [36m2afc97a [33m2017-07-10 [m9.0.0.M23 was not released due to a regression [35m Mark Thomas [32m
+* [36m6714f0c [33m2017-07-10 [mCorrect a regression in the fix for bug 49464 that could cause an incorrect Content-Length header to be sent by the DefaultServlet if the encoding of a static is not consistent with the encoding of the response. [35m Mark Thomas [32m
+* [36m4992db6 [33m2017-07-09 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61264 Correct a regression in the refactoring to use Charset rather than String to store request character encoding that prevented getReader() throwing an UnsupportedEncodingException if the user agent specifies an unsupported character encoding. [35m Mark Thomas [32m
+* [36mfdb0759 [33m2017-07-07 [mRefactor propertySource as final. [35m Remy Maucherat [32m
+* [36mdea0e73 [33m2017-07-07 [mFix some bad sync in OpenSSLEngine, any async use of the ssl pointer could cause a crash. It shouldn't happen as the engine is not directly accessible, but the cost is very low. [35m Remy Maucherat [32m
+* [36md82edcb [33m2017-07-06 [mFix a FindBugs nag and add an explanatory comment. [35m Mark Thomas [32m
+* [36md27fbc0 [33m2017-07-06 [mFix NPE and dead store warnings. Reported by FindBugs. [35m Mark Thomas [32m
+* [36mb8fbf59 [33m2017-07-06 [mFix possible name confusion. Reported by FindBugs. [35m Mark Thomas [32m
+* [36m50c1a3f [33m2017-07-06 [mAvoid possible NPE. Reported by FindBugs. [35m Mark Thomas [32m
+* [36m82ba6fc [33m2017-07-06 [mRemove unnecessary code identified by FindBugs [35m Mark Thomas [32m
+* [36md6459a4 [33m2017-07-05 [mUse Map rather than a specific implementation [35m Mark Thomas [32m
+* [36mf0da424 [33m2017-07-05 [mFollow-up to r1800867 Better handling for when user does not specify an alias to use [35m Mark Thomas [32m
+* [36m31aab10 [33m2017-07-05 [mFollow-up to r1800867 Avoid NPE when no alias is specified. Now an in memory key store with a single key is used, there is no need for the JSSEKeyManager - so remove it. [35m Mark Thomas [32m
+* [36mc5aff0d [33m2017-07-05 [mEnable TLS connectors to use Java key stores that contain multiple keys where each key has a separate password. Based on a patch by Frank Taffelt. [35m Mark Thomas [32m
+* [36m19e7527 [33m2017-07-05 [mRevert r1800850. A better solution has been suggested on the users list. [35m Mark Thomas [32m
+* [36m23ee861 [33m2017-07-05 [mClarify the documentation for certificateKeyPassword with information on the lack of support for multiple keys in a single key store, each with a separate password. [35m Mark Thomas [32m
+* [36m7675661 [33m2017-07-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=53031 Add support for the fork option when compiling JSPs with the Jasper Ant task and javac. [35m Mark Thomas [32m
+* [36m59956e5 [33m2017-07-04 [mRefactor to use a constant like the other files. [35m Mark Thomas [32m
+* [36m7017167 [33m2017-07-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=52924 Add support for a Tomcat specific deployment descriptor. This allows apps to ship with Tomcat specific configuration (e.g for JSP or Default Servlet) without breaking when the app is deployed on other containers. [35m Mark Thomas [32m
+* [36m477ba14 [33m2017-07-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=52791 Add the ability to set the defaults used by the Windows installer from a configuration file. Patch provided by Sandra Madden. [35m Mark Thomas [32m
+* [36mec6f7b6 [33m2017-07-04 [mUpdate versions for next dev cycle [35m Mark Thomas [32m
+* [36mf7de9c3 [33m2017-07-04 [mTomcat 9 requires Java 8 [35m Mark Thomas [32m
+| * [36m24566c0 [33m2017-07-04 [mFix typo [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M23)
+| * [36m3f1143b [33m2017-07-04 [mTag 9.0.0.M23 [35m Mark Thomas [32m (tag: TONCAT_9_0_0_M23)
+|/  
+* [36mcdec427 [33m2017-07-03 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=51513 Add support for the compressionMinSize attribute to the GzipInterceptor, add optional statistics collection and expose the Interceptor over JMX. Based on a patch by Christian Stöber. [35m Mark Thomas [32m
+* [36mf7bddfb [33m2017-07-03 [mWhoops. Remove copy/paste comment [35m Mark Thomas [32m
+* [36m8e6e427 [33m2017-07-03 [mRefactor to use parameterised tests (less code) [35m Mark Thomas [32m
+* [36mfda5419 [33m2017-07-03 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m0e8894c [33m2017-07-03 [mRemove unused / unnecessary fields [35m Mark Thomas [32m
+* [36m4ad5264 [33m2017-07-03 [mAdd necessary Java 9 configuration options to the startup scripts to prevent warnings being generated on web application stop. [35m Mark Thomas [32m
+* [36ma505b4c [33m2017-07-03 [mRestore the local definition of the web service annotations since the JRE provided versions are deprecated and Java 9 does not provide them by default. [35m Mark Thomas [32m
+* [36m328c306 [33m2017-06-30 [mOnly attempt to convert character encoding for text resources [35m Mark Thomas [32m
+* [36mcb7a126 [33m2017-06-30 [mFix (hopefully) CI failures [35m Mark Thomas [32m
+* [36ma53991a [33m2017-06-30 [mImprove the Default Servlet's handling of static files when the file encoding is not compatible with the required response encoding. [35m Mark Thomas [32m
+* [36m4c82d85 [33m2017-06-30 [mRemove references to the Loader attribute searchExternalFirst from the documentation since the attribute is no longer supported. [35m Mark Thomas [32m
+* [36m0092083 [33m2017-06-29 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61229 Correct a regression in 9.0.0.M21 that broke WebDAV handling for resources with names that included a '&' character. [35m Mark Thomas [32m
+* [36m9451182 [33m2017-06-28 [mFix build error [35m Mark Thomas [32m
+* [36ma3190e2 [33m2017-06-28 [mCorrect comment [35m Mark Thomas [32m
+* [36m77b1a50 [33m2017-06-28 [mRefactor. It is more verbose but it stops Eclipse complaining about a possible NPE. [35m Mark Thomas [32m
+* [36m93ae8bd [33m2017-06-28 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=49176 When generating JSP runtime error messages that quote the relevant JSP source code, switch from using the results of the JSP page parsing process to using the JSR 045 source map data to identify the correct part of the JSP source from the stack trace. This significantly reduces the memory footprint of Jasper in development mode, provides a small performance improvement for error page generation and enables source quotes to continue to be provided after a Tomcat restart. [35m Mark Thomas [32m
+* [36m66c4b57 [33m2017-06-28 [mAdditional permission for deleting files is granted to JULI as it is required by FileHandler when running under a Security Manager. [35m Violeta Georgieva Georgieva [32m
+* [36md9dffb7 [33m2017-06-28 [mName the thread that cleans the log files and mark it as a daemon thread. [35m Violeta Georgieva Georgieva [32m
+* [36mc85d86a [33m2017-06-27 [mMinor clean-up. No functional change. [35m Mark Thomas [32m
+* [36mec1cb0f [33m2017-06-27 [mEnsure to send a space between trailer field name and field value for HTTP responses trailer fields [35m Huxing Zhang [32m
+* [36m4ce1f20 [33m2017-06-26 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61224 Make the GlobalRequestProcessor MBean attributes read-only. Patch provided by Alexis Hassler. This closes #68 [35m Mark Thomas [32m
+* [36mc624423 [33m2017-06-26 [mRefactor - remove unnecessary code [35m Mark Thomas [32m
+* [36m659f72e [33m2017-06-26 [mReformat. No functional change. [35m Mark Thomas [32m
+* [36mb828717 [33m2017-06-26 [mImprove layout for CompositeData and TabularData when viewing via the JMX proxy servlet. Patch provided by Alexis Hassler. This closes #67 [35m Mark Thomas [32m
+* [36m8733b98 [33m2017-06-26 [mAvoid NPE during non-container thread error handling [35m Mark Thomas [32m
+* [36m7702811 [33m2017-06-26 [mRefactor to reduce code duplication. [35m Mark Thomas [32m
+* [36m017b789 [33m2017-06-26 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61215 Correctly define addConnectorPort and invalidAuthenticationWhenDeny in the mbean-descriptors.xml file for the org.apache.catalina.valves package so that the attributes are accessible via JMX. [35m Mark Thomas [32m
+* [36mef0be59 [33m2017-06-26 [mRemove deleted attribute <code>servlets</code> from the Context MBean description. Patch provided by Alexis Hassler. This closes #65. [35m Mark Thomas [32m
+* [36mefccc2e [33m2017-06-26 [mAdd release date for 9.0.0.M22 [35m Mark Thomas [32m
+* [36m1a98327 [33m2017-06-23 [m60461: Sync SSL session access for the APR connector. [35m Remy Maucherat [32m
+* [36mbb91f35 [33m2017-06-23 [mWhen the access log valve logs a TLS related request attribute and the NIO2 connector is used with OpenSSL, ensure that the TLS attributes are available to the access log valve when the connection is closing. [35m Mark Thomas [32m
+* [36m9ebe0b3 [33m2017-06-23 [mChangelog entry for r1799701 [35m Mark Thomas [32m
+* [36m0ac2868 [33m2017-06-23 [mThe SSL session ID can be null when OpenSSL is using session tickets. Therefore, remove the check that throws an ISE if the session ID is found to be null. [35m Mark Thomas [32m
+* [36m465b035 [33m2017-06-23 [mMove changelog entry to correct version after review by markt. [35m Christopher Schultz [32m
+* [36md2115fe [33m2017-06-23 [mFix a bug and a small integration support improvement after review by mgrigorov. Fix changelog after review by markt. [35m Christopher Schultz [32m
+* [36m493833e [33m2017-06-23 [mFixing typo (r1799648) changed response body length so test needed to be updated. [35m Mark Thomas [32m
+* [36m793d8b8 [33m2017-06-23 [mFix typo in trailer fileds example [35m Huxing Zhang [32m
+* [36ma505a1a [33m2017-06-21 [mEnable SSLv3 to be used. NOT enabled by default. [35m Mark Thomas [32m
+* [36m6998b8c [33m2017-06-21 [mFix various build errors and IDE warnings [35m Mark Thomas [32m
+* [36m8cc433a [33m2017-06-21 [mAdd LoadBalancerDrainingValve. [35m Christopher Schultz [32m
+* [36m0291cee [33m2017-06-21 [m*sigh* one more revert. [35m Christopher Schultz [32m
+* [36mff64f7c [33m2017-06-21 [mRevert accidental change to build.xml. [35m Christopher Schultz [32m
+* [36mf3068da [33m2017-06-21 [mAllow human-readable channelSendOptions and mapSendOptions in configurations. Patch provided by Igal Sapir. [35m Christopher Schultz [32m
+* [36m030af77 [33m2017-06-21 [mIncrement version for next development cycle [35m Mark Thomas [32m
+| * [36m642d3dd [33m2017-06-21 [mTag 9.0.0.M22 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M22)
+|/  
+* [36m7d5b01d [33m2017-06-21 [mSSLv2 and SSLv3 are hard-coded coded to be disabled. [35m Mark Thomas [32m
+* [36mfb16772 [33m2017-06-20 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61201 Ensure that the SCRIPT_NAME environment variable for CGI executables is populated in a consistent way regardless of how the CGI servlet is mapped to a request. [35m Mark Thomas [32m
+* [36m0da1d02 [33m2017-06-19 [mGet test working on Windows that doesn't like ':' in file names. [35m Mark Thomas [32m
+* [36md2a3a29 [33m2017-06-19 [mRefactor to reduce the need to deprecate code in 8.5.x [35m Mark Thomas [32m
+* [36mcc5e480 [33m2017-06-19 [mRefactor to reduce the need to deprecate code in 8.5.x [35m Mark Thomas [32m
+* [36m46a4446 [33m2017-06-19 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61197 Ensure that the charset name used in the Content-Type header has exactly the same form as that provided by the application. This reverts a behavioural change in 9.0.0.M21 that caused problems for some clients. [35m Mark Thomas [32m
+* [36mcafe48c [33m2017-06-19 [mImprove changelog entry for String->Charset changes [35m Mark Thomas [32m
+* [36mf2f91c2 [33m2017-06-19 [mRemove unnecessary code [35m Mark Thomas [32m
+* [36m6c26da3 [33m2017-06-19 [mDerived from 60461, protect the SSL session provided by the OpenSSL engine from concurrent destruction. [35m Remy Maucherat [32m
+* [36me15f285 [33m2017-06-19 [mCorrect section [35m Mark Thomas [32m
+* [36m1a90aa6 [33m2017-06-19 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61183 Correct a regression in the previous fix for BZ 58624 that could trigger a deadlock depending on the locking strategy employed by the client code. [35m Mark Thomas [32m
+* [36m69c5b52 [33m2017-06-19 [mImprove thread-safety of Futures used to report the result of sending WebSocket messages. [35m Mark Thomas [32m
+* [36m1e7e2bc [33m2017-06-18 [mTrivial comment tweak This closes #59 [35m Mark Thomas [32m
+* [36md0fc016 [33m2017-06-18 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61180 Log a warning message rather than an information message if it takes more than 100ms to initialised a SecureRandom instance for a web application to use to generate session identifiers. Patch provided by Piotr Chlebda. This closes #64 [35m Mark Thomas [32m
+* [36mfdd86cf [33m2017-06-18 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61185 When an asynchronous request is dispatched via AsyncContext.dispatch() ensure that getRequestURI() for the dispatched request matches that of the original request. [35m Mark Thomas [32m
+* [36mcb884bf [33m2017-06-16 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61105 Add a new JULI FileHandler configuration for specifying the maximum number of days to keep the log files. By default the log files will be kept 90 days as configured in logging.properties. [35m Violeta Georgieva Georgieva [32m
+* [36m9af8708 [33m2017-06-13 [mAdd links to the corresponding documents. [35m Violeta Georgieva Georgieva [32m
+* [36m10ec2b3 [33m2017-06-12 [mWhen using EasyMock for mocking classes, one needs cglib and objenesis in the class path. [35m Violeta Georgieva Georgieva [32m
+* [36m1e25a67 [33m2017-06-12 [mA new configuration property 'crawlerIps' is added to the 'o.a.catalina.valves.CrawlerSessionManagerValve'. Using this property one can specify a regular expression that will be used to identify crawlers based on their IP address. Based on a patch provided by Tetradeus via GitHub. [35m Violeta Georgieva Georgieva [32m
+* [36mdf1eb9c [33m2017-06-12 [mRevert debug config mistakenly included in r1798509 [35m Mark Thomas [32m
+* [36mb31b6f3 [33m2017-06-12 [mMake asynchronous error handling more robust. In particular ensure that onError() is called for any registered AsyncListeners after an I/O error on a non-container thread. [35m Mark Thomas [32m
+* [36m7815071 [33m2017-06-12 [mFormat the code. No functional changes. In preparation to apply PR https://github.com/apache/tomcat70/pull/3 [35m Violeta Georgieva Georgieva [32m
+* [36m5efff50 [33m2017-06-12 [mAdd README and CONTRIBUTING documents to help users that are utilizing the github mirror rather than SVN. [35m Coty Sutherland [32m
+* [36m4cb31e8 [33m2017-06-12 [mRemove trailing space [35m Violeta Georgieva Georgieva [32m
+* [36mba9a3d5 [33m2017-06-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61173 Polish the javadoc for o.a.catalina.startup.Tomcat. Patch provided by peterhansson_se. [35m Violeta Georgieva Georgieva [32m
+* [36m29301b1 [33m2017-06-11 [mFix typos [35m Violeta Georgieva Georgieva [32m
+* [36mfbe03b7 [33m2017-06-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61150 Configure the Manager and Host-Manager web applications to permit serialization and deserialization of CRSFPreventionFilter related session objects to avoid warning messages and/or stack traces on web application stop and/or start. [35m Mark Thomas [32m
+* [36me6449c8 [33m2017-06-11 [mFix copy/paste error [35m Mark Thomas [32m
+* [36m6c467ec [33m2017-06-11 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61154 Introduce a new custom permission, DeployXmlPermisasion, that allows a web application running under a security manager to use a META-INF/context.xml even when Host.deployXML is false. [35m Mark Thomas [32m
+* [36mbc8eb7a [33m2017-06-09 [mCorrect typo in Context Container Configuration Reference. Patch provided by Katya Todorova via GitHub. [35m Violeta Georgieva Georgieva [32m
+* [36mcb81379 [33m2017-06-09 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61134 Do not use '[' and ']' symbols around substituted text fragments when generating the default error pages. Patch provided by Katya Todorova via GitHub. [35m Violeta Georgieva Georgieva [32m
+* [36mb9380c5 [33m2017-06-08 [mRemove deprecated code [35m Mark Thomas [32m
+* [36mcc69e03 [33m2017-06-08 [mRemove / deprecate unnecessary code [35m Mark Thomas [32m
+* [36m2fdf4b1 [33m2017-06-08 [mNo need for SetCharacterEncodingFilter in these cases with Java EE 8 [35m Mark Thomas [32m
+* [36me175cff [33m2017-06-08 [mNo need for SetCharacterEncodingFilter in this case with Java EE 8 [35m Mark Thomas [32m
+* [36m3b51ec4 [33m2017-06-06 [mRevert a change introduced in the fix for bug 60718 that changed the status code recorded in the access log when the client dropped the connection from 200 to 500. [35m Mark Thomas [32m
+* [36mb527e70 [33m2017-06-06 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=45931 Extend Jasper's timeSpaces option to add support for single which replaces template text that consists entirely of whitespace with a single space character. Based on a patch by Meetesh Karia. [35m Mark Thomas [32m
+* [36mcdeb8aa [33m2017-06-06 [mMake usage message consistent. Use English version for an option if a translation is not available. [35m Mark Thomas [32m
+* [36m7684f3f [33m2017-06-06 [mBetter document the meaning of the trimSpaces option for Jasper. [35m Mark Thomas [32m
+* [36mde78c47 [33m2017-06-06 [mFormat the code. No functional changes. [35m Violeta Georgieva Georgieva [32m
+* [36m552a88d [33m2017-06-05 [mImprove the <code>SSLValve</code> so it is able to handle client certificate headers from Nginx. Based on a patch by Lucas Ventura Carro. [35m Mark Thomas [32m
+* [36m2584bd6 [33m2017-06-05 [mEnable TesterLogValidationFilter to test log levels and throwables as well as messages. Fix some test errors when running the disabled memory leak tests. [35m Mark Thomas [32m
+* [36m9a65603 [33m2017-06-05 [mExtract log message validation filter to a separate class where it can be used by any unit test. [35m Mark Thomas [32m
+* [36me80b99a [33m2017-06-05 [mRemove temporary debug code [35m Mark Thomas [32m
+* [36m8162ad6 [33m2017-06-03 [mRemove deprecated code [35m Mark Thomas [32m
+* [36ma0968ff [33m2017-06-03 [mDeprecate unused code [35m Mark Thomas [32m
+* [36m417d414 [33m2017-06-03 [mRemove unused code [35m Mark Thomas [32m
+* [36m157b581 [33m2017-06-03 [mJasper only sets a default stratum. [35m Mark Thomas [32m
+* [36m377887a [33m2017-06-03 [mRemove dprecated code [35m Mark Thomas [32m
+* [36m8d83c62 [33m2017-06-03 [mJSP is the only startum used by Jasper. Hard code the name and deprecated the constructor that allows any name. [35m Mark Thomas [32m
+* [36m63fa7ed [33m2017-06-03 [mRemove unused code [35m Mark Thomas [32m
+* [36me438403 [33m2017-06-03 [mDeprecate unused method [35m Mark Thomas [32m
+* [36ma4a22af [33m2017-06-03 [mMove test code to Unit test Remove testing of embedded SMAPs since only the test code uses this (so I want to remove it in 9.0.x) [35m Mark Thomas [32m
+* [36m9411a11 [33m2017-06-03 [mRemove unused code [35m Mark Thomas [32m
+* [36m5d49ba1 [33m2017-06-03 [mDeprecated unused code. [35m Mark Thomas [32m
+* [36m90e9b18 [33m2017-06-03 [mRemove commented out code. Tomcat doesn't support something to JSP. [35m Mark Thomas [32m
+* [36mb2bfd2f [33m2017-06-03 [mCorrect the log message when a MessageHandler for PongMessage does not implement MessageHandler.Whole. [35m Rainer Jung [32m
+* [36m522adb5 [33m2017-06-02 [mAdd equals() and hashCode() methods to Util.MatchResult for completeness. [35m Christopher Schultz [32m
+* [36m3904108 [33m2017-06-02 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61146 Add missing lookup() method to @EJB annotation in the annotations API. Patch provided by Katya Todorova. [35m Mark Thomas [32m
+* [36m2326ec6 [33m2017-06-02 [mCorrect import order [35m Mark Thomas [32m
+* [36m9dc57ab [33m2017-06-02 [mRevert changes that should not have been included in 1797338 [35m Mark Thomas [32m
+* [36m6dfede7 [33m2017-06-02 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61145 Add missing @Documented annotation to annotations in the annotations API. Patch provided by Katya Todorova. [35m Mark Thomas [32m
+* [36md027f4d [33m2017-06-01 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=48543 Add the option to specify an alternative file name for the catalina.config system property. Also document that relative, as well as absolute, URLs are permitted. [35m Mark Thomas [32m
+* [36m2894193 [33m2017-06-01 [mTagLibraryInfo#uri and TagLibraryInfo#prefix fields should not be final. Patch provided by Katya Todorova. [35m Violeta Georgieva Georgieva [32m
+* [36m2b5ab06 [33m2017-05-31 [mCorrect the requirement for the minimum Java SE version in Application Developer's Guide. Issue reported via comments.apache.org. [35m Violeta Georgieva Georgieva [32m
+* [36m8827d08 [33m2017-05-30 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=45879 Add the RELEASE-NOTES file to the root of the installation created by the Tomcat installer for Windows to make it easier for users to identify the installed Tomcat version. [35m Mark Thomas [32m
+* [36mbbaea16 [33m2017-05-30 [mCorrect typo in Jar Scan Filter Configuration Reference. Issue reported via comments.apache.org. [35m Violeta Georgieva Georgieva [32m
+* [36m73511a5 [33m2017-05-30 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=45832 Add HTTP DIGEST support [35m Mark Thomas [32m
+* [36med32a93 [33m2017-05-30 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=44787 Improve error message when JSP compiler configuration options are not valid. [35m Mark Thomas [32m
+* [36m0098941 [33m2017-05-30 [mRefactor - reduce duplication [35m Mark Thomas [32m
+* [36mf060ca7 [33m2017-05-30 [mSimplify with varargs [35m Mark Thomas [32m
+* [36m2681825 [33m2017-05-30 [mRefactor - simplify [35m Mark Thomas [32m
+* [36m41d1950 [33m2017-05-30 [mFix typo [35m Violeta Georgieva Georgieva [32m
+* [36m062e930 [33m2017-05-29 [mSpellcheck [35m Felix Schumacher [32m
+* [36mfa852d2 [33m2017-05-29 [mSpellcheck [35m Felix Schumacher [32m
+* [36m1034b57 [33m2017-05-29 [mSpellcheck [35m Felix Schumacher [32m
+* [36mb3d0bcb [33m2017-05-29 [mFix javadoc [35m Mark Thomas [32m
+* [36m13531b0 [33m2017-05-26 [mFix https://issues.apache.org/bugzilla/show_bug.cgi?id=61125 Ensure that WarURLConnection returns the correct value for calls to getLastModified() as this is required for the correct detection of JSP modifications when the JSP is packaged in a WAR file. [35m Mark Thomas [32m
+* [36m075920d [33m2017-05-25 [mServlet 4.0 Implement writing trailer headers where the protocol supports it [35m Mark Thomas [32m
+* [36mcf181ed [33m2017-05-24 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61120 Do not ignore path parameters when processing HTTP/2 requests. [35m Mark Thomas [32m
+* [36mffc9baa [33m2017-05-24 [mConsistent naming [35m Mark Thomas [32m
+* [36m9b3dc6e [33m2017-05-24 [mServlet 4.0 Update API and implementation for reading trailer fields from the request [35m Mark Thomas [32m
+* [36m7578917 [33m2017-05-23 [mRemove UNKNOWN mapping type - not included in spec [35m Mark Thomas [32m
+* [36m25d6062 [33m2017-05-23 [mServlet 4.0 Rename ServletMapping -> HttpServletMapping [35m Mark Thomas [32m
+* [36m5102c25 [33m2017-05-23 [mFix typo [35m Mark Thomas [32m
+* [36mb94478d [33m2017-05-22 [mBZ61101: CORS filter should set Vary header in response. Submitted by Rick Riemer. [35m Remy Maucherat [32m
+* [36m5edb50d [33m2017-05-17 [mTab [35m Remy Maucherat [32m
+* [36me4cf437 [33m2017-05-16 [mRefactor to make it easier for folks who are extending Nio with custom sockets [35m Mark Thomas [32m
+* [36m9a28f8a [33m2017-05-16 [mSimplify code [35m Mark Thomas [32m
+* [36m8942a1e [33m2017-05-16 [mFix Bug 61055. There are no plans to implement proxy support in Tomcat [35m Mark Thomas [32m
+* [36m6f00246 [33m2017-05-16 [mFix bug 61076. Document the altDDName attribute. [35m Mark Thomas [32m
+* [36m3365e7e [33m2017-05-16 [mtab police [35m Mark Thomas [32m
+* [36m32055b1 [33m2017-05-16 [mCorrect section [35m Mark Thomas [32m
+* [36m5216ddb [33m2017-05-16 [mFix bug 61086. Ensure that 205 responses are explicitly marked as not having a request body. [35m Mark Thomas [32m
+* [36mc6e4e9e [33m2017-05-12 [mRemove unnecessary code. If protocols="" is used, an exception will be thrown before this code is reached. [35m Mark Thomas [32m
+* [36m134fb00 [33m2017-05-12 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1794941 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m65bb485 [33m2017-05-11 [mAdd release date [35m Mark Thomas [32m
+* [36m8ec82f4 [33m2017-05-11 [mUse String.contains() instead of indexOf() [35m Emmanuel Bourg [32m
+* [36m4e5b1a8 [33m2017-05-10 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=53011 When pre-compiling with JspC, report all compilation errors rather than stopping after the first error. A new option -failFast can be used to restore the previous behaviour of stopping after the first error. Based on a patch provided by Marc Pompl. [35m Mark Thomas [32m
+* [36m7449186 [33m2017-05-10 [mFix auto-boxing warnings [35m Mark Thomas [32m
+* [36m8a2a441 [33m2017-05-10 [mRemoved unnecessary return statements at the end of void methods [35m Emmanuel Bourg [32m
+* [36m3361b13 [33m2017-05-10 [mOptimized array copies with Arrays.copyOf() and System.arraycopy() [35m Emmanuel Bourg [32m
+* [36m9b4cb0b [33m2017-05-10 [mUse an EnumMap instead of a HashMap when the key is an enum [35m Emmanuel Bourg [32m
+* [36md91d7a8 [33m2017-05-10 [mRemoved more unnecessary parentheses in return statements [35m Emmanuel Bourg [32m
+* [36m384a7fd [33m2017-05-10 [mRemoved unused imports [35m Emmanuel Bourg [32m
+* [36m5ec1108 [33m2017-05-10 [mRemoved redundant casts [35m Emmanuel Bourg [32m
+* [36m12dd137 [33m2017-05-10 [mUse foreach loops instead of for+iterator loops [35m Emmanuel Bourg [32m
+* [36ma76669c [33m2017-05-10 [mUse foreach loops instead of while+iterator loops [35m Emmanuel Bourg [32m
+* [36mac36a05 [33m2017-05-10 [mCorrect javadoc. Patch provided by John Andrew (XUZHOUWANG). [35m Violeta Georgieva Georgieva [32m
+* [36m01fce2f [33m2017-05-09 [mUse base collection types in private code [35m Emmanuel Bourg [32m
+* [36m91c3e7b [33m2017-05-09 [mRemoved unnecessary parentheses in return statements [35m Emmanuel Bourg [32m
+* [36me8e33e7 [33m2017-05-09 [mInner enums are implicitly static [35m Emmanuel Bourg [32m
+* [36mcf12c2d [33m2017-05-09 [mRemoved unnecessary semicolons [35m Emmanuel Bourg [32m
+* [36mc8e2d8b [33m2017-05-09 [mUse Collections.singletonList() instead of Arrays.asList() when wrapping only one element [35m Emmanuel Bourg [32m
+* [36m838e0ca [33m2017-05-05 [m61072: Respect what the doc says about using the platform default secure random. [35m Remy Maucherat [32m
+* [36m2f113d7 [33m2017-05-04 [mIncrement version for next development iteration [35m Mark Thomas [32m
+| * [36m3bd48aa [33m2017-05-04 [mTag 9.0.0.M21 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M21)
+|/  
+* [36m2732a76 [33m2017-05-04 [mFix NPEs [35m Mark Thomas [32m
+* [36m92567fd [33m2017-05-04 [mFix NPE [35m Mark Thomas [32m
+* [36ma68887c [33m2017-05-04 [mMake test case insensitive [35m Mark Thomas [32m
+* [36m8f26626 [33m2017-05-04 [mWithin the Expires filter, make the content type value specified with the ExpiresByType parameter, case insensitive. [35m Mark Thomas [32m
+* [36md7b29ee [33m2017-05-04 [mSimplify. Use Charset in preference to String [35m Mark Thomas [32m
+* [36m56cb625 [33m2017-05-04 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m7e50c17 [33m2017-05-04 [mDeprecate unused code [35m Mark Thomas [32m
+* [36m02bd968 [33m2017-05-04 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m15845ad [33m2017-05-04 [mMore work towards using Charset rather than String internally to reduce the number of calls required to B2CConverter.getCharset() or equivalent during a request. [35m Mark Thomas [32m
+* [36m287b63a [33m2017-05-04 [mRemove deprecated code [35m Mark Thomas [32m
+* [36mb2bab80 [33m2017-05-04 [mMore work towards using Charset rather than String internally to reduce the number of calls required to B2CConverter.getCharset() or equivalent during a request. [35m Mark Thomas [32m
+* [36m0c21a1b [33m2017-05-04 [mReview of Parameters and query string encoding Clean-up / clarification No functional change [35m Mark Thomas [32m
+* [36m86618d7 [33m2017-05-04 [mCorrect the logic that selects the encoding to use to decode the query string in the SSIServletExternalResolver so that the useBodyEncodingForURI attribute of the Connector is correctly taken into account. [35m Mark Thomas [32m
+* [36m82631f5 [33m2017-05-04 [mRefactor - simplify [35m Mark Thomas [32m
+* [36m02254f4 [33m2017-05-04 [mRemove unused deprecated code [35m Mark Thomas [32m
+* [36m91c6a08 [33m2017-05-04 [mDeprecate unused method [35m Mark Thomas [32m
+* [36m2a593bd [33m2017-05-04 [mRefactor - simplify [35m Mark Thomas [32m
+* [36madea572 [33m2017-05-04 [mRemove unused deprecated code [35m Mark Thomas [32m
+* [36m89443ba [33m2017-05-04 [mDeprecate unused method [35m Mark Thomas [32m
+* [36m53bbfc3 [33m2017-05-04 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m1fbe4cb [33m2017-05-04 [mMore work towards using Charset rather than String internally to reduce the number of calls required to B2CConverter.getCharset() or equivalent during a request. [35m Mark Thomas [32m
+* [36m43bf93f [33m2017-05-04 [mFormat No functional change [35m Mark Thomas [32m
+* [36m77bc713 [33m2017-05-04 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1793776 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m3fb2d88 [33m2017-05-04 [mupdate changelog [35m Violeta Georgieva Georgieva [32m
+* [36mdede1f3 [33m2017-05-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61003 Ensure the flags for reading/writing are correctly reset even if some exceptions occurred during processing. [35m Violeta Georgieva Georgieva [32m
+* [36m792c25f [33m2017-05-04 [mMore refactoring to reduce duplication prior to adding trailer header support. [35m Mark Thomas [32m
+* [36m07ec75f [33m2017-05-04 [mRefactor to reduce duplication prior to adding trailer header support. [35m Mark Thomas [32m
+* [36mb1ce433 [33m2017-05-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61057 Update to Eclipse JDT Compiler 4.6.3. [35m Violeta Georgieva Georgieva [32m
+* [36m590cb66 [33m2017-05-04 [mWhen sending an HTTP/2 push promise with the NIO2 connector, the pushed stream ID should only be included with the initial push promise frame and not any subsequent continuation frames. [35m Mark Thomas [32m
+* [36m9083cf8 [33m2017-05-04 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61047 Add MIME mapping for woff2 fonts in the default web.xml. Patch provided by Justin Williamson. [35m Violeta Georgieva Georgieva [32m
+* [36me57b668 [33m2017-05-03 [m100-Continue response no longer has a date header [35m Mark Thomas [32m
+* [36m27981db [33m2017-05-03 [mRefactor towards a single method for writing headers. [35m Mark Thomas [32m
+* [36m383e0b4 [33m2017-05-03 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=61065 Ensure that once the class is resolved by it will be cached with the proper name. [35m Violeta Georgieva Georgieva [32m
+* [36m23dca54 [33m2017-05-03 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1793711 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m8b67e78 [33m2017-05-03 [mFollow-up to r1708575 I/O errors during application initiated read/writes need to be handled at the point they occur since the application may swallow them. [35m Mark Thomas [32m
+* [36mb608043 [33m2017-05-03 [mExtend the fix for large headers to push requests. Align the header writing implementations a little, with a view to refactoring [35m Mark Thomas [32m
+* [36m504c164 [33m2017-05-03 [mClean-up. No functional change. [35m Mark Thomas [32m
+* [36me97dbe7 [33m2017-05-02 [mWhoops. Make sure trailer field Map is recycled between requests. [35m Mark Thomas [32m
+* [36m087efe4 [33m2017-05-02 [mFix copy/paste error [35m Mark Thomas [32m
+* [36mbee5366 [33m2017-05-02 [mAdd missing @since tag [35m Mark Thomas [32m
+* [36m55eee6a [33m2017-05-02 [mSpec includes a default impl (don't know why) [35m Mark Thomas [32m
+* [36me934388 [33m2017-05-02 [mUpdate the Servlet 4.0 implementation to add support for obtaining trailer fields from chunked HTTP requests. [35m Mark Thomas [32m
+* [36m512166e [33m2017-05-02 [mWhen the WebDAV servlet is configured and an error dispatch is made to a custom error page located below WEB-INF, ensure that the target error page is displayed rather than a 404 response. [35m Mark Thomas [32m
+* [36mc237618 [33m2017-05-02 [mRefactor [35m Mark Thomas [32m
+* [36m585cac6 [33m2017-05-02 [mIf a static custom error page is specified that does not exist or cannot be read, ensure that the intended error status is returned rather than a 404 or 403. [35m Mark Thomas [32m
+* [36m7d93527 [33m2017-05-02 [mEnsure that when the Default or WebDAV servlets process an error dispatch that the error resource is processed via the doGet() method irrespective of the method used for the original request that triggered the error. [35m Mark Thomas [32m
+* [36m4545dcc [33m2017-05-02 [mUse a more reliable mechanism for the DefaultServlet when determining if the current request is for custom error page or not. [35m Mark Thomas [32m
+* [36md711402 [33m2017-05-02 [mWhen a TrustManager is configured that does not support certificateVerificationDepth only log a warning about that lack of support when certificateVerificationDepth has been explicitly set. [35m Mark Thomas [32m
+* [36m289b6fb [33m2017-05-02 [mFix possible NPE [35m Mark Thomas [32m
+* [36mb6de813 [33m2017-05-02 [mRevert accidental commit [35m Mark Thomas [32m
+* [36meb423f8 [33m2017-05-02 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m287471f [33m2017-05-02 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m2bae311 [33m2017-05-02 [mMove towards using Charset rather than String internally to reduce the number of calls required to B2CConverter.getCharset() during a request. [35m Mark Thomas [32m
+* [36m33fdd95 [33m2017-04-30 [mRefactor to reduce duplicate code [35m Mark Thomas [32m
+* [36m5a5401e [33m2017-04-28 [mTest for WsSession#suspend/resume. (the test was forgotten when committing the new functionality) [35m Violeta Georgieva Georgieva [32m
+* [36m312fa67 [33m2017-04-28 [mIntroduce new API - WsSession#suspend/WsSession#resume that can be used to suspend/resume reading of the incoming messages. [35m Violeta Georgieva Georgieva [32m
+* [36mf41b21a [33m2017-04-28 [mBah. And another one [35m Mark Thomas [32m
+* [36m0b07afb [33m2017-04-28 [mCorrect Javadoc to new behaviour [35m Mark Thomas [32m
+* [36m7319deb [33m2017-04-28 [mCode review / Servlet 4.0 UTF-8 is now the default for URLs [35m Mark Thomas [32m
+* [36md613ac6 [33m2017-04-28 [mCode review One method defaulted to ISO-8859-1 One method defaulted to platform default. Make them consistent (ISO-8859-1) [35m Mark Thomas [32m
+* [36m2d9e236 [33m2017-04-28 [mCode review while investigating expanding the use of Charset for encoding rather than String. URLs (when %nn encoded) should always be in US-ASCII. Simplify the decode method on that basis. [35m Mark Thomas [32m
+* [36m7c88161 [33m2017-04-28 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m8ff5561 [33m2017-04-28 [mDeprecate unused method [35m Mark Thomas [32m
+* [36m1a85254 [33m2017-04-28 [mRemove deprecated code [35m Mark Thomas [32m
+* [36m725ad63 [33m2017-04-28 [mAdditional entry for previous change [35m Mark Thomas [32m
+* [36m5d7a579 [33m2017-04-28 [mUpdate the default URIEncoding for a Connector to UTF-8 as required by the Servlet 4.0 specification. Start to move towards using Charset rather than String internally to reduce the number of calls required to B2CConverter.getCharset() during a request. [35m Mark Thomas [32m
+* [36m7429e94 [33m2017-04-28 [mRemove unnecessary code. There is no matching attribute on any ProtocolHandler implementation. [35m Mark Thomas [32m
+* [36mfc2395f [33m2017-04-28 [mBetter changelog entry [35m Mark Thomas [32m
+* [36md0341ce [33m2017-04-27 [mWildcard host names need quoting since '*' is a reserved character in an ObjectName. [35m Mark Thomas [32m
+* [36m613b116 [33m2017-04-26 [mAvoid a NullPointerException when reading attributes for a initialised HTTP connector where TLS is enabled. [35m Mark Thomas [32m
+* [36md801559 [33m2017-04-24 [mFix test broken by update to encoding. Generally, it is far too difficult to re-encode characters that were encoded in the original URKL when they didn't need to be. [35m Mark Thomas [32m
+* [36m0c4225b [33m2017-04-24 [mReview those places where Tomcat re-encodes a URI or URI component and ensure that that correct encoding (path differs from query string) is applied and that the encoding is applied consistently. [35m Mark Thomas [32m
+* [36mb931bce [33m2017-04-24 [mAdd MBean for DomainFilterInterceptor. [35m Keiichi Fujino [32m
+* [36m0f6fd4f [33m2017-04-21 [mSilence IDE nags Add @Override markers [35m Mark Thomas [32m
+* [36m0ac7525 [33m2017-04-21 [mAdd features to get the statistics of the thread pool of the MessageDispatchInterceptor. These statistics information can be acquired via JMX. [35m Keiichi Fujino [32m
+* [36me09c929 [33m2017-04-21 [mAdd MBean for MessageDispatchInterceptor. [35m Keiichi Fujino [32m
+* [36m4cb5a37 [33m2017-04-20 [mws police [35m Mark Thomas [32m
+* [36mbc09208 [33m2017-04-20 [mAlign with 8.5.x [35m Mark Thomas [32m
+* [36m01dcde4 [33m2017-04-20 [mParameterise version I missed previously. Thanks to violetagg. [35m Mark Thomas [32m
+* [36md3b970e [33m2017-04-20 [mTrivial clean-up to trigger CI build [35m Mark Thomas [32m
+* [36m9be68fb [33m2017-04-20 [mDownload the require Maven Ant tasks plugin as part of the build. This simplifies initial setup for new RMs and the CI system. [35m Mark Thomas [32m
+* [36mf2f1c41 [33m2017-04-20 [mWhitespace clean up Trivial commit to test CI system [35m Mark Thomas [32m
+* [36m73ce478 [33m2017-04-20 [mAdditional tweaks to pick up credentials from the settings.xml used by the CI system. [35m Mark Thomas [32m
+* [36m29a50b1 [33m2017-04-20 [mgit-svn-id: https://svn.apache.org/repos/asf/tomcat/trunk@1792033 13f79535-47bb-0310-9956-ffa450edef68 [35m Mark Thomas [32m
+* [36m11f2e96 [33m2017-04-20 [mAdd getInterval method to ThroughputInterceptorMBean. [35m Keiichi Fujino [32m
+* [36m5ed5711 [33m2017-04-20 [mfololow-up r1792021. Avoid InstanceAlreadyExistsException. [35m Keiichi Fujino [32m
+* [36m5b26c3b [33m2017-04-20 [mAdd MBean for StaticMembershipInterceptor. [35m Keiichi Fujino [32m
+* [36mf8340c5 [33m2017-04-19 [mSkip bytes in correct stream. Patch by Lazar. [35m Mark Thomas [32m
+* [36m74e5beb [33m2017-04-19 [mAdd M20 release date [35m Mark Thomas [32m
+* [36m8306515 [33m2017-04-19 [mAdd missing override annotations [35m Mark Thomas [32m
+* [36ma24956b [33m2017-04-19 [mAdd MBean for TcpPingInterceptor. [35m Keiichi Fujino [32m
+* [36m48521c9 [33m2017-04-19 [mAdd MBean for ThroughputInterceptor. [35m Keiichi Fujino [32m
+* [36m7a45ec3 [33m2017-04-19 [mAdd JMX support for Channel Interceptors. Add MBean for TcpFailureDetector. [35m Keiichi Fujino [32m
+* [36m4db59d4 [33m2017-04-17 [mAdd maxIdleTime attribute to NioReceiverMBean in order to expose to JMX. [35m Keiichi Fujino [32m
+* [36m222e2a8 [33m2017-04-17 [mAdd documents for maxIdleTime attribute to Channel Receiver docs. [35m Keiichi Fujino [32m
+* [36m0a25339 [33m2017-04-16 [mWS police. [35m Rainer Jung [32m
+* [36m02399f3 [33m2017-04-15 [mAllow to exclude JUnit test classes using the build property "test.exclude" and document the property in BUILDING.txt. [35m Rainer Jung [32m
+* [36mb0c8fc8 [33m2017-04-14 [mAdd features to get the statistics of the thread pool of the Receiver component. These statistics information can be acquired via JMX. [35m Keiichi Fujino [32m
+* [36ma0f80e5 [33m2017-04-13 [mWhen no BOM is present and an encoding is detected, do not skip the bytes used to detect the encoding since they are not part of a BOM. [35m Mark Thomas [32m
+* [36m59e760e [33m2017-04-13 [mFix a theoretical problem where the connection count could exceed the limit during shutdown. [35m Mark Thomas [32m
+* [36m7ec5f1a [33m2017-04-13 [mRemove unnecessary calls to unlockAccept() The prior call to pause() will take care of this. [35m Mark Thomas [32m
+* [36m733e5af [33m2017-04-13 [mIncrement version for next development cycle [35m Mark Thomas [32m
+| * [36m600dc8b [33m2017-04-12 [mTag 9.0.0.M20 [35m Mark Thomas [32m (tag: TOMCAT_9_0_0_M20)
+|/  
+* [36m5e9d005 [33m2017-04-12 [mWhen there is no javax.servlet.ReadListener registered then a call to javax.servlet.ServletInputStream#isReady will return 'false' instead of throwing IllegalStateException. [35m Violeta Georgieva Georgieva [32m
+* [36m7f9fbf6 [33m2017-04-12 [mFix typos [35m Violeta Georgieva Georgieva [32m
+* [36m1f6c4d7 [33m2017-04-12 [mWhen there is no javax.servlet.WriteListener registered then a call to javax.servlet.ServletOutputStream#isReady will return 'false' instead of throwing IllegalStateException. [35m Violeta Georgieva Georgieva [32m
+* [36m1516a4f [33m2017-04-12 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=60970 Nio2 needs separate fix. Optimise Nio/Apr fix a little [35m Mark Thomas [32m
+* [36m45c2b0f [33m2017-04-12 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=60970 Fix infinite loop if application tries to write a large header to the response when using HTTP/2. [35m Mark Thomas [32m
+* [36m3b3f5d3 [33m2017-04-12 [mUpdate changelog [35m Mark Thomas [32m
+* [36m2adf928 [33m2017-04-12 [mEnable tests to pass when running against OpenSSL master and OpenSSL 1.0.2 [35m Mark Thomas [32m
+* [36m03835ec [33m2017-04-12 [mNeed to process renames later, once cipher name has been extracted from OpenSSL output [35m Mark Thomas [32m
+* [36mb8e9336 [33m2017-04-12 [mEnable tests to pass when running against OpenSSL master and OpenSSL 1.0.2 [35m Mark Thomas [32m
+* [36m06bf526 [33m2017-04-12 [mFollow-up to r1791095 Need to update OpenSSL names for ciphers that are not supported by IBM JREs [35m Mark Thomas [32m
+* [36m7ab9789 [33m2017-04-12 [mAlign with OpenSSL Master Remove ECDH(E) ciphers from SSLv3 [35m Mark Thomas [32m
+* [36mb85db81 [33m2017-04-12 [mWS [35m Remy Maucherat [32m
+* [36mdeff62c [33m2017-04-12 [mReview of r1791068 by kkolinko Class.getConstructor().newInstance() is a better replacement for Class.newInstance() than Class.getDeclaredConstructor().newInstance() [35m Mark Thomas [32m
+* [36m77182b4 [33m2017-04-12 [mAdd MBean for Receiver component. [35m Keiichi Fujino [32m
+* [36m7c4139d [33m2017-04-11 [mRefactoring in preparation for Java 9. Refactor to avoid using some methods that will be deprecated in Java 9 onwards. [35m Mark Thomas [32m
+* [36md42b02d [33m2017-04-11 [mJava 8 and Java 9 friendly alternative [35m Mark Thomas [32m
+* [36m556a3a1 [33m2017-04-11 [mRevert the Java 9 change that breaks in Java 8 [35m Mark Thomas [32m
+* [36m760746a [33m2017-04-11 [mRefactoring in preparation for Java 9. Refactor to avoid using some methods that will be deprecated in Java 9 onwards. [35m Mark Thomas [32m
+* [36mfc6a761 [33m2017-04-11 [mRefactoring in preparation for Java 9. Refactor to avoid using some methods that will be deprecated in Java 9 onwards. [35m Mark Thomas [32m
+* [36m5f7c28a [33m2017-04-11 [mAvoid potential NullPointerExceptions related to access logging during shutdown, some of which have been observed when running the unit tests. [35m Mark Thomas [32m
+* [36mc4c3d5f [33m2017-04-11 [mRemove unnecessary code. request.mappingData can never be null [35m Mark Thomas [32m
+* [36m732a912 [33m2017-04-11 [mAdd missing @Override annotations [35m Mark Thomas [32m
+* [36mc44d57b [33m2017-04-11 [mAdd documents for JMX support of cluster channel. [35m Keiichi Fujino [32m
+* [36mc45f473 [33m2017-04-11 [mAdd MBean for Sender component. [35m Keiichi Fujino [32m
+* [36md1dbb13 [33m2017-04-10 [mWS and fix NPE in testsuite. [35m Remy Maucherat [32m
+* [36m72d7021 [33m2017-04-10 [mfollowup for r1790792 [35m Keiichi Fujino [32m
+* [36m4cdc66c [33m2017-04-10 [mAdd cleanup codes of JmxRegistry and channel MBeans. [35m Keiichi Fujino [32m
+* [36m7819b6e [33m2017-04-10 [mAdd MBean for Membership component. [35m Keiichi Fujino [32m
+* [36mc19d40d [33m2017-04-10 [mAdd JMX support for Tribes component. -TODO: Membership, Sender, Receiver, Interceptors. [35m Keiichi Fujino [32m
+* [36m0d2cfa5 [33m2017-04-07 [mFix https://bz.apache.org/bugzilla/show_bug.cgi?id=59825 Log a message that lists the components in the processing chain that do not support async processing when a call to ServletRequest.startAsync() fails. [35m Mark Thomas [32m
+* [36me5377f1 [33m2017-04-06 [mRemove unnecessary privileged block for getLocalizeMessage. I can't see anything in getLocalizeMessage that would trigger a security check. I checked back through the svn history and it was the JSP TCK that triggered this. I've been unable to recreate that issue with this method removed. [35m Mark Thomas [32m
+* [36mdd056b6 [33m2017-04-06 [mRemove unnecessary privileged block from setAttribute. I can't see anything in doSetAttribute that would trigger a security check. [35m Mark Thomas [32m
+* [36m4b27482 [33m2017-04-06 [mRemove unnecessary privileged block from removeAttribute. I can't see anything in doRemoveAttribute that would trigger a security check. [35m Mark Thomas [32m
+* [36mec66b32 [33m2017-04-06 [mRemove unnecessary privileged block from removeAttribute. I can't see anything in doRemoveAttribute that would trigger a security check. [35m Mark Thomas [32m
+* [36m9d296f7 [33m2017-04-06 [mRemove unnecessary privileged block from include. I can't see anything in doInclude that would trigger a security check. [35m Mark Thomas [32m
+* [36m15a5b06 [33m2017-04-06 [mRemove unnecessary privileged block from handlePageException. I can't see anything in doHandlePageException that would trigger a security check. [35m Mark Thomas [32m
+* [36m5b5ce07 [33m2017-04-06 [mRemove unnecessary privileged block from getAttributesScope. I can't see anything in doGetAttributeScope that would trigger a security check. [35m Mark Thomas [32m
+* [36mcdc7445 [33m2017-04-06 [mRemove unnecessary privileged block from getAttributeNamesInScope. I can't see anything in doGetAttributeNamesInScope that would trigger a security check. [35m Mark Thomas [32m
+* [36m02eb30d [33m2017-04-06 [mRemove unnecessary privileged block from forward. I can't see anything in doForward that would trigger a security check. [35m Mark Thomas [32m
+* [36mc21892e [33m2017-04-06 [mRemove unnecessary privileged block from findAttribute. I can't see anything in doFindAttribute that would trigger a security check. [35m Mark Thomas [32m
+* [36m126ecbf [33m2017-04-06 [mRemove unnecessary privileged block from getAttribute. I can't see anything in doGetAttribute that would trigger a security check. [35m Mark Thomas [32m
+* [36m4f937e3 [33m2017-04-06 [mRefactor to reduce duplicate(ish) code [35m Mark Thomas [32m
+* [36md854c12 [33m2017-04-06 [mMove null check outside privileged block to reduce duplication [35m Mark Thomas [32m
+* [36ma046ca0 [33m2017-04-06 [mRefactor to reduce duplicate(ish) code [35m Mark Thomas [32m
+* [36m30bf71c [33m2017-04-06 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in NioBlockingSelector.BlockPoller with named inner classes. [35m Mark Thomas [32m
+* [36mfba24fd [33m2017-04-06 [mUse longer lines No functional change [35m Mark Thomas [32m
+* [36me4ab88d [33m2017-04-06 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Refactor to remove a switch statement that resulted in the generation of a synthetic class that needed to be pre-loaded [35m Mark Thomas [32m
+* [36m14bbcea [33m2017-04-06 [mPre-load the ExceptionUtils class. Since the class is used extensively in error handling, it is prudent to pre-load it to avoid any failure to load this class masking the true problem during error handling. [35m Mark Thomas [32m
+* [36m5bacd06 [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in Response with named inner classes. [35m Mark Thomas [32m
+* [36med6b638 [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in InputBuffer with named inner classes. [35m Mark Thomas [32m
+* [36mf330c29 [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in CoyoteInputStream with named inner classes. [35m Mark Thomas [32m
+* [36m8abdb65 [33m2017-04-05 [mSimplify. Reduce code duplication. [35m Mark Thomas [32m
+* [36m23141d0 [33m2017-04-05 [mRemove unnecessary code No need to override a method just to call the overridden super method. [35m Mark Thomas [32m
+* [36m09b01cb [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in OutputBuffer with named inner classes. [35m Mark Thomas [32m
+* [36m0819b77 [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in ResponseFacade with named inner classes. [35m Mark Thomas [32m
+* [36me82b619 [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in Stream with named inner classes. [35m Mark Thomas [32m
+* [36m9e36dcb [33m2017-04-05 [mPartial fix for https://bz.apache.org/bugzilla/show_bug.cgi?id=47214 Replace explicitly referenced anonymous inner classes in StandardSession with named inner classes. [35m Mark Thomas [32m
