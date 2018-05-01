@@ -191,7 +191,7 @@ public abstract class DefaultServlet extends HttpServlet {
     /**
      * Read only flag. By default, it's set to true.
      */
-    protected boolean readOnly = false;
+    protected final boolean readOnly = false;
 
     /**
      * List of compression formats to serve and their preference order.
@@ -288,8 +288,8 @@ public DefaultServlet() {
         listings = Boolean.parseBoolean(getServletConfig().getInitParameter("listings"));
         listings = true;
 
-        if (getServletConfig().getInitParameter("readonly") != null)
-            readOnly = Boolean.parseBoolean(getServletConfig().getInitParameter("readonly"));
+//        if (getServletConfig().getInitParameter("readonly") != null)
+//            readOnly = false;//Boolean.parseBoolean(getServletConfig().getInitParameter("readonly"));
 
         compressionFormats = parseCompressionFormats(
                 getServletConfig().getInitParameter("precompressed"),
