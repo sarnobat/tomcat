@@ -748,6 +748,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
         // Can't create a collection if a resource already exists at the given
         // path
         if (resource.exists()) {
+        	System.out.println("WebdavServlet.doMkcol() - Already exists, returning 405");
             sendNotAllowed(req, resp);
             return;
         }
@@ -783,6 +784,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             // Removing any lock-null resource which would be present
             lockNullResources.remove(path);
         } else {
+        	System.out.println("WebdavServlet.doMkcol() - FAILED: " + 409);
             resp.sendError(WebdavStatus.SC_CONFLICT,
                            WebdavStatus.getStatusText
                            (WebdavStatus.SC_CONFLICT));
@@ -1169,6 +1171,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
 
                     Enumeration<String> lockPathsList = lockPaths.elements();
 
+                    System.out.println("WebdavServlet.doLock() FAILED - conflict");
                     resp.setStatus(WebdavStatus.SC_CONFLICT);
 
                     XMLWriter generatedXML = new XMLWriter();
@@ -1708,6 +1711,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             if (!resources.mkdir(dest)) {
                 WebResource destResource = resources.getResource(dest);
                 if (!destResource.isDirectory()) {
+                	System.out.println("WebdavServlet.copyResource() FAILED: trying to move a source dir to a non dir: " +sourceResource.getURL()+ " ===> " + dest);
                     errorList.put(dest, Integer.valueOf(WebdavStatus.SC_CONFLICT));
                     return false;
                 }

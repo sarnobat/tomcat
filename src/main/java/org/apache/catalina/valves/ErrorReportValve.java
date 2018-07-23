@@ -153,7 +153,9 @@ public class ErrorReportValve extends ValveBase {
     protected void report(Request request, Response response, Throwable throwable) {
 
         int statusCode = response.getStatus();
-        System.out.println("SRIDHAR ErrorReportValve.report() - http status code " + statusCode);
+        if (statusCode > 399) {
+        	System.out.println("SRIDHAR ErrorReportValve.report() - http status code " + statusCode + " : " + request.getPathInfo());
+        }
 
 
 response.setHeader("Access-Control-Allow-Origin", "*");

@@ -228,6 +228,9 @@ public final class Response {
      */
     public void setStatus(int status) {
         if (this.status > 399) {
+        	System.out.println("Response.setStatus() " + status + ". Something went wrong.");
+        }
+        if (this.status > 399) {
             // Don't overwrite first recorded error status
             return;
         }
