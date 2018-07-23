@@ -594,6 +594,7 @@ public class DefaultServlet extends HttpServlet {
                     resp.setStatus(HttpServletResponse.SC_CREATED);
                 }
             } else {
+            	System.out.println("DefaultServlet.doPut() FAILED 409");
                 resp.sendError(HttpServletResponse.SC_CONFLICT);
             }
         } finally {

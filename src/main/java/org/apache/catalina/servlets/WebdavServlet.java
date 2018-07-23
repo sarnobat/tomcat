@@ -877,7 +877,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
      */
     protected void doMove(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-
+System.out.println("WebdavServlet.doMove() moving - this sometimes returns 409 and I don't understand where.");
         if (readOnly) {
             resp.sendError(WebdavStatus.SC_FORBIDDEN);
             return;
@@ -1552,6 +1552,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
 
         if (destinationPath == null) {
             resp.sendError(WebdavStatus.SC_BAD_REQUEST);
+            System.out.println("WebdavServlet.copyResource() FAILED 400");
             return false;
         }
 
@@ -1616,6 +1617,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
         // Check destination path to protect special subdirectories
         if (isSpecialPath(destinationPath)) {
             resp.sendError(WebdavStatus.SC_FORBIDDEN);
+            System.out.println("WebdavServlet.copyResource() FAILED 403 - 1");
             return false;
         }
 
@@ -1623,6 +1625,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
 
         if (destinationPath.equals(path)) {
             resp.sendError(WebdavStatus.SC_FORBIDDEN);
+            System.out.println("WebdavServlet.copyResource() FAILED 403 - 2");
             return false;
         }
 
@@ -1647,6 +1650,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             // Delete destination resource, if it exists
             if (destination.exists()) {
                 if (!deleteResource(destinationPath, req, resp, true)) {
+                	System.out.println("WebdavServlet.copyResource() FAILED - could not delete");
                     return false;
                 }
             } else {
@@ -1656,6 +1660,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             // If the destination exists, then it's a conflict
             if (destination.exists()) {
                 resp.sendError(WebdavStatus.SC_PRECONDITION_FAILED);
+                System.out.println("WebdavServlet.copyResource() FAILED - 412");
                 return false;
             }
         }
@@ -1672,6 +1677,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             } else {
                 sendReport(req, resp, errorList);
             }
+            System.out.println("WebdavServlet.copyResource() FAILED - copy failed, or error list not empty");
             return false;
         }
 
@@ -1740,6 +1746,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
                     WebResource parentResource = resources.getResource(parent);
                     if (!parentResource.isDirectory()) {
                         errorList.put(source, Integer.valueOf(WebdavStatus.SC_CONFLICT));
+                        System.out.println("WebdavServlet.copyResource() - FAILED 409");
                         return false;
                     }
                 }
@@ -1753,6 +1760,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             }
             try (InputStream is = sourceResource.getInputStream()) {
                 if (!resources.write(dest, is, false)) {
+                	System.out.println("WebdavServlet.copyResource() FAILED 500 - 1");
                     errorList.put(source, Integer.valueOf(WebdavStatus.SC_INTERNAL_SERVER_ERROR));
                     return false;
                 }
@@ -1761,6 +1769,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
             }
         } else {
             errorList.put(source, Integer.valueOf(WebdavStatus.SC_INTERNAL_SERVER_ERROR));
+            System.out.println("WebdavServlet.copyResource() FAILED 500 - source is neither recognized by tomcat as a file nor directory (probably because it has special characters): " + source);
             return false;
         }
         return true;
@@ -1823,6 +1832,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
 
         if (!resource.isDirectory()) {
             if (!resource.delete()) {
+System.out.println("WebdavServlet.deleteResource()  FAILED 500");
                 resp.sendError(WebdavStatus.SC_INTERNAL_SERVER_ERROR);
                 return false;
             }
@@ -1897,6 +1907,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
                     if (!childResource.isDirectory()) {
                         // If it's not a collection, then it's an unknown
                         // error
+                    	System.out.println("WebdavServlet.deleteCollection()  FAILED 500");
                         errorList.put(childName, Integer.valueOf(
                                 WebdavStatus.SC_INTERNAL_SERVER_ERROR));
                     }
