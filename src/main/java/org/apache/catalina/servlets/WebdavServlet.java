@@ -339,7 +339,9 @@ resp.setHeader("Access-Control-Allow-Headers","*");
         }
 
         final String method = req.getMethod();
-        System.out.println("SRIDHAR WebdavServlet.service() - method = " + method);
+	if (!method.equals("OPTIONS") && method != METHOD_PROPFIND) {
+        	System.out.println("SRIDHAR WebdavServlet.service() - method = " + method);
+	}
 
         if (debug > 0) {
             log("[" + method + "] " + path);
@@ -1760,7 +1762,7 @@ System.out.println("WebdavServlet.doMove() moving - this sometimes returns 409 a
             }
             try (InputStream is = sourceResource.getInputStream()) {
                 if (!resources.write(dest, is, false)) {
-                	System.out.println("WebdavServlet.copyResource() FAILED 500 - 1");
+                	System.out.println("WebdavServlet.copyResource() FAILED 500 - 1, dest = " + dest);
                     errorList.put(source, Integer.valueOf(WebdavStatus.SC_INTERNAL_SERVER_ERROR));
                     return false;
                 }

@@ -153,7 +153,8 @@ public class ErrorReportValve extends ValveBase {
     protected void report(Request request, Response response, Throwable throwable) {
 
         int statusCode = response.getStatus();
-        if (statusCode > 399) {
+	// 404 is fine when we are checking if it's safe to move a file to a destination.
+        if (statusCode > 399 && statusCode != 404) {
         	System.out.println("SRIDHAR ErrorReportValve.report() - http status code " + statusCode + " : " + request.getPathInfo());
         }
 

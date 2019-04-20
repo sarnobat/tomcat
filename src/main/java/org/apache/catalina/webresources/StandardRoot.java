@@ -175,14 +175,15 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
 
     @Override
     public boolean write(String path, InputStream is, boolean overwrite) {
+    System.out.println("StandardRoot.write() - begin");
         path = validate(path);
 
         if (!overwrite && preResourceExists(path)) {
             return false;
         }
-
+    System.out.println("StandardRoot.write() - 1 main = " + main.getClass());
         boolean writeResult = main.write(path, is, overwrite);
-
+    System.out.println("StandardRoot.write() - 2 writeResult = " + writeResult);
         if (writeResult && isCachingAllowed()) {
             // Remove the entry from the cache so the new resource is visible
             cache.removeCacheEntry(path);

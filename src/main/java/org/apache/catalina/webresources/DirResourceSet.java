@@ -209,17 +209,20 @@ public class DirResourceSet extends AbstractFileResourceSet {
         checkPath(path);
 
         if (is == null) {
+        	System.out.println("DirResourceSet.write() - 1");
             throw new NullPointerException(
                     sm.getString("dirResourceSet.writeNpe"));
         }
 
         if (isReadOnly()) {
+        	System.out.println("DirResourceSet.write() - 2");
             return false;
         }
 
         // write() is meant to create a file so ensure that the path doesn't
         // end in '/'
         if (path.endsWith("/")) {
+        	System.out.println("DirResourceSet.write() - 3");
             return false;
         }
 
@@ -228,23 +231,31 @@ public class DirResourceSet extends AbstractFileResourceSet {
         if (path.startsWith(webAppMount)) {
             dest = file(path.substring(webAppMount.length()), false);
             if (dest == null) {
+        	System.out.println("DirResourceSet.write() - 4");
                 return false;
             }
         } else {
+        	System.out.println("DirResourceSet.write() - 5");
             return false;
         }
 
         if (dest.exists() && !overwrite) {
+        	System.out.println("DirResourceSet.write() - 6");
             return false;
         }
 
         try {
             if (overwrite) {
+				System.out.println("DirResourceSet.write() - 7");
                 Files.copy(is, dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } else {
+            
+        	System.out.println("DirResourceSet.write() - 8");
                 Files.copy(is, dest.toPath());
             }
         } catch (IOException ioe) {
+        ioe.printStackTrace();
+        	System.out.println("DirResourceSet.write() - 9 " + ioe);
             return false;
         }
 
