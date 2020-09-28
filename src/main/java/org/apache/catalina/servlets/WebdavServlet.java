@@ -879,7 +879,7 @@ resp.setHeader("Access-Control-Allow-Headers","*");
      */
     protected void doMove(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-System.out.println("WebdavServlet.doMove() moving - this sometimes returns 409 and I don't understand where.");
+System.out.println("SRIDHAR WebdavServlet.doMove() moving - this sometimes returns 409 and I don't understand where.");
         if (readOnly) {
             resp.sendError(WebdavStatus.SC_FORBIDDEN);
             return;
@@ -892,6 +892,7 @@ System.out.println("WebdavServlet.doMove() moving - this sometimes returns 409 a
 
         String path = getRelativePath(req);
 
+System.out.println("SRIDHAR WebdavServlet.doMove() copy first, only delete if successful.");
         if (copyResource(req, resp)) {
             deleteResource(path, req, resp, false);
         }
@@ -1548,6 +1549,7 @@ System.out.println("WebdavServlet.doMove() moving - this sometimes returns 409 a
                                  HttpServletResponse resp)
             throws IOException {
 
+            System.out.println("SRIDHAR WebdavServlet.copyResource() - begin");
         // Parsing destination header
 
         String destinationPath = req.getHeader("Destination");

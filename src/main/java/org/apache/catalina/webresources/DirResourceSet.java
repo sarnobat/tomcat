@@ -208,6 +208,7 @@ public class DirResourceSet extends AbstractFileResourceSet {
     public boolean write(String path, InputStream is, boolean overwrite) {
         checkPath(path);
 
+        	System.out.println("DirResourceSet.write() - 0 - " + path.toString());
         if (is == null) {
         	System.out.println("DirResourceSet.write() - 1");
             throw new NullPointerException(
@@ -250,12 +251,14 @@ public class DirResourceSet extends AbstractFileResourceSet {
                 Files.copy(is, dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } else {
             
-        	System.out.println("DirResourceSet.write() - 8");
+        	System.out.println("DirResourceSet.write() - 8 - doing Files.copy() - will be slow for large files (we can't do Files.move() because of some file name escaping issues..)");
                 Files.copy(is, dest.toPath());
+                //Files.move(java.nio.file.Paths.get(path), dest.toPath());
+        	System.out.println("DirResourceSet.write() - 9 - DONE. Finished doing Files.copy(): " + dest.toPath());
             }
         } catch (IOException ioe) {
         ioe.printStackTrace();
-        	System.out.println("DirResourceSet.write() - 9 " + ioe);
+        	System.out.println("DirResourceSet.write() - 10 " + ioe);
             return false;
         }
 

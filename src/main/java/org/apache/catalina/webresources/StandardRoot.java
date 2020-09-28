@@ -175,15 +175,15 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
 
     @Override
     public boolean write(String path, InputStream is, boolean overwrite) {
-    System.out.println("StandardRoot.write() - begin");
+    System.out.println("SRIDHAR StandardRoot.write() - begin");
         path = validate(path);
 
         if (!overwrite && preResourceExists(path)) {
             return false;
         }
-    System.out.println("StandardRoot.write() - 1 main = " + main.getClass());
+    System.out.println("SRIDHAR StandardRoot.write() - 1 main = " + main.getClass());
         boolean writeResult = main.write(path, is, overwrite);
-    System.out.println("StandardRoot.write() - 2 writeResult = " + writeResult);
+    System.out.println("SRIDHAR StandardRoot.write() - 2 writeResult = " + writeResult);
         if (writeResult && isCachingAllowed()) {
             // Remove the entry from the cache so the new resource is visible
             cache.removeCacheEntry(path);
@@ -209,14 +209,16 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
 
     private WebResource getResource(String path, boolean validate,
             boolean useClassLoaderResources) {
-        System.out.println("SRIDHAR StandardRoot.getResource() - " + path);
+        System.out.println("SRIDHAR StandardRoot.getResource() - begin: " + path);
         if (validate) {
             path = validate(path);
         }
 
         if (isCachingAllowed()) {
+	 //       System.out.println("SRIDHAR StandardRoot.getResource() - getting resource from cache: " + path);
             return cache.getResource(path, useClassLoaderResources);
         } else {
+        System.out.println("SRIDHAR StandardRoot.getResource() - caching not allowed, getting from file system: " + path);
             return getResourceInternal(path, useClassLoaderResources);
         }
     }
