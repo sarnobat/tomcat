@@ -315,7 +315,7 @@ public class WebdavServlet extends DefaultServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
-
+System.out.println("SRIDHAR WebdavServlet::service() - begin");
         final String path = getRelativePath(req);
 resp.setHeader("Access-Control-Allow-Origin", "*");
 resp.setHeader("Access-Control-Allow-Methods", "*");

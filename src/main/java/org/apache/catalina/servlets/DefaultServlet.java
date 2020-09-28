@@ -428,7 +428,7 @@ public class DefaultServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+System.out.println("SRIDHAR DefaultServlet::service() - begin");
         if (req.getDispatcherType() == DispatcherType.ERROR) {
             doGet(req, resp);
         } else {
@@ -451,6 +451,7 @@ public class DefaultServlet extends HttpServlet {
                          HttpServletResponse response)
         throws IOException, ServletException {
 
+System.out.println("SRIDHAR DefaultServlet::doGet() - begin");
         // Serve the requested resource, including the data content
         serveResource(request, response, true, fileEncoding);
 
@@ -762,11 +763,11 @@ public class DefaultServlet extends HttpServlet {
                                  boolean content,
                                  String inputEncoding)
         throws IOException, ServletException {
-
         boolean serveContent = content;
 
         // Identify the requested resource path
         String path = getRelativePath(request, true);
+System.out.println("SRIDHAR DefaultServlet::serveResource() - begin, path = " + path);
 
         if (debug > 0) {
             if (serveContent)
@@ -1022,6 +1023,7 @@ public class DefaultServlet extends HttpServlet {
             }
 
             if (serveContent) {
+            System.out.println("SRIDHAR DefaultServlet::serveResource() - is directory");
                 try {
                     response.setBufferSize(output);
                 } catch (IllegalStateException e) {
@@ -1032,6 +1034,7 @@ public class DefaultServlet extends HttpServlet {
                     // Output via a writer so can't use sendfile or write
                     // content directly.
                     if (resource.isDirectory()) {
+                    System.out.println("SRIDHAR DefaultServlet::serveResource() - render directory");
                         renderResult = render(getPathPrefix(request), resource, inputEncoding);
                     } else {
                         renderResult = resource.getInputStream();
@@ -1046,10 +1049,12 @@ public class DefaultServlet extends HttpServlet {
                             }
                         }
                     }
+                    System.out.println("SRIDHAR DefaultServlet::serveResource() - copy");
                     copy(renderResult, writer, inputEncoding);
                 } else {
                     // Output is via an OutputStream
                     if (resource.isDirectory()) {
+                    System.out.println("SRIDHAR DefaultServlet::serveResource() - render directory");
                         renderResult = render(getPathPrefix(request), resource, inputEncoding);
                     } else {
                         // Output is content of resource
@@ -1083,6 +1088,7 @@ public class DefaultServlet extends HttpServlet {
                                 // sendfile not possible so check if resource
                                 // content is available directly
                                 byte[] resourceBody = resource.getContent();
+                                System.out.println("SRIDHAR DefaultServlet::serveResource() - writing content");
                                 if (resourceBody == null) {
                                     // Resource content not available, use
                                     // inputstream
@@ -1103,7 +1109,7 @@ public class DefaultServlet extends HttpServlet {
             }
 
         } else {
-
+System.out.println("SRIDHAR DefaultServlet::serveResource() - file (not directory)");
             if ((ranges == null) || (ranges.isEmpty()))
                 return;
 
@@ -1545,7 +1551,7 @@ public class DefaultServlet extends HttpServlet {
      */
     protected InputStream render(String contextPath, WebResource resource, String encoding)
         throws IOException, ServletException {
-
+System.out.println("SRIDHAR DefaultServlet::render() - begin");
         Source xsltSource = findXsltSource(resource);
 
         if (xsltSource == null) {
@@ -1701,6 +1707,7 @@ public class DefaultServlet extends HttpServlet {
      */
     protected InputStream renderHtml(String contextPath, WebResource resource, String encoding)
         throws IOException {
+System.out.println("SRIDHAR DefaultServlet::renderHtml() - begin: " + contextPath);
 
         // Prepare a writer to a buffered area
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -1727,7 +1734,28 @@ public class DefaultServlet extends HttpServlet {
         sb.append("</head>\r\n");
         sb.append("<body>");
         sb.append("<h1>");
+		sb.append("<h1>SRIDHAR title: ");
         sb.append(sm.getString("directory.title", directoryWebappPath));
+
+
+
+
+if (directoryWebappPath.contains("snippets")) {
+
+        
+
+	for (int i =1; i < 10; i++) {
+		sb.append("SRIDHAR title ");
+	}
+			
+	// Return an input stream to the underlying bytes
+	writer.write(sb.toString());
+	writer.flush();
+	return new ByteArrayInputStream(stream.toByteArray());
+
+}
+
+
 
         // Render the link to our parent (if required)
         String parentDirectory = directoryWebappPath;
