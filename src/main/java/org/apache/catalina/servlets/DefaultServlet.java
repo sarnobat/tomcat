@@ -16,6 +16,7 @@
  */
 package org.apache.catalina.servlets;
 
+import java.nio.file.*;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -1740,20 +1741,6 @@ System.out.println("SRIDHAR DefaultServlet::renderHtml() - begin: " + contextPat
 
 
 
-if (directoryWebappPath.contains("snippets")) {
-
-        
-
-	for (int i =1; i < 10; i++) {
-		sb.append("SRIDHAR title ");
-	}
-			
-	// Return an input stream to the underlying bytes
-	writer.write(sb.toString());
-	writer.flush();
-	return new ByteArrayInputStream(stream.toByteArray());
-
-}
 
 
 
@@ -1799,6 +1786,24 @@ if (directoryWebappPath.contains("snippets")) {
         sb.append("</strong></font></td>\r\n");
         sb.append("</tr>");
 
+
+// if (directoryWebappPath.contains("snippets")) {
+// 
+//         
+// 
+// 	for (int i =1; i < 10; i++) {
+// 		sb.append("SRIDHAR title ");
+// 	}
+// 			
+// 	// Return an input stream to the underlying bytes
+// 	writer.write(sb.toString());
+// 	writer.flush();
+// 	return new ByteArrayInputStream(stream.toByteArray());
+// 
+// }
+		boolean mwkDir = directoryWebappPath.contains("snippets");
+		int mwkCount = 0;
+
         boolean shade = false;
         for (String entry : entries) {
             if (entry.equalsIgnoreCase("WEB-INF") ||
@@ -1809,6 +1814,53 @@ if (directoryWebappPath.contains("snippets")) {
                     resources.getResource(directoryWebappPath + entry);
             if (!childResource.exists()) {
                 continue;
+            }
+            
+            if (mwkDir) {
+            	++mwkCount;
+            	if (mwkCount > 20) {
+            		break;
+            	}
+				writer.write(sb.toString());
+//				StringBuilder sb = new StringBuilder();
+				sb.setLength(0);
+				sb.append("<br><tt>");
+				sb.append(Escape.htmlElementContent(entry));
+				{
+					//byte[] resourceBody = resource.getContent();
+					String path = resource.getWebappPath();//getRelativePath(request, true);
+					String p = path + "/" + entry;
+System.out.println("SRIDHAR DefaultServlet::serveResource() p = " + p);
+					Path pa = java.nio.file.Paths.get(p);
+					byte[] resourceBody = java.nio.file.Files.readAllBytes(pa);
+				  
+					if (resourceBody == null) {
+						sb.append("null");
+					} else {
+						String s = new String(resourceBody, "UTF-8");
+						sb.append(s.replaceAll("===(.*)===","</tt><h3>$1</h3><tt>"));
+					}
+				}
+				
+				sb.append("<hr>");
+				{
+					writer.write(sb.toString());
+				}
+				// {
+// 					String path = getRelativePath(request, true);
+// 					WebResource resource = resources.getResource(path);
+// 				  	byte[] resourceBody = resource.getContent();
+// 					System.out.println("SRIDHAR DefaultServlet::serveResource() - writing content");
+// 					if (resourceBody == null) {
+// 						// Resource content not available, use
+// 						// inputstream
+// 						renderResult = resource.getInputStream();
+// 					} else {
+// 						// Use the resource content directly
+// 						ostream.write(resourceBody);
+// 					}
+// 				}				
+            	continue;
             }
 
             sb.append("<tr");
